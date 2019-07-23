@@ -698,9 +698,9 @@ Parameters
 
 Property | Type | Description
 --------- | ------- | ----------
-1. `String` - The address to get the numbers of transactions from.
-2. `Number|String` - (optional) If you pass this parameter it will not use the default block set with :ref:`web3.eth.defaultBlock <eth-defaultblock>`.
-3. `Function` - (optional) Optional callback, returns an error object as first parameter and the result as second.
+address | `String` | The address to get the numbers of transactions from.
+defaultBlock | `Number|String` | (optional) If you pass this parameter it will not use the default block set with :ref:`web3.eth.defaultBlock <eth-defaultblock>`.
+callback | `Function` | (optional) Optional callback, returns an error object as first parameter and the result as second.
 
 Returns
 
