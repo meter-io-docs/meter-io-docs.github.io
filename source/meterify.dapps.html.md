@@ -37,12 +37,6 @@ DApps are decentralized applications that utilize blockchains to store their his
 
 At this time, DApps are generally related to categories such as finance, exchanges, and gambling, but social applications and games also exist. At the same time, there are numerous untapped opportunities to develop DApps for other categories that don't yet exist, or for which there are few DApps for at this time.
 
-* [Developing an Example DApp](#example-dapp)
-* [Building the Example on Linux Using Docker](#example-with-docker)
-* [Building the Example on Linux Without Docker](#example-no-docker)
-* [Create the Application Functions](#create-application-functions)
-* [Load, Deploy, and Test a Smart Contract](#example-smart-contract)
-
 <a name="example-dapp"/>
 
 ## Developing an Example DApp
