@@ -2,13 +2,13 @@
 title: Meter Mining Guide
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - javascript
+  - bash
 
 toc_footers:
 - <a href='./index.html'>Documentation Home</a>
 - <a href='./meterify.dapps.html'>DApp Tutorials</a>
 - <a href='./meterify.examples.html'>Examples</a>
-- <a href='./meterify.mining.html'>Mining Guide</a>
+- <a href='./mining.html'>Mining Guide</a>
 - <hr>
 - API Documentation
 - <a href='./meterify.html'>meterify</a>
@@ -51,13 +51,13 @@ When these challenges can be met in the right combination, the other side that n
 
 Mining Meter at this time is in the testing phase, and production mining is set to begin soon. This provides a very good incentive for early adopters to more easily and economically acquire MTR through mining, before it becomes more widely available, and as more miners begin to direct their resources towards the Meter Network.     
 
-## How to Mine
+# How to Mine
 
 Generally speaking, miners may choose to operate their own equipment, and gain all the rewards for their efforts, or join together with others in a mining pool, and share the rewards (see What is a Mining Pool). In some cases people can subscribe to a pool and gain some of the rewards, but without owning any equipment of their own. This is called cloud mining. Each has its own benefits and drawbacks, and it is up to each person to determine which approach suits them best.
 
 The remainder of this document is in support of those that already operate their own equipment, or wish to, and are interested in mining Meter. Primarily this will include those that will mine directly on their own, mining pools that choose to support Meter, or those that want to setup cloud mining for Meter. However, this information might also be of interest to others, such as those that are already part of a mining pool, and want to request that their pool add support for Meter.  
 
-### What is a Mining Pool?
+## What is a Mining Pool?
 
 When miners group together to use their combined processing power this is called a mining pool. The rewards from mining are split proportionally according to the amount of hash power miners contribute to the pool.
 
@@ -65,19 +65,19 @@ Mining pools can be split into both public ones and private ones. Public pools w
 
 Mining is strictly voluntary, and as such miners can opt to switch their mining capabilities whenever they choose, according to their own objectives or criteria. For example, if a miner that traditionally was in a Bitcoin mining pool decided to divert some or all processing power to mine another blockchain, such as Meter, it is simply a case of making a few minor configuration changes to point the mining equipment to the new pool.
 
-## Mining Hardware
+# Mining Hardware
 
 ASIC miners are specialized hardware machines that are required to efficiently mine Meter.
 
 Since Meter uses SHA256, the same as Bitcoin, miners can use the same hardware for mining both coins, and the mining setup for the two is very similar.
 
-### Hardware Setup Guide
+## Hardware Setup Guide
 
 Meter uses an account based system, rather than the UTXO based method that Bitcoin uses. However, this difference only amounts to a small change that needs to be made in the configuration.
 
 Follow [this guide](https://www.bitcoin.com/get-started/how-to-setup-a-bitcoin-asic-miner-and-what-they-are) on installing and configuring your ASICs.
 
-## The Meter Mining Pool
+# The Meter Mining Pool
 
 Meter is actively working with mining pools for support. However, in the meantime there are two dedicated Meter mining pools currently running for test purposes:
 
@@ -99,7 +99,7 @@ These results are still relatively slow now. However, closer to the mainnet laun
 
 The Meter mining pool status statistics can be viewed at http://54.184.235.97:8088/stats.
 
-### Joining the Meter Mining Pool
+## Joining the Meter Mining Pool
 
 !> BE AWARE NO REWARD will be distributed from these pools, as the logic has not been implemented yet.
 
@@ -113,11 +113,11 @@ Where:
 * `Worker` is the Meter wallet address.
 * `Password` is the password associated with the wallet.
 
-## Starting a Mining Pool on the Meter Network
+# Starting a Mining Pool on the Meter Network
 
 An example implementation of the Meter mining pool is available on [GitHub](https://github.com/meterio/meter-nomp), based on the open source nomp Bitcoin mining pool. This code has been provided to show the changes needed compared to standard bitcoin mining pools, and is not intended to be used in a production environment.
 
-### Requirements
+## Requirements
 
 There are three things required to run Meter nomp: Node.js, a database (Redis or MySQL), and a connection to a coin daemon on the Meter Network, which is a Meter full node that monitors transactions on both the Meter PoW and PoS chains.
 
@@ -130,7 +130,7 @@ The following are the minimal version requirements for Node.js and Redis. If old
 
 **Important Warning!** It is always a good idea to learn about and understand any software that you are using. An important security measure to implement for nomp is to secure the database so it cannot be accessed externally. An easy way to do this for Redis is to include `bind 127.0.0.1` in your `redis.conf` file, and use a firewall with strict rules in place to only allow accessing Redis locally. For more information please read [Security](http://redis.io/topics/security). Another good place to start for additional information about using Redis for nomp is [Data Persistence](http://redis.io/topics/persistence).
 
-### Downloading & Installing
+## Downloading & Installing
 
 Clone the repository and run `npm update` for all the dependencies to be installed:
 
@@ -140,13 +140,11 @@ cd meter-nomp
 npm install
 ```
 
-### Optional: Using Docker
+## Using Docker
 
-Rather than using the host system's Redis and Node.js, it is possible to containerize everything using Docker. The following describes this optional approach with Docker Compose. Do the following before continuing with the remaining steps, and in further sections any additional adjustments that need to be made will be highlighted.
+> meter-nomp/docker-compose.yml
 
-Create the following `docker-compose.yml` file inside the `meter-nomp` sub-directory in the previous step.
-
-```
+```bash
 version: '3.5'
 services:
   redis:
@@ -197,9 +195,14 @@ networks:
       - subnet: 172.16.238.0/24
 ```
 
-### Portal Configuration
+This is completely optional. Rather than using the host system's Redis and Node.js, it is possible to containerize everything using Docker. The following describes this optional approach with Docker Compose. Do the following before continuing with the remaining steps, and in further sections any additional adjustments that need to be made will be highlighted.
 
-Inside the `config_example.json` file, ensure the default configuration will work for your environment, then copy the file to `config.json`. If using the Docker example outlined above, change the `redis` sections to replace `127.0.0.1` with `172.16.238.10` as follows:
+Create the following `docker-compose.yml` file inside the `meter-nomp` sub-directory in the previous step.
+
+
+## Portal Configuration
+
+> Make the following changes in config.json
 
 ```js
 "redis": {
@@ -208,7 +211,9 @@ Inside the `config_example.json` file, ensure the default configuration will wor
 }
 ```
 
-**Field Description**
+Inside the `config_example.json` file, ensure the default configuration will work for your environment, then copy the file to `config.json`. If using the Docker example outlined above, change the `redis` sections to replace `127.0.0.1` with `172.16.238.10` as follows:
+
+> Field Description
 
 ```js
 {
@@ -372,9 +377,9 @@ Inside the `config_example.json` file, ensure the default configuration will wor
 }
 ```
 
-### Coin Configuration
+## Coin Configuration
 
-Inside the `coins` directory, ensure that a json file exists for Meter coin, and if no create it. Here is an example of what the file should look like:
+> coins/meter.json
 
 ```js
 {
@@ -384,13 +389,13 @@ Inside the `coins` directory, ensure that a json file exists for Meter coin, and
 }
 ```
 
+Inside the `coins` directory, ensure that a json file exists for Meter coin, and if no create it. Here is an example of what the file should look like:
+
 For additional documentation on how to configure coins and their different algorithms see [these instructions](github.com/meterio/meter-stratum-pool#module-usage).
 
-### Pool Configuration
+## Pool Configuration
 
-There is a json config file `meter.json` in the `pool_configs` sub-directory. Make sure to configure the appropriate fields in this file, especially the address fields and the `daemon`/`daemons` fields.
-
-For example, assuming the miner's account in Meter for receiving a reward is the `rewardBeneficiary` field, in the example configuration below the value is `0a05c2d862ca051010698b69b54278cbaf945ccb`. In the same example, the value for Meter test coin in the `daemons` section is configured as follows:
+> Make the followig change in the daemons section of pool_configs/meter.json
 
 ```js
 [
@@ -403,7 +408,7 @@ For example, assuming the miner's account in Meter for receiving a reward is the
 ]
 ```
 
-**Field Description**
+> pool_configs/meter.json
 
 ```js
 {
@@ -533,60 +538,78 @@ For example, assuming the miner's account in Meter for receiving a reward is the
 }
 ```
 
+There is a json config file `meter.json` in the `pool_configs` sub-directory. Make sure to configure the appropriate fields in this file, especially the address fields and the `daemon`/`daemons` fields.
+
+For example, assuming the miner's account in Meter for receiving a reward is the `rewardBeneficiary` field, in the example configuration below the value is `0a05c2d862ca051010698b69b54278cbaf945ccb`. In the same example, the value for Meter test coin in the `daemons` section is configured.
+
 Many of these pool config files can be created. If this is the case, they must have unique stratum ports.
 
 For more information on these configuration options see the [pool module documentation](https://github.com/meterio/meter-stratum-pool#module-usage).
 
-### Start the Portal
+## Start the Portal
 
 After all the configuration files have been set up, it is time to start the mining pool.
 
-#### Using Local Host Resources (no Docker)
+### Using Local Host Resources (no Docker)
 
-If everything is installed locally on the host, initiate using the following:
+> Start the portal (no Docker)
 
 ```bash
 $ node init.js
 ```
 
-#### Using Docker
+If everything is installed locally on the host, initiate using the following:
 
-*Step 1:* If using the Docker approach, make sure on first run to remove the dependencies in `node_modules` and it is empty.
+### Using Docker
 
-The reason for this is that there may be a version mismatch if dependencies were installed outside the container, as might have happened if `npm install` or `npm update` were run from the host. The `docker-compose.yml` file takes care of installing the dependencies, and automatically starting the application.
+
+#### Step 1: Remove dependencies
+
+> Remove all modules from node_modules
 
 ```bash
 $ rm -fr node_modules/*
 ```
-Or remove it entirely:
+> Or remove node_modules entirely:
 
 ```bash
 $ rm -fr node_modules
 ```
 
-*Step 2:* Ensure the latest version of `docker-compose` is installed.
+If using the Docker approach, make sure on first run to remove the dependencies in `node_modules` and it is empty.
+
+The reason for this is that there may be a version mismatch if dependencies were installed outside the container, as might have happened if `npm install` or `npm update` were run from the host. The `docker-compose.yml` file takes care of installing the dependencies, and automatically starting the application.
+
+#### Step 2: Get the latest `docker-compose`
+
+> Install docker-compose
 
 ```bash
 $ sudo curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 $ sudo chmod +x /usr/local/bin/docker-compose
 ```
+Ensure the latest version of `docker-compose` is installed.
 
-*Step 3:* Check that `docker-compose` was installed correctly.
+#### Step 3: Check `docker-compose` version
 
 ```bash
 $ docker-compose --version
 docker-compose version 1.24.1, build 4667896b
 ```
 
-*Step 4:* Double check the configuration details and then start Docker.
+Check that `docker-compose` was installed correctly.
+
+#### Step 4: Start Docker.
 
 ```bash
 docker-compose up
 ```
 
-*Step 5:* Watch the log output for any errors.
+Double check the configuration details and then start Docker.
 
-The following errors are known to occur upon startup when the daemon is not running in the background:
+#### Step 5: Watch log output
+
+> Known errors when daemon is not running.
 
 ```bash
 [Payments]	[meter] Error with payment processing daemon {"type":"offline","message":"connect ECONNREFUSED 127.0.0.1:8332"}
@@ -594,8 +617,9 @@ The following errors are known to occur upon startup when the daemon is not runn
 [Pool]	[meter] (Thread 2) Could not start pool, error with init batch RPC call: {"type":"offline","message":"connect ECONNREFUSED 127.0.0.1:8332"}
 [Pool]	[meter] (Thread 1) Could not start pool, error with init batch RPC call: {"type":"offline","message":"connect ECONNREFUSED 127.0.0.1:8332"}
 ```
+Watch the log output for any errors. Errors are known to occur upon startup when the daemon is not running in the background:
 
-*Step 6*: Press `Ctrl+C` to stop.
+#### Step 6: Stop Docker
 
 ```bash
 Gracefully stopping... (press Ctrl+C again to force)
@@ -603,8 +627,12 @@ Stopping meter-nomp_node_1  ... done
 Stopping meter-nomp_redis_1 ... done
 ```
 
-*Step 7*: When wishing to start again in detached mode us the `-d` flag with `docker-compose`.
+Press `Ctrl+C` to stop.
+
+#### Step 7: Using detached mode
 
 ```bash
 docker-compose up -d
 ```
+
+When wishing to start again in detached mode us the `-d` flag with `docker-compose`.
