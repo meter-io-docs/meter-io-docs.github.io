@@ -1,0 +1,757 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>meterify.module.options</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="meterify" data-languages="[&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.svg" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#meterify-module-options" class="toc-h1 toc-link" data-title="meterify.module.options">meterify.module.options</a>
+          </li>
+          <li>
+            <a href="#defaultblock" class="toc-h1 toc-link" data-title="defaultBlock">defaultBlock</a>
+          </li>
+          <li>
+            <a href="#defaultaccount" class="toc-h1 toc-link" data-title="defaultAccount">defaultAccount</a>
+          </li>
+          <li>
+            <a href="#defaultgasprice" class="toc-h1 toc-link" data-title="defaultGasPrice">defaultGasPrice</a>
+          </li>
+          <li>
+            <a href="#defaultgas" class="toc-h1 toc-link" data-title="defaultGas">defaultGas</a>
+          </li>
+          <li>
+            <a href="#transactionblocktimeout" class="toc-h1 toc-link" data-title="transactionBlockTimeout">transactionBlockTimeout</a>
+          </li>
+          <li>
+            <a href="#transactionconfirmationblocks" class="toc-h1 toc-link" data-title="transactionConfirmationBlocks">transactionConfirmationBlocks</a>
+          </li>
+          <li>
+            <a href="#transactionpollingtimeout" class="toc-h1 toc-link" data-title="transactionPollingTimeout">transactionPollingTimeout</a>
+          </li>
+          <li>
+            <a href="#transactionsigner" class="toc-h1 toc-link" data-title="transactionSigner">transactionSigner</a>
+          </li>
+          <li>
+            <a href="#setprovider" class="toc-h1 toc-link" data-title="setProvider">setProvider</a>
+          </li>
+          <li>
+            <a href="#providers" class="toc-h1 toc-link" data-title="providers">providers</a>
+          </li>
+          <li>
+            <a href="#givenprovider" class="toc-h1 toc-link" data-title="givenProvider">givenProvider</a>
+          </li>
+          <li>
+            <a href="#currentprovider" class="toc-h1 toc-link" data-title="currentProvider">currentProvider</a>
+          </li>
+          <li>
+            <a href="#batchrequest" class="toc-h1 toc-link" data-title="BatchRequest">BatchRequest</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='./index.html'>Documentation Home</a></li>
+            <li><a href='./meterify.dapps.html'>DApp Tutorials</a></li>
+            <li><a href='./meterify.examples.html'>Examples</a></li>
+            <li><a href='./mining.html'>Mining Guide</a></li>
+            <li><hr></li>
+            <li>API Documentation</li>
+            <li><a href='./meterify.html'>meterify</a></li>
+            <li><a href='./meterify.module.options.html'>meterify.module.options</a></li>
+            <li><a href='./meterify.eth.html'>meterify.eth</a></li>
+            <li><a href='./meterify.eth.subscribe.html'>meterify.eth.subscribe</a></li>
+            <li><a href='./meterify.eth.Contract.html'>meterify.eth.Contract</a></li>
+            <li><a href='./meterify.eth.Iban.html'>meterify.eth.Iban</a></li>
+            <li><a href='./meterify.eth.personal.html'>meterify.eth.personal</a></li>
+            <li><a href='./meterify.eth.accounts.html'>meterify.eth.accounts</a></li>
+            <li><a href='./meterify.eth.ens.html'>meterify.eth.ens</a></li>
+            <li><a href='./meterify.eth.abi.html'>meterify.eth.abi</a></li>
+            <li><a href='./meterify.eth.net.html'>meterify.eth.net</a></li>
+            <li><a href='./meterify.shh.html'>meterify.shh</a></li>
+            <li><a href='./meterify.utils.html'>meterify.utils</a></li>
+            <li><hr></li>
+            <li><a href='https://www.meter.io/claim-your-meter/'>Request Test Tokens</a></li>
+            <li><a href='https://www.meter.io'>Meter.io</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='meterify-module-options'>meterify.module.options</h1>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="kr">import</span> <span class="nx">Web3</span> <span class="nx">from</span> <span class="s1">'web3'</span><span class="p">;</span>
+
+    <span class="kr">const</span> <span class="nx">meterify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"meterify"</span><span class="p">).</span><span class="nx">meterify</span><span class="p">;</span>
+
+    <span class="kr">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">defaultAccount</span><span class="p">:</span> <span class="s1">'0x0'</span><span class="p">,</span>
+        <span class="na">defaultBlock</span><span class="p">:</span> <span class="s1">'latest'</span><span class="p">,</span>
+        <span class="na">defaultGas</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="na">defaultGasPrice</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="na">transactionBlockTimeout</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="na">transactionConfirmationBlocks</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+        <span class="na">transactionPollingTimeout</span><span class="p">:</span> <span class="mi">480</span><span class="p">,</span>
+        <span class="na">transactionSigner</span><span class="p">:</span> <span class="k">new</span> <span class="nx">CustomTransactionSigner</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="kr">const</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="s1">'http://test.meter.io:8669'</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+
+    <span class="kr">const</span> <span class="nx">meterify</span> <span class="o">=</span> <span class="nx">meterify</span><span class="p">(</span><span class="nx">web3</span><span class="p">,</span> <span class="s2">"http://test.meter.io:8669"</span><span class="p">);</span>
+</code></pre>
+<p>A module does provide several options for configuring the transaction confirmation workflow or for defining default values.
+This document describes the available option properties on a module.</p>
+<h1 id='defaultblock'>defaultBlock</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">defaultBlock</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">defaultBlock</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">shh</span><span class="p">.</span><span class="nx">defaultBlock</span>
+    <span class="p">...</span>
+</code></pre>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">getBalance</span><span class="p">();</span>
+<span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">getCode</span><span class="p">();</span>
+<span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">getTransactionCount</span><span class="p">();</span>
+<span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">getStorageAt</span><span class="p">();</span>
+<span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">call</span><span class="p">();</span>
+<span class="k">new</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">Contract</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nx">myContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">().</span><span class="nx">call</span><span class="p">();</span><span class="s2">`
+</span></code></pre>
+<p>The default block is used for all methods which have a block parameter.
+You can override it by passing the block parameter if a block is required.</p>
+
+<p>Returns</p>
+
+<p>The <code>defaultBlock</code> property can return the following values:</p>
+
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>a number</td>
+<td>&#39;Number&#39;</td>
+<td>A block number</td>
+</tr>
+<tr>
+<td><code>genesis</code></td>
+<td><code>String</code></td>
+<td>The genesis block</td>
+</tr>
+<tr>
+<td><code>latest</code></td>
+<td><code>String</code></td>
+<td>The latest block (current head of the blockchain)</td>
+</tr>
+<tr>
+<td><code>pending</code></td>
+<td><code>String</code></td>
+<td>The currently mined block (including pending transactions)</td>
+</tr>
+</tbody></table>
+
+<p>Default is <code>latest</code></p>
+<h1 id='defaultaccount'>defaultAccount</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">defaultAccount</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">defaultAccount</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">shh</span><span class="p">.</span><span class="nx">defaultAccount</span>
+    <span class="p">...</span>
+</code></pre>
+<p>This default address is used as the default <code>&quot;from&quot;</code> property, if no <code>&quot;from&quot;</code> property is specified.</p>
+
+<p>Returns</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>String</code> - 20 Bytes</td>
+<td>Any Ethereum address. You need to have the private key for that address in your node or keystore. (Default is <code>undefined</code>)</td>
+</tr>
+</tbody></table>
+<h1 id='defaultgasprice'>defaultGasPrice</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">defaultGasPrice</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">defaultGasPrice</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">shh</span><span class="p">.</span><span class="nx">defaultGasPrice</span>
+    <span class="p">...</span>
+</code></pre>
+<p>The default gas price which will be used for a request.</p>
+
+<p>Returns</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>string</code> or <code>number</code></td>
+<td>The current value of the defaultGasPrice property.</td>
+</tr>
+</tbody></table>
+<h1 id='defaultgas'>defaultGas</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">defaultGas</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">defaultGas</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">shh</span><span class="p">.</span><span class="nx">defaultGas</span>
+    <span class="p">...</span>
+</code></pre>
+<p>The default gas which will be used for a request.</p>
+
+<p>Returns</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>string</code> or <code>number</code></td>
+<td>The current value of the defaultGas property.</td>
+</tr>
+</tbody></table>
+<h1 id='transactionblocktimeout'>transactionBlockTimeout</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">transactionBlockTimeout</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">transactionBlockTimeout</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">shh</span><span class="p">.</span><span class="nx">transactionBlockTimeout</span>
+    <span class="p">...</span>
+</code></pre>
+<p>The <code>transactionBlockTimeout</code> will be used over a socket based connection. This option does define the amount of new blocks it should wait until the first confirmation happens.
+This means the PromiEvent rejects with a timeout error when the timeout got exceeded.</p>
+
+<p>Returns</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>number</code></td>
+<td>The current value of transactionBlockTimeout</td>
+</tr>
+</tbody></table>
+<h1 id='transactionconfirmationblocks'>transactionConfirmationBlocks</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">transactionConfirmationBlocks</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">transactionConfirmationBlocks</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">shh</span><span class="p">.</span><span class="nx">transactionConfirmationBlocks</span>
+    <span class="p">...</span>
+</code></pre>
+<p>This defines the number of blocks it requires until a transaction will be handled as confirmed.</p>
+
+<p>Returns</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>number</code></td>
+<td>The current value of transactionConfirmationBlocks</td>
+</tr>
+</tbody></table>
+<h1 id='transactionpollingtimeout'>transactionPollingTimeout</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">transactionPollingTimeout</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">transactionPollingTimeout</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">shh</span><span class="p">.</span><span class="nx">transactionPollingTimeout</span>
+    <span class="p">...</span>
+</code></pre>
+<p>The <code>transactionPollingTimeout</code>  will be used over a HTTP connection.
+This option does define the amount of polls (each second) it should wait until the first confirmation happens.</p>
+
+<p>Returns</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>number</code></td>
+<td>The current value of transactionPollingTimeout</td>
+</tr>
+</tbody></table>
+<h1 id='transactionsigner'>transactionSigner</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">transactionSigner</span>
+    <span class="p">...</span>
+</code></pre>
+<p>The <code>TransactionSigner</code> property does provide us the possibility to customize the signing process
+of the <code>Eth</code> module and the related sub-modules.</p>
+
+<p>The interface of a <code>TransactionSigner</code>:</p>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="kr">interface</span> <span class="nx">TransactionSigner</span> <span class="p">{</span>
+        <span class="nx">sign</span><span class="p">(</span><span class="nx">txObject</span><span class="p">:</span> <span class="nx">Transaction</span><span class="p">):</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">SignedTransaction</span><span class="o">&gt;</span>
+    <span class="p">}</span>
+
+    <span class="kr">interface</span> <span class="nx">SignedTransaction</span> <span class="p">{</span>
+        <span class="nl">messageHash</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+        <span class="nx">v</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+        <span class="nx">r</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+        <span class="nx">s</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+        <span class="nx">rawTransaction</span><span class="p">:</span> <span class="nx">string</span>
+    <span class="p">}</span>
+</code></pre>
+<p>Returns</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>TransactionSigner</code></td>
+<td>A JavaScript class of type TransactionSigner.</td>
+</tr>
+</tbody></table>
+<h1 id='setprovider'>setProvider</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">setProvider</span><span class="p">(</span><span class="nx">myProvider</span><span class="p">)</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">setProvider</span><span class="p">(</span><span class="nx">myProvider</span><span class="p">)</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">shh</span><span class="p">.</span><span class="nx">setProvider</span><span class="p">(</span><span class="nx">myProvider</span><span class="p">)</span>
+    <span class="p">...</span>
+</code></pre>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="kr">import</span> <span class="nx">Web3</span> <span class="nx">from</span> <span class="s1">'web3'</span><span class="p">;</span>
+
+    <span class="kr">const</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="s1">'http://localhost:8545'</span><span class="p">);</span>
+
+    <span class="c1">// or</span>
+    <span class="kr">const</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="k">new</span> <span class="nx">Web3</span><span class="p">.</span><span class="nx">providers</span><span class="p">.</span><span class="nx">HttpProvider</span><span class="p">(</span><span class="s1">'http://localhost:8545'</span><span class="p">));</span>
+
+    <span class="c1">// change provider</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">setProvider</span><span class="p">(</span><span class="s1">'ws://localhost:8546'</span><span class="p">);</span>
+    <span class="c1">// or</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">setProvider</span><span class="p">(</span><span class="k">new</span> <span class="nx">Web3</span><span class="p">.</span><span class="nx">providers</span><span class="p">.</span><span class="nx">WebsocketProvider</span><span class="p">(</span><span class="s1">'ws://localhost:8546'</span><span class="p">));</span>
+
+    <span class="c1">// Using the IPC provider in node.js</span>
+    <span class="kr">const</span> <span class="nx">net</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'net'</span><span class="p">);</span>
+    <span class="kr">const</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="s1">'/Users/myuser/Library/Ethereum/geth.ipc'</span><span class="p">,</span> <span class="nx">net</span><span class="p">);</span> <span class="c1">// mac os path</span>
+
+    <span class="c1">// or</span>
+    <span class="kr">const</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="k">new</span> <span class="nx">Web3</span><span class="p">.</span><span class="nx">providers</span><span class="p">.</span><span class="nx">IpcProvider</span><span class="p">(</span><span class="s1">'/Users/myuser/Library/Ethereum/geth.ipc'</span><span class="p">,</span> <span class="nx">net</span><span class="p">));</span> <span class="c1">// mac os path</span>
+    <span class="c1">// on windows the path is: '\\\\.\\pipe\\geth.ipc'</span>
+    <span class="c1">// on linux the path is: '/users/myuser/.ethereum/geth.ipc'</span>
+</code></pre>
+<p>Will change the provider for its module.</p>
+
+<p>Note: When called on the umbrella package <code>web3</code> it will also set the provider for all sub modules <code>web3.eth</code>, <code>web3.shh</code>, etc.</p>
+
+<p>Parameters</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>Object</code> or <code>String</code></td>
+<td><code>provider</code>: a valid provider</td>
+</tr>
+<tr>
+<td><code>Net</code></td>
+<td><code>net</code>: (optional) the node.js Net package. This is only required for the IPC provider.</td>
+</tr>
+</tbody></table>
+
+<p>Returns</p>
+
+<p><code>Boolean</code></p>
+<h1 id='providers'>providers</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">Web3</span><span class="p">.</span><span class="nx">providers</span>
+    <span class="nx">Eth</span><span class="p">.</span><span class="nx">providers</span>
+    <span class="p">...</span>
+</code></pre>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="kr">const</span> <span class="nx">Web3</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'web3'</span><span class="p">);</span>
+    <span class="c1">// use the given Provider, e.g in Mist, or instantiate a new websocket provider</span>
+    <span class="kr">const</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="nx">Web3</span><span class="p">.</span><span class="nx">givenProvider</span> <span class="o">||</span> <span class="s1">'ws://localhost:8546'</span><span class="p">);</span>
+    <span class="c1">// or</span>
+    <span class="kr">const</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="nx">Web3</span><span class="p">.</span><span class="nx">givenProvider</span> <span class="o">||</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">.</span><span class="nx">providers</span><span class="p">.</span><span class="nx">WebsocketProvider</span><span class="p">(</span><span class="s1">'ws://localhost:8546'</span><span class="p">));</span>
+
+    <span class="c1">// Using the IPC provider in node.js</span>
+    <span class="kr">const</span> <span class="nx">net</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'net'</span><span class="p">);</span>
+
+    <span class="kr">const</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="s1">'/Users/myuser/Library/Ethereum/geth.ipc'</span><span class="p">,</span> <span class="nx">net</span><span class="p">);</span> <span class="c1">// mac os path</span>
+    <span class="c1">// or</span>
+    <span class="kr">const</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="k">new</span> <span class="nx">Web3</span><span class="p">.</span><span class="nx">providers</span><span class="p">.</span><span class="nx">IpcProvider</span><span class="p">(</span><span class="s1">'/Users/myuser/Library/Ethereum/geth.ipc'</span><span class="p">,</span> <span class="nx">net</span><span class="p">));</span> <span class="c1">// mac os path</span>
+    <span class="c1">// on windows the path is: '\\\\.\\pipe\\geth.ipc'</span>
+    <span class="c1">// on linux the path is: '/users/myuser/.ethereum/geth.ipc'</span>
+</code></pre>
+<p>Contains the current available providers.</p>
+
+<p><code>Object</code> with the following providers:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>Object</code></td>
+<td><code>HttpProvider</code></td>
+<td>The HTTP provider is <strong>deprecated</strong>, as it will not work for subscriptions.</td>
+</tr>
+<tr>
+<td><code>Object</code></td>
+<td><code>WebsocketProvider</code></td>
+<td>The Websocket provider is the standard for usage in legacy browsers.</td>
+</tr>
+<tr>
+<td><code>Object</code></td>
+<td><code>IpcProvider</code></td>
+<td>The IPC provider is used node dapps when running a local node. Gives the most secure connection.</td>
+</tr>
+</tbody></table>
+<h1 id='givenprovider'>givenProvider</h1><pre class="highlight javascript tab-javascript"><code>    <span class="nx">Web3</span><span class="p">.</span><span class="nx">givenProvider</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">givenProvider</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">shh</span><span class="p">.</span><span class="nx">givenProvider</span>
+    <span class="p">...</span>
+</code></pre>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">setProvider</span><span class="p">(</span><span class="nx">Web3</span><span class="p">.</span><span class="nx">givenProvider</span> <span class="o">||</span> <span class="s1">'ws://localhost:8546'</span><span class="p">);</span>
+</code></pre>
+<p>When using web3.js in an Ethereum compatible browser, it will set with the current native provider by that browser.
+Will return the given provider by the (browser) environment, otherwise <code>null</code>.</p>
+
+<p>Returns</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>Object</code></td>
+<td>The given provider set or <code>false</code>.</td>
+</tr>
+</tbody></table>
+<h1 id='currentprovider'>currentProvider</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">currentProvider</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">currentProvider</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">shh</span><span class="p">.</span><span class="nx">currentProvider</span>
+    <span class="p">...</span>
+</code></pre>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">web3</span><span class="p">.</span><span class="nx">currentProvider</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">web3</span><span class="p">.</span><span class="nx">setProvider</span><span class="p">(</span><span class="s1">'http://localhost:8545'</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre>
+<p>Will return the current provider.</p>
+
+<p>Returns</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>Object</code></td>
+<td>The current provider set.</td>
+</tr>
+</tbody></table>
+<h1 id='batchrequest'>BatchRequest</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="k">new</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">BatchRequest</span><span class="p">()</span>
+    <span class="k">new</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">BatchRequest</span><span class="p">()</span>
+    <span class="k">new</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">shh</span><span class="p">.</span><span class="nx">BatchRequest</span><span class="p">()</span>
+    <span class="p">...</span>
+</code></pre>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="kr">const</span> <span class="nx">contract</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">Contract</span><span class="p">(</span><span class="nx">abi</span><span class="p">,</span> <span class="nx">address</span><span class="p">);</span>
+
+    <span class="kr">const</span> <span class="nx">batch</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">BatchRequest</span><span class="p">();</span>
+    <span class="nx">batch</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">getBalance</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">'0x0000000000000000000000000000000000000000'</span><span class="p">,</span> <span class="s1">'latest'</span><span class="p">));</span>
+    <span class="nx">batch</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">contract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">balance</span><span class="p">(</span><span class="nx">address</span><span class="p">).</span><span class="nx">call</span><span class="p">.</span><span class="nx">request</span><span class="p">({</span><span class="na">from</span><span class="p">:</span> <span class="s1">'0x0000000000000000000000000000000000000000'</span><span class="p">}));</span>
+    <span class="nx">batch</span><span class="p">.</span><span class="nx">execute</span><span class="p">().</span><span class="nx">then</span><span class="p">(...);</span>
+</code></pre>
+<p>Class to create and execute batch requests.</p>
+
+<p>Parameters</p>
+
+<p>none</p>
+
+<p>Returns</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>Object</code></td>
+<td>Contains the following methods:</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>add(request)</code></td>
+<td>To add a request object to the batch call.</td>
+</tr>
+<tr>
+<td><code>execute()</code></td>
+<td>Will execute the batch request.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
