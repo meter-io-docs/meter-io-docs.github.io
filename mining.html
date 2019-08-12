@@ -1,0 +1,917 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Meter Mining Guide</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="mining" data-languages="[&quot;bash&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.svg" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="bash">bash</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#meter-mining-guide" class="toc-h1 toc-link" data-title="Meter Mining Guide">Meter Mining Guide</a>
+          </li>
+          <li>
+            <a href="#making-the-case-for-mining" class="toc-h1 toc-link" data-title="Making The Case for Mining">Making The Case for Mining</a>
+          </li>
+          <li>
+            <a href="#how-to-mine" class="toc-h1 toc-link" data-title="How to Mine">How to Mine</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#what-is-a-mining-pool" class="toc-h2 toc-link" data-title="What is a Mining Pool?">What is a Mining Pool?</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#mining-hardware" class="toc-h1 toc-link" data-title="Mining Hardware">Mining Hardware</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#hardware-setup-guide" class="toc-h2 toc-link" data-title="Hardware Setup Guide">Hardware Setup Guide</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#the-meter-mining-pool" class="toc-h1 toc-link" data-title="The Meter Mining Pool">The Meter Mining Pool</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#joining-the-meter-mining-pool" class="toc-h2 toc-link" data-title="Joining the Meter Mining Pool">Joining the Meter Mining Pool</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#starting-a-mining-pool-on-the-meter-network" class="toc-h1 toc-link" data-title="Starting a Mining Pool on the Meter Network">Starting a Mining Pool on the Meter Network</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#requirements" class="toc-h2 toc-link" data-title="Requirements">Requirements</a>
+                  </li>
+                  <li>
+                    <a href="#downloading-amp-installing" class="toc-h2 toc-link" data-title="Downloading &amp; Installing">Downloading &amp; Installing</a>
+                  </li>
+                  <li>
+                    <a href="#using-docker" class="toc-h2 toc-link" data-title="Using Docker">Using Docker</a>
+                  </li>
+                  <li>
+                    <a href="#portal-configuration" class="toc-h2 toc-link" data-title="Portal Configuration">Portal Configuration</a>
+                  </li>
+                  <li>
+                    <a href="#coin-configuration" class="toc-h2 toc-link" data-title="Coin Configuration">Coin Configuration</a>
+                  </li>
+                  <li>
+                    <a href="#pool-configuration" class="toc-h2 toc-link" data-title="Pool Configuration">Pool Configuration</a>
+                  </li>
+                  <li>
+                    <a href="#start-the-portal" class="toc-h2 toc-link" data-title="Start the Portal">Start the Portal</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#using-local-host-resources-no-docker" class="toc-h3 toc-link" data-title="Using Local Host Resources (no Docker)">Using Local Host Resources (no Docker)</a>
+                          </li>
+                          <li>
+                            <a href="#using-docker-2" class="toc-h3 toc-link" data-title="Using Docker">Using Docker</a>
+                              <ul class="toc-list-h4">
+                                  <li>
+                                    <a href="#step-1-remove-dependencies" class="toc-h4 toc-link" data-title="Step 1: Remove dependencies">Step 1: Remove dependencies</a>
+                                  </li>
+                                  <li>
+                                    <a href="#step-2-get-the-latest-docker-compose" class="toc-h4 toc-link" data-title="Step 2: Get the latest <code>docker-compose</code>">Step 2: Get the latest <code>docker-compose</code></a>
+                                  </li>
+                                  <li>
+                                    <a href="#step-3-check-docker-compose-version" class="toc-h4 toc-link" data-title="Step 3: Check <code>docker-compose</code> version">Step 3: Check <code>docker-compose</code> version</a>
+                                  </li>
+                                  <li>
+                                    <a href="#step-4-start-docker" class="toc-h4 toc-link" data-title="Step 4: Start Docker.">Step 4: Start Docker.</a>
+                                  </li>
+                                  <li>
+                                    <a href="#step-5-watch-log-output" class="toc-h4 toc-link" data-title="Step 5: Watch log output">Step 5: Watch log output</a>
+                                  </li>
+                                  <li>
+                                    <a href="#step-6-stop-docker" class="toc-h4 toc-link" data-title="Step 6: Stop Docker">Step 6: Stop Docker</a>
+                                  </li>
+                                  <li>
+                                    <a href="#step-7-using-detached-mode" class="toc-h4 toc-link" data-title="Step 7: Using detached mode">Step 7: Using detached mode</a>
+                                  </li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='./index.html'>Documentation Home</a></li>
+            <li><a href='./meterify.dapps.html'>DApp Tutorials</a></li>
+            <li><a href='./meterify.examples.html'>Examples</a></li>
+            <li><a href='./mining.html'>Mining Guide</a></li>
+            <li><hr></li>
+            <li>API Documentation</li>
+            <li><a href='./meterify.html'>meterify</a></li>
+            <li><a href='./meterify.module.options.html'>meterify.module.options</a></li>
+            <li><a href='./meterify.eth.html'>meterify.eth</a></li>
+            <li><a href='./meterify.eth.subscribe.html'>meterify.eth.subscribe</a></li>
+            <li><a href='./meterify.eth.Contract.html'>meterify.eth.Contract</a></li>
+            <li><a href='./meterify.eth.Iban.html'>meterify.eth.Iban</a></li>
+            <li><a href='./meterify.eth.personal.html'>meterify.eth.personal</a></li>
+            <li><a href='./meterify.eth.accounts.html'>meterify.eth.accounts</a></li>
+            <li><a href='./meterify.eth.ens.html'>meterify.eth.ens</a></li>
+            <li><a href='./meterify.eth.abi.html'>meterify.eth.abi</a></li>
+            <li><a href='./meterify.eth.net.html'>meterify.eth.net</a></li>
+            <li><a href='./meterify.shh.html'>meterify.shh</a></li>
+            <li><a href='./meterify.utils.html'>meterify.utils</a></li>
+            <li><hr></li>
+            <li><a href='https://www.meter.io/claim-your-meter/'>Request Test Tokens</a></li>
+            <li><a href='https://www.meter.io'>Meter.io</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='meter-mining-guide'>Meter Mining Guide</h1>
+<p>Mining is how cryptocurrency is created and one way to acquire coins. It is an intensive computing activity, and involves the use of specialized hardware to get rewarded for processing transaction blocks on a blockchain. Meter (MTR) itself is no exception to this.</p>
+
+<p>There are a number of interlinked factors to consider when it comes to mining. Just to name a few:</p>
+
+<ul>
+<li>Whether it is more economical or profitable to mine or buy cryptocurrency.</li>
+<li>What blockchain to focus on, and why.</li>
+<li>How to approach mining. For example, doing it all yourself, cooperating with others, or have somebody else do it for you.</li>
+</ul>
+<h1 id='making-the-case-for-mining'>Making The Case for Mining</h1>
+<p>Every miner will have their own reasons whether or not to choose mining. For example, under some circumstances it may be highly profitable to mine, while in other situations the costs may be too high and the return on investment too low.</p>
+
+<p>When it comes to owning equipment, the main expenses involved will include the cost of the equipment, and the expenses involved in operating and maintaining it. Mining equipment is specialized hardware that is much more expensive than a standard PC computer, and requires a big upfront investment. That equipment also needs to be housed somewhere, under optimal conditions, such as keeping it cool while running. And, the other big operational factor is the price of electricity and dependability of delivery wherever the equipment is being operated.</p>
+
+<p>When these challenges can be met in the right combination, the other side that needs to be looked at is the return. If the expenses are manageable, and the return on each coin is high enough, then that should equate to a good profit margin. However, it may be the case that at the time of mining a coin it is not actively being traded yet, but the anticipated return sometime later is expected to be profitable.</p>
+
+<p>Mining Meter at this time is in the testing phase, and production mining is set to begin soon. This provides a very good incentive for early adopters to more easily and economically acquire MTR through mining, before it becomes more widely available, and as more miners begin to direct their resources towards the Meter Network.     </p>
+<h1 id='how-to-mine'>How to Mine</h1>
+<p>Generally speaking, miners may choose to operate their own equipment, and gain all the rewards for their efforts, or join together with others in a mining pool, and share the rewards (see What is a Mining Pool). In some cases people can subscribe to a pool and gain some of the rewards, but without owning any equipment of their own. This is called cloud mining. Each has its own benefits and drawbacks, and it is up to each person to determine which approach suits them best.</p>
+
+<p>The remainder of this document is in support of those that already operate their own equipment, or wish to, and are interested in mining Meter. Primarily this will include those that will mine directly on their own, mining pools that choose to support Meter, or those that want to setup cloud mining for Meter. However, this information might also be of interest to others, such as those that are already part of a mining pool, and want to request that their pool add support for Meter.  </p>
+<h2 id='what-is-a-mining-pool'>What is a Mining Pool?</h2>
+<p>When miners group together to use their combined processing power this is called a mining pool. The rewards from mining are split proportionally according to the amount of hash power miners contribute to the pool.</p>
+
+<p>Mining pools can be split into both public ones and private ones. Public pools will generally charge a fee</p>
+
+<p>Mining is strictly voluntary, and as such miners can opt to switch their mining capabilities whenever they choose, according to their own objectives or criteria. For example, if a miner that traditionally was in a Bitcoin mining pool decided to divert some or all processing power to mine another blockchain, such as Meter, it is simply a case of making a few minor configuration changes to point the mining equipment to the new pool.</p>
+<h1 id='mining-hardware'>Mining Hardware</h1>
+<p>ASIC miners are specialized hardware machines that are required to efficiently mine Meter.</p>
+
+<p>Since Meter uses SHA256, the same as Bitcoin, miners can use the same hardware for mining both coins, and the mining setup for the two is very similar.</p>
+<h2 id='hardware-setup-guide'>Hardware Setup Guide</h2>
+<p>Meter uses an account based system, rather than the UTXO based method that Bitcoin uses. However, this difference only amounts to a small change that needs to be made in the configuration.</p>
+
+<p>Follow <a href="https://www.bitcoin.com/get-started/how-to-setup-a-bitcoin-asic-miner-and-what-they-are">this guide</a> on installing and configuring your ASICs.</p>
+<h1 id='the-meter-mining-pool'>The Meter Mining Pool</h1>
+<p>Meter is actively working with mining pools for support. However, in the meantime there are two dedicated Meter mining pools currently running for test purposes:</p>
+<pre class="highlight plaintext"><code>stratum+tcp://34.222.111.82:3256
+stratum+tcp://54.184.235.97:3256
+</code></pre>
+<p>The following are the rough production parameters for different mining hardware on the Meter testnet, tuned to 1 meter = 10 kwh on an Antminer S9:</p>
+
+<table><thead>
+<tr>
+<th></th>
+<th>Power</th>
+<th>Hash</th>
+<th>Efficiency</th>
+<th>Meter/Day</th>
+<th>Margin Index</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AntMiner S9</td>
+<td>1323</td>
+<td>13.5</td>
+<td>98</td>
+<td>31.75</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>WhatsMiner M10</td>
+<td>3500</td>
+<td>55</td>
+<td>63.64</td>
+<td>129.36</td>
+<td>1.54</td>
+</tr>
+<tr>
+<td>Inno Silicon T3+ 52T</td>
+<td>2200</td>
+<td>52</td>
+<td>42.31</td>
+<td>79.42</td>
+<td>2.32</td>
+</tr>
+<tr>
+<td>AntMiner S17Pro</td>
+<td>2094</td>
+<td>53</td>
+<td>39.51</td>
+<td>80.95</td>
+<td>2.48</td>
+</tr>
+</tbody></table>
+
+<p>These results are still relatively slow now. However, closer to the mainnet launch, parameters will be tuned to more efficient mining hardware, and achieve faster end results.</p>
+
+<p>The Meter mining pool status statistics can be viewed at http://54.184.235.97:8088/stats.</p>
+<h2 id='joining-the-meter-mining-pool'>Joining the Meter Mining Pool</h2>
+<p>!&gt; BE AWARE NO REWARD will be distributed from these pools, as the logic has not been implemented yet.</p>
+
+<p>In order to configure a miner to join a Meter mining pool, the following fields in the <code>Miner configuration</code> tab of the ASIC&#39;s web panel need to be set:</p>
+
+<p><img src="images/conf_s9.png" alt="miner_configuration_example" /></p>
+
+<p>Where:</p>
+
+<ul>
+<li><code>URL</code> is the address of the mining pool.</li>
+<li><code>Worker</code> is the Meter wallet address.</li>
+<li><code>Password</code> is the password associated with the wallet.</li>
+</ul>
+<h1 id='starting-a-mining-pool-on-the-meter-network'>Starting a Mining Pool on the Meter Network</h1>
+<p>An example implementation of the Meter mining pool is available on <a href="https://github.com/meterio/meter-nomp">GitHub</a>, based on the open source nomp Bitcoin mining pool. This code has been provided to show the changes needed compared to standard bitcoin mining pools, and is not intended to be used in a production environment.</p>
+<h2 id='requirements'>Requirements</h2>
+<p>There are three things required to run Meter nomp: Node.js, a database (Redis or MySQL), and a connection to a coin daemon on the Meter Network, which is a Meter full node that monitors transactions on both the Meter PoW and PoS chains.</p>
+
+<p>On the testnet, coin deamons have already been setup by the Meter team. Normally a pool operator would setup its own coin daemon, and this will be possible in the future.</p>
+
+<p>The following are the minimal version requirements for Node.js and Redis. If older versions than the following are used (e.g. installed by a package manager) then problems will arise:</p>
+
+<ul>
+<li><a href="http://nodejs.org/">Node.js</a> v0.10+ (<a href="https://tecadmin.net/install-nodejs-with-nvm/#">follow these installation instructions</a>)</li>
+<li><a href="http://redis.io/">Redis</a> v2.6+ (<a href="http://redis.io/topics/quickstart">follow these instructions</a>)</li>
+</ul>
+
+<p><strong>Important Warning!</strong> It is always a good idea to learn about and understand any software that you are using. An important security measure to implement for nomp is to secure the database so it cannot be accessed externally. An easy way to do this for Redis is to include <code>bind 127.0.0.1</code> in your <code>redis.conf</code> file, and use a firewall with strict rules in place to only allow accessing Redis locally. For more information please read <a href="http://redis.io/topics/security">Security</a>. Another good place to start for additional information about using Redis for nomp is <a href="http://redis.io/topics/persistence">Data Persistence</a>.</p>
+<h2 id='downloading-amp-installing'>Downloading &amp; Installing</h2>
+<p>Clone the repository and run <code>npm update</code> for all the dependencies to be installed:</p>
+<pre class="highlight shell"><code>git clone https://github.com/meterio/meter-nomp.git
+<span class="nb">cd </span>meter-nomp
+npm install
+</code></pre><h2 id='using-docker'>Using Docker</h2>
+<blockquote>
+<p>meter-nomp/docker-compose.yml</p>
+</blockquote>
+<pre class="highlight shell"><code>version: <span class="s1">'3.5'</span>
+services:
+  redis:
+    image: <span class="s2">"redis:alpine"</span>
+    networks:
+      backend:
+        ipv4_address: 172.16.238.10
+  node:
+    image: <span class="s2">"node:10"</span>
+    user: <span class="s2">"node"</span>
+    working_dir: /home/node/meter-nomp
+    volumes:
+      - ./:/home/node/meter-nomp
+    networks:
+      backend:
+        ipv4_address: 172.16.238.11
+    ports:
+    <span class="c"># The following ports should be exposed to support</span>
+    <span class="c"># the example setup in the remainder of this document.</span>
+      <span class="c"># Web interface</span>
+      - <span class="s2">"8088:8088"</span>
+      <span class="c"># CLI</span>
+      - <span class="s2">"17117:17117"</span>
+      <span class="c"># Algorithm Switching</span>
+      - <span class="s2">"3333:3333"</span>
+      - <span class="s2">"4444:4444"</span>
+      - <span class="s2">"5555:5555"</span>
+      <span class="c"># Payment Processing Daemon Port</span>
+      - <span class="s2">"8332:8332"</span>
+      <span class="c"># Pool Connection Ports</span>
+      - <span class="s2">"3008:3008"</span>
+      - <span class="s2">"3032:3032"</span>
+      - <span class="s2">"3256:3256"</span>
+      <span class="c"># MySQL Port (not enabled in the example)</span>
+      <span class="c"># - "3306:3306"</span>
+      <span class="c"># Other ports as required</span>
+    <span class="nb">command</span>: &gt;
+      sh -c <span class="s2">"npm update &amp;&amp;
+             node init.js"</span>
+
+networks:
+  backend:
+    name: nomp_backend
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.16.238.0/24
+</code></pre>
+<p>This is completely optional. Rather than using the host system&#39;s Redis and Node.js, it is possible to containerize everything using Docker. The following describes this optional approach with Docker Compose. Do the following before continuing with the remaining steps, and in further sections any additional adjustments that need to be made will be highlighted.</p>
+
+<p>Create the following <code>docker-compose.yml</code> file inside the <code>meter-nomp</code> sub-directory in the previous step.</p>
+<h2 id='portal-configuration'>Portal Configuration</h2>
+<blockquote>
+<p>Make the following changes in config.json</p>
+</blockquote>
+<pre class="highlight javascript"><code><span class="s2">"redis"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"host"</span><span class="p">:</span> <span class="s2">"172.16.238.10"</span><span class="p">,</span>
+    <span class="s2">"port"</span><span class="p">:</span> <span class="mi">6379</span>
+<span class="p">}</span>
+</code></pre>
+<p>Inside the <code>config_example.json</code> file, ensure the default configuration will work for your environment, then copy the file to <code>config.json</code>. If using the Docker example outlined above, change the <code>redis</code> sections to replace <code>127.0.0.1</code> with <code>172.16.238.10</code> as follows:</p>
+
+<blockquote>
+<p>Field Description</p>
+</blockquote>
+<pre class="highlight javascript"><code><span class="p">{</span>
+    <span class="cm">/* Specifies the level of log output verbosity. Anything more severe than the level specified
+       will also be logged. */</span>
+    <span class="s2">"logLevel"</span><span class="p">:</span> <span class="s2">"debug"</span><span class="p">,</span> <span class="c1">//or "warning", "error"</span>
+
+    <span class="cm">/* By default meter-NOMP logs to console and gives pretty colors. If you direct that output to a
+       log file then disable this feature to avoid nasty characters in your log file. */</span>
+    <span class="s2">"logColors"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+
+
+    <span class="cm">/* The NOMP CLI (command-line interface) will listen for commands on this port. For example,
+       blocknotify messages are sent to NOMP through this. */</span>
+    <span class="s2">"cliPort"</span><span class="p">:</span> <span class="mi">17117</span><span class="p">,</span>
+
+    <span class="cm">/* By default 'forks' is set to "auto" which will spawn one process/fork/worker for each CPU
+       core in your system. Each of these workers will run a separate instance of your pool(s),
+       and the kernel will load balance miners using these forks. Optionally, the 'forks' field
+       can be a number for how many forks will be spawned. */</span>
+    <span class="s2">"clustering"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"enabled"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s2">"forks"</span><span class="p">:</span> <span class="s2">"auto"</span>
+    <span class="p">},</span>
+
+    <span class="cm">/* Pool config file will inherit these default values if they are not set. */</span>
+    <span class="s2">"defaultPoolConfigs"</span><span class="p">:</span> <span class="p">{</span>
+
+        <span class="cm">/* Poll RPC daemons for new blocks every this many milliseconds. */</span>
+        <span class="s2">"blockRefreshInterval"</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+
+        <span class="cm">/* If no new blocks are available for this many seconds update and rebroadcast job. */</span>
+        <span class="s2">"jobRebroadcastTimeout"</span><span class="p">:</span> <span class="mi">55</span><span class="p">,</span>
+
+        <span class="cm">/* Disconnect workers that haven't submitted shares for this many seconds. */</span>
+        <span class="s2">"connectionTimeout"</span><span class="p">:</span> <span class="mi">600</span><span class="p">,</span>
+
+        <span class="cm">/* (For MPOS mode) Store the block hashes for shares that aren't block candidates. */</span>
+        <span class="s2">"emitInvalidBlockHashes"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+
+        <span class="cm">/* This option will only authenticate miners using an address or mining key. */</span>
+        <span class="s2">"validateWorkerUsername"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+
+        <span class="cm">/* Enable for client IP addresses to be detected when using a load balancer with TCP
+           proxy protocol enabled, such as HAProxy with 'send-proxy' param:
+           http://haproxy.1wt.eu/download/1.5/doc/configuration.txt */</span>
+        <span class="s2">"tcpProxyProtocol"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+
+        <span class="cm">/* If under low-diff share attack we can ban their IP to reduce system/network load. If
+           running behind HAProxy be sure to enable 'tcpProxyProtocol', otherwise you'll end up
+           banning your own IP address (and therefore all workers). */</span>
+        <span class="s2">"banning"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"enabled"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="s2">"time"</span><span class="p">:</span> <span class="mi">600</span><span class="p">,</span> <span class="c1">//How many seconds to ban worker for</span>
+            <span class="s2">"invalidPercent"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="c1">//What percent of invalid shares triggers ban</span>
+            <span class="s2">"checkThreshold"</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="c1">//Perform check when this many shares have been submitted</span>
+            <span class="s2">"purgeInterval"</span><span class="p">:</span> <span class="mi">300</span> <span class="c1">//Every this many seconds clear out the list of old bans</span>
+        <span class="p">},</span>
+
+        <span class="cm">/* Used for storing share and block submission data and payment processing. */</span>
+        <span class="s2">"redis"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"host"</span><span class="p">:</span> <span class="s2">"127.0.0.1"</span><span class="p">,</span>
+            <span class="s2">"port"</span><span class="p">:</span> <span class="mi">6379</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+
+    <span class="cm">/* This is the front-end. Its not finished. When it is finished, this comment will say so. */</span>
+    <span class="s2">"website"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"enabled"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="cm">/* If you are using a reverse-proxy like nginx to display the website then set this to
+           127.0.0.1 to not expose the port. */</span>
+        <span class="s2">"host"</span><span class="p">:</span> <span class="s2">"0.0.0.0"</span><span class="p">,</span>
+        <span class="s2">"port"</span><span class="p">:</span> <span class="mi">8088</span><span class="p">,</span>
+        <span class="cm">/* Used for displaying stratum connection data on the Getting Started page. */</span>
+        <span class="s2">"stratumHost"</span><span class="p">:</span> <span class="s2">"example.com"</span><span class="p">,</span>
+        <span class="s2">"stats"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="cm">/* Gather stats to broadcast to page viewers and store in redis for historical stats
+               every this many seconds. */</span>
+            <span class="s2">"updateInterval"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+            <span class="cm">/* How many seconds to hold onto historical stats. Currently set to 24 hours. */</span>
+            <span class="s2">"historicalRetention"</span><span class="p">:</span> <span class="mi">43200</span><span class="p">,</span>
+            <span class="cm">/* How many seconds worth of shares should be gathered to generate hashrate. */</span>
+            <span class="s2">"hashrateWindow"</span><span class="p">:</span> <span class="mi">300</span>
+        <span class="p">},</span>
+        <span class="cm">/* Not done yet. */</span>
+        <span class="s2">"adminCenter"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"enabled"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="s2">"password"</span><span class="p">:</span> <span class="s2">"password"</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+
+    <span class="cm">/* Redis instance of where to store global portal data such as historical stats, proxy states,
+       ect.. */</span>
+    <span class="s2">"redis"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"host"</span><span class="p">:</span> <span class="s2">"127.0.0.1"</span><span class="p">,</span>
+        <span class="s2">"port"</span><span class="p">:</span> <span class="mi">6379</span>
+    <span class="p">},</span>
+
+
+    <span class="cm">/* With this switching configuration, you can setup ports that accept miners for work based on
+       a specific algorithm instead of a specific coin. Miners that connect to these ports are
+       automatically switched a coin determined by the server. The default coin is the first
+       configured pool for each algorithm and coin switching can be triggered using the
+       cli.js script in the scripts folder.
+
+       Miners connecting to these switching ports must use their public key in the format of
+       RIPEMD160(SHA256(public-key)). An address for each type of coin is derived from the miner's
+       public key, and payments are sent to that address. */</span>
+    <span class="s2">"switching"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"switch1"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"enabled"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s2">"algorithm"</span><span class="p">:</span> <span class="s2">"sha256"</span><span class="p">,</span>
+            <span class="s2">"ports"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"3333"</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">"diff"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                    <span class="s2">"varDiff"</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">"minDiff"</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                        <span class="s2">"maxDiff"</span><span class="p">:</span> <span class="mi">512</span><span class="p">,</span>
+                        <span class="s2">"targetTime"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+                        <span class="s2">"retargetTime"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+                        <span class="s2">"variancePercent"</span><span class="p">:</span> <span class="mi">30</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">"switch2"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"enabled"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s2">"algorithm"</span><span class="p">:</span> <span class="s2">"scrypt"</span><span class="p">,</span>
+            <span class="s2">"ports"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"4444"</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">"diff"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                    <span class="s2">"varDiff"</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">"minDiff"</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                        <span class="s2">"maxDiff"</span><span class="p">:</span> <span class="mi">512</span><span class="p">,</span>
+                        <span class="s2">"targetTime"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+                        <span class="s2">"retargetTime"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+                        <span class="s2">"variancePercent"</span><span class="p">:</span> <span class="mi">30</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">"switch3"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"enabled"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s2">"algorithm"</span><span class="p">:</span> <span class="s2">"x11"</span><span class="p">,</span>
+            <span class="s2">"ports"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"5555"</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">"diff"</span><span class="p">:</span> <span class="mf">0.001</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+
+    <span class="s2">"profitSwitch"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"enabled"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="s2">"updateInterval"</span><span class="p">:</span> <span class="mi">600</span><span class="p">,</span>
+        <span class="s2">"depth"</span><span class="p">:</span> <span class="mf">0.90</span><span class="p">,</span>
+        <span class="s2">"usePoloniex"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s2">"useCryptsy"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s2">"useMintpal"</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre><h2 id='coin-configuration'>Coin Configuration</h2>
+<blockquote>
+<p>coins/meter.json</p>
+</blockquote>
+<pre class="highlight javascript"><code><span class="p">{</span>
+    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Meter"</span><span class="p">,</span>
+    <span class="s2">"symbol"</span><span class="p">:</span> <span class="s2">"MTR"</span><span class="p">,</span>
+    <span class="s2">"algorithm"</span><span class="p">:</span> <span class="s2">"sha256"</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre>
+<p>Inside the <code>coins</code> directory, ensure that a json file exists for Meter coin, and if no create it. Here is an example of what the file should look like:</p>
+
+<p>For additional documentation on how to configure coins and their different algorithms see <a href="github.com/meterio/meter-stratum-pool#module-usage">these instructions</a>.</p>
+<h2 id='pool-configuration'>Pool Configuration</h2>
+<blockquote>
+<p>Make the followig change in the daemons section of pool_configs/meter.json</p>
+</blockquote>
+<pre class="highlight javascript"><code><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">"host"</span><span class="p">:</span> <span class="s2">"127.0.0.1"</span><span class="p">,</span>
+        <span class="s2">"port"</span><span class="p">:</span> <span class="mi">8332</span><span class="p">,</span>
+        <span class="s2">"user"</span><span class="p">:</span> <span class="s2">"testuser"</span><span class="p">,</span>
+        <span class="s2">"password"</span><span class="p">:</span> <span class="s2">"testpass"</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre>
+<blockquote>
+<p>pool_configs/meter.json</p>
+</blockquote>
+<pre class="highlight javascript"><code><span class="p">{</span>
+    <span class="s2">"enabled"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">//Set this to false and a pool will not be created from this config file</span>
+    <span class="s2">"coin"</span><span class="p">:</span> <span class="s2">"meter.json"</span><span class="p">,</span> <span class="c1">//Reference to coin config file in 'coins' directory</span>
+
+    <span class="s2">"address"</span><span class="p">:</span> <span class="s2">"mi4iBXbBsydtcc5yFmsff2zCFVX4XG7qJc"</span><span class="p">,</span> <span class="c1">//Address to where block rewards are given</span>
+
+    <span class="cm">/* Block rewards go to the configured pool wallet address to later be paid out to miners,
+       except for a percentage that can go to, for examples, pool operator(s) as pool fees or
+       or to donations address. Addresses or hashed public keys can be used. Here is an example
+       of rewards going to the main pool op, and pool co-owner.*/</span>
+    <span class="s2">"rewardRecipients"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"n37vuNFkXfk15uFnGoVyHZ6PYQxppD3QqK"</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span> <span class="c1">//1.5% goes to pool op</span>
+        <span class="s2">"mirj3LtZxbSTharhtXvotqtJXUY7ki5qfx"</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="c1">//0.5% goes to a pool co-owner</span>
+    <span class="p">},</span>
+
+    <span class="cm">/* this is Pos beneficiary. It is 20 bytes address. Mining reward goes to this address in Pos ssytem. */</span>
+    <span class="s2">"rewardBeneficiary"</span><span class="p">:</span> <span class="s2">"0a05c2d862ca051010698b69b54278cbaf945ccb"</span><span class="p">,</span>
+
+    <span class="cm">/* payment must be disabled */</span>
+    <span class="s2">"paymentProcessing"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"enabled"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+
+        <span class="cm">/* Every this many seconds get submitted blocks from redis, use daemon RPC to check
+           their confirmation status, if confirmed then get shares from redis that contributed
+           to block and send out payments. */</span>
+        <span class="s2">"paymentInterval"</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+
+        <span class="cm">/* Minimum number of coins that a miner must earn before sending payment. Typically,
+           a higher minimum means less transactions fees (you profit more) but miners see
+           payments less frequently (they dislike). Opposite for a lower minimum payment. */</span>
+        <span class="s2">"minimumPayment"</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
+
+        <span class="cm">/* This daemon is used to send out payments. It MUST be for the daemon that owns the
+           configured 'address' that receives the block rewards, otherwise the daemon will not
+           be able to confirm blocks or send out payments. */</span>
+        <span class="s2">"daemon"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"host"</span><span class="p">:</span> <span class="s2">"127.0.0.1"</span><span class="p">,</span>
+            <span class="s2">"port"</span><span class="p">:</span> <span class="mi">8332</span><span class="p">,</span>
+            <span class="s2">"user"</span><span class="p">:</span> <span class="s2">"testuser"</span><span class="p">,</span>
+            <span class="s2">"password"</span><span class="p">:</span> <span class="s2">"testpass"</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+
+    <span class="cm">/* Each pool can have as many ports for your miners to connect to as you wish. Each port can
+       be configured to use its own pool difficulty and variable difficulty settings. varDiff is
+       optional and will only be used for the ports you configure it for. */</span>
+    <span class="s2">"ports"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"3008"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"diff"</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">},</span>
+
+        <span class="s2">"3032"</span><span class="p">:</span> <span class="p">{</span> <span class="c1">//A port for your miners to connect to</span>
+            <span class="s2">"diff"</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span> <span class="c1">//the pool difficulty for this port</span>
+
+            <span class="cm">/* Variable difficulty is a feature that will automatically adjust difficulty for
+               individual miners based on their hashrate in order to lower networking overhead */</span>
+            <span class="s2">"varDiff"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"minDiff"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="c1">//Minimum difficulty</span>
+                <span class="s2">"maxDiff"</span><span class="p">:</span> <span class="mi">512</span><span class="p">,</span> <span class="c1">//Network difficulty will be used if it is lower than this</span>
+                <span class="s2">"targetTime"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="c1">//Try to get 1 share per this many seconds</span>
+                <span class="s2">"retargetTime"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="c1">//Check to see if we should retarget every this many seconds</span>
+                <span class="s2">"variancePercent"</span><span class="p">:</span> <span class="mi">30</span> <span class="c1">//Allow time to very this % from target without retargeting</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">"3256"</span><span class="p">:</span> <span class="p">{</span> <span class="c1">//Another port for your miners to connect to, for ASIC miner</span>
+            <span class="s2">"diff"</span><span class="p">:</span> <span class="mi">200000</span> <span class="c1">//The pool difficulty</span>
+            <span class="s2">"varDiff"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"minDiff"</span><span class="p">:</span> <span class="mi">100000</span><span class="p">,</span>
+                <span class="s2">"maxDiff"</span><span class="p">:</span> <span class="mi">2000000</span><span class="p">,</span>
+                <span class="s2">"targetTime"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+                <span class="s2">"retargetTime"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+                <span class="s2">"variancePercent"</span><span class="p">:</span> <span class="mi">30</span>
+            <span class="p">}</span>
+
+        <span class="p">}</span>
+    <span class="p">},</span>
+
+    <span class="cm">/* More than one daemon instances can be setup in case one drops out-of-sync or dies. */</span>
+    <span class="s2">"daemons"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>   <span class="c1">//Main daemon instance</span>
+            <span class="s2">"host"</span><span class="p">:</span> <span class="s2">"127.0.0.1"</span><span class="p">,</span>
+            <span class="s2">"port"</span><span class="p">:</span> <span class="mi">8332</span><span class="p">,</span>
+            <span class="s2">"user"</span><span class="p">:</span> <span class="s2">"testuser"</span><span class="p">,</span>
+            <span class="s2">"password"</span><span class="p">:</span> <span class="s2">"testpass"</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+
+    <span class="cm">/* This allows the pool to connect to the daemon as a node peer to receive block updates.
+       It may be the most efficient way to get block updates (faster than polling, less
+       intensive than blocknotify script). It requires the additional field "peerMagic" in
+       the coin config. */</span>
+    <span class="s2">"p2p"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"enabled"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+
+        <span class="cm">/* Host for daemon */</span>
+        <span class="s2">"host"</span><span class="p">:</span> <span class="s2">"127.0.0.1"</span><span class="p">,</span>
+
+        <span class="cm">/* Port configured for daemon (this is the actual peer port not RPC port) */</span>
+        <span class="s2">"port"</span><span class="p">:</span> <span class="mi">19333</span><span class="p">,</span>
+
+        <span class="cm">/* If your coin daemon is new enough then it will support a p2p
+           feature that prevents the daemon from spamming our peer node with unnecessary
+           transaction data. Assume its supported but if you have problems try disabling it. */</span>
+        <span class="s2">"disableTransactions"</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+
+    <span class="cm">/* Enabled this mode and shares will be inserted into in a MySQL database. You may also want
+       to use the "emitInvalidBlockHashes" option below if you require it. The config options
+       "redis" and "paymentProcessing" will be ignored/unused if this is enabled. */</span>
+    <span class="s2">"mposMode"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"enabled"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="s2">"host"</span><span class="p">:</span> <span class="s2">"127.0.0.1"</span><span class="p">,</span> <span class="c1">//MySQL db host</span>
+        <span class="s2">"port"</span><span class="p">:</span> <span class="mi">3306</span><span class="p">,</span> <span class="c1">//MySQL db port</span>
+        <span class="s2">"user"</span><span class="p">:</span> <span class="s2">"me"</span><span class="p">,</span> <span class="c1">//MySQL db user</span>
+        <span class="s2">"password"</span><span class="p">:</span> <span class="s2">"mypass"</span><span class="p">,</span> <span class="c1">//MySQL db password</span>
+        <span class="s2">"database"</span><span class="p">:</span> <span class="s2">"mtr"</span><span class="p">,</span> <span class="c1">//MySQL db database name</span>
+
+        <span class="cm">/* Checks for valid password in database when miners connect. */</span>
+        <span class="s2">"checkPassword"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+
+        <span class="cm">/* Unregistered workers can automatically be registered (added to database) on stratum
+           worker authentication if this is true. */</span>
+        <span class="s2">"autoCreateWorker"</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>There is a json config file <code>meter.json</code> in the <code>pool_configs</code> sub-directory. Make sure to configure the appropriate fields in this file, especially the address fields and the <code>daemon</code>/<code>daemons</code> fields.</p>
+
+<p>For example, assuming the miner&#39;s account in Meter for receiving a reward is the <code>rewardBeneficiary</code> field, in the example configuration below the value is <code>0a05c2d862ca051010698b69b54278cbaf945ccb</code>. In the same example, the value for Meter test coin in the <code>daemons</code> section is configured.</p>
+
+<p>Many of these pool config files can be created. If this is the case, they must have unique stratum ports.</p>
+
+<p>For more information on these configuration options see the <a href="https://github.com/meterio/meter-stratum-pool#module-usage">pool module documentation</a>.</p>
+<h2 id='start-the-portal'>Start the Portal</h2>
+<p>After all the configuration files have been set up, it is time to start the mining pool.</p>
+<h3 id='using-local-host-resources-no-docker'>Using Local Host Resources (no Docker)</h3>
+<blockquote>
+<p>Start the portal (no Docker)</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="gp">$ </span>node init.js
+</code></pre>
+<p>If everything is installed locally on the host, initiate using the following:</p>
+<h3 id='using-docker-2'>Using Docker</h3><h4 id='step-1-remove-dependencies'>Step 1: Remove dependencies</h4>
+<blockquote>
+<p>Remove all modules from node_modules</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="gp">$ </span>rm -fr node_modules/<span class="k">*</span>
+</code></pre>
+<blockquote>
+<p>Or remove node_modules entirely:</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="gp">$ </span>rm -fr node_modules
+</code></pre>
+<p>If using the Docker approach, make sure on first run to remove the dependencies in <code>node_modules</code> and it is empty.</p>
+
+<p>The reason for this is that there may be a version mismatch if dependencies were installed outside the container, as might have happened if <code>npm install</code> or <code>npm update</code> were run from the host. The <code>docker-compose.yml</code> file takes care of installing the dependencies, and automatically starting the application.</p>
+<h4 id='step-2-get-the-latest-docker-compose'>Step 2: Get the latest <code>docker-compose</code></h4>
+<blockquote>
+<p>Install docker-compose</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="gp">$ </span>sudo curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-compose-<span class="sb">`</span>uname -s<span class="sb">`</span>-<span class="sb">`</span>uname -m<span class="sb">`</span> -o /usr/local/bin/docker-compose
+<span class="gp">$ </span>sudo chmod +x /usr/local/bin/docker-compose
+</code></pre>
+<p>Ensure the latest version of <code>docker-compose</code> is installed.</p>
+<h4 id='step-3-check-docker-compose-version'>Step 3: Check <code>docker-compose</code> version</h4><pre class="highlight shell"><code><span class="gp">$ </span>docker-compose --version
+docker-compose version 1.24.1, build 4667896b
+</code></pre>
+<p>Check that <code>docker-compose</code> was installed correctly.</p>
+<h4 id='step-4-start-docker'>Step 4: Start Docker.</h4><pre class="highlight shell"><code>docker-compose up
+</code></pre>
+<p>Double check the configuration details and then start Docker.</p>
+<h4 id='step-5-watch-log-output'>Step 5: Watch log output</h4>
+<blockquote>
+<p>Known errors when daemon is not running.</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="o">[</span>Payments]  <span class="o">[</span>meter] Error with payment processing daemon <span class="o">{</span><span class="s2">"type"</span>:<span class="s2">"offline"</span>,<span class="s2">"message"</span>:<span class="s2">"connect ECONNREFUSED 127.0.0.1:8332"</span><span class="o">}</span>
+<span class="o">[</span>Website]   <span class="o">[</span>meter] Could not dumpprivkey <span class="k">for </span>meter <span class="o">{</span><span class="s2">"type"</span>:<span class="s2">"offline"</span>,<span class="s2">"message"</span>:<span class="s2">"connect ECONNREFUSED 127.0.0.1:8332"</span><span class="o">}</span>
+<span class="o">[</span>Pool]  <span class="o">[</span>meter] <span class="o">(</span>Thread 2<span class="o">)</span> Could not start pool, error with init batch RPC call: <span class="o">{</span><span class="s2">"type"</span>:<span class="s2">"offline"</span>,<span class="s2">"message"</span>:<span class="s2">"connect ECONNREFUSED 127.0.0.1:8332"</span><span class="o">}</span>
+<span class="o">[</span>Pool]  <span class="o">[</span>meter] <span class="o">(</span>Thread 1<span class="o">)</span> Could not start pool, error with init batch RPC call: <span class="o">{</span><span class="s2">"type"</span>:<span class="s2">"offline"</span>,<span class="s2">"message"</span>:<span class="s2">"connect ECONNREFUSED 127.0.0.1:8332"</span><span class="o">}</span>
+</code></pre>
+<p>Watch the log output for any errors. Errors are known to occur upon startup when the daemon is not running in the background:</p>
+<h4 id='step-6-stop-docker'>Step 6: Stop Docker</h4><pre class="highlight shell"><code>Gracefully stopping... <span class="o">(</span>press Ctrl+C again to force<span class="o">)</span>
+Stopping meter-nomp_node_1  ... <span class="k">done
+</span>Stopping meter-nomp_redis_1 ... <span class="k">done</span>
+</code></pre>
+<p>Press <code>Ctrl+C</code> to stop.</p>
+<h4 id='step-7-using-detached-mode'>Step 7: Using detached mode</h4><pre class="highlight shell"><code>docker-compose up -d
+</code></pre>
+<p>When wishing to start again in detached mode us the <code>-d</code> flag with <code>docker-compose</code>.</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="bash">bash</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
