@@ -209,7 +209,7 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.svg" class="logo" alt="Logo" />
+      <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="javascript">javascript</a>
         </div>
@@ -242,6 +242,15 @@
             <a href="#abimodel" class="toc-h1 toc-link" data-title="AbiModel">AbiModel</a>
           </li>
           <li>
+            <a href="#abiitemmodel" class="toc-h1 toc-link" data-title="AbiItemModel">AbiItemModel</a>
+          </li>
+          <li>
+            <a href="#abiinput" class="toc-h1 toc-link" data-title="AbiInput">AbiInput</a>
+          </li>
+          <li>
+            <a href="#abioutput" class="toc-h1 toc-link" data-title="AbiOutput">AbiOutput</a>
+          </li>
+          <li>
             <a href="#methods" class="toc-h1 toc-link" data-title="Methods">Methods</a>
               <ul class="toc-list-h2">
                   <li>
@@ -249,36 +258,9 @@
                   </li>
                   <li>
                     <a href="#deploy" class="toc-h2 toc-link" data-title="deploy">deploy</a>
-                      <ul class="toc-list-h3">
-                          <li>
-                            <a href="#parameters" class="toc-h3 toc-link" data-title="Parameters">Parameters</a>
-                          </li>
-                      </ul>
                   </li>
                   <li>
                     <a href="#methods-2" class="toc-h2 toc-link" data-title="methods">methods</a>
-                      <ul class="toc-list-h3">
-                          <li>
-                            <a href="#parameters-2" class="toc-h3 toc-link" data-title="Parameters">Parameters</a>
-                          </li>
-                          <li>
-                            <a href="#methods-mymethod-call" class="toc-h3 toc-link" data-title="methods.myMethod.call">methods.myMethod.call</a>
-                              <ul class="toc-list-h4">
-                                  <li>
-                                    <a href="#parameters-3" class="toc-h4 toc-link" data-title="Parameters">Parameters</a>
-                                  </li>
-                              </ul>
-                          </li>
-                          <li>
-                            <a href="#methods-mymethod-send" class="toc-h3 toc-link" data-title="methods.myMethod.send">methods.myMethod.send</a>
-                          </li>
-                          <li>
-                            <a href="#methods-mymethod-estimategas" class="toc-h3 toc-link" data-title="methods.myMethod.estimateGas">methods.myMethod.estimateGas</a>
-                          </li>
-                          <li>
-                            <a href="#methods-mymethod-encodeabi" class="toc-h3 toc-link" data-title="methods.myMethod.encodeABI">methods.myMethod.encodeABI</a>
-                          </li>
-                      </ul>
                   </li>
               </ul>
           </li>
@@ -302,9 +284,6 @@
       </ul>
         <ul class="toc-footer">
             <li><a href='./index.html'>Documentation Home</a></li>
-            <li><a href='./meterify.dapps.html'>DApp Tutorials</a></li>
-            <li><a href='./meterify.examples.html'>Examples</a></li>
-            <li><a href='./meterify.mining.html'>Mining Guide</a></li>
             <li><hr></li>
             <li>API Documentation</li>
             <li><a href='./meterify.html'>meterify</a></li>
@@ -321,6 +300,11 @@
             <li><a href='./meterify.shh.html'>meterify.shh</a></li>
             <li><a href='./meterify.utils.html'>meterify.utils</a></li>
             <li><hr></li>
+            <li><a href='./meterify.dapps.html'>DApp Tutorial</a></li>
+            <li><a href='./meterify.examples.html'>Examples</a></li>
+            <li><a href='./mining.html'>Mining Guide</a></li>
+            <li><a href='./contributing/index.html'>Contributing</a></li>
+            <li><hr></li>
             <li><a href='https://www.meter.io/claim-your-meter/'>Request Test Tokens</a></li>
             <li><a href='https://www.meter.io'>Meter.io</a></li>
         </ul>
@@ -329,13 +313,9 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='meterify-eth-contract'>meterify.eth.Contract</h1>
-<p>The <code>meterify.eth.Contract</code> object makes it easy to interact with smart contracts on the Ethereum blockchain.
-When you create a new contract object you give it the json interface of the respective smart contract
-and web3 will auto convert all calls into low level ABI calls over RPC for you.</p>
-
-<p>This allows you to interact with smart contracts as if they were JavaScript objects.</p>
-
+<blockquote>
 <p>To use it standalone:</p>
+</blockquote>
 <pre class="highlight javascript tab-javascript"><code>    <span class="kr">import</span> <span class="p">{</span><span class="nx">Contract</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">'web3-eth-contract'</span><span class="p">;</span>
     <span class="kr">import</span> <span class="p">{</span><span class="nx">Accounts</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">'web3-eth-accounts'</span><span class="p">;</span>
 
@@ -350,11 +330,26 @@ and web3 will auto convert all calls into low level ABI calls over RPC for you.<
     <span class="nx">contract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">somFunc</span><span class="p">().</span><span class="nx">send</span><span class="p">({</span><span class="na">from</span><span class="p">:</span> <span class="p">....}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'receipt'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="p">...</span>
     <span class="p">});</span>
-</code></pre><h1 id='meterify-eth-contract-2'>meterify.eth.Contract</h1><pre class="highlight javascript tab-javascript"><code>
+</code></pre>
+<p>The <code>meterify.eth.Contract</code> object makes it easy to interact with smart contracts on the Meter blockchain.
+When you create a new contract object you give it the json interface of the respective smart contract
+and web3 will auto convert all calls into low level ABI calls over RPC for you.</p>
+
+<p>This allows you to interact with smart contracts as if they were JavaScript objects.</p>
+<h1 id='meterify-eth-contract-2'>meterify.eth.Contract</h1><pre class="highlight javascript tab-javascript"><code>
     <span class="k">new</span> <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">Contract</span><span class="p">(</span><span class="nx">jsonInterface</span><span class="p">,</span> <span class="nx">address</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
 </code></pre>
 <p>Creates a new contract instance with all its methods and events defined in its :ref:<code>json interface &lt;glossary-json-interface&gt;</code> object.</p>
 
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="kr">const</span> <span class="nx">myContract</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">Contract</span><span class="p">([...],</span> <span class="s1">'0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">defaultAccount</span><span class="p">:</span> <span class="s1">'0x1234567890123456789012345678901234567891'</span><span class="p">,</span> <span class="c1">// default from address</span>
+        <span class="na">defaultGasPrice</span><span class="p">:</span> <span class="s1">'20000000000'</span> <span class="c1">// default gas price in wei, 20 gwei in this case</span>
+    <span class="p">});</span>
+</code></pre>
 <p>Parameters</p>
 
 <ol>
@@ -379,14 +374,7 @@ and web3 will auto convert all calls into low level ABI calls over RPC for you.<
 <p>Returns</p>
 
 <p><code>Object</code>: The contract instance with all its methods and events.</p>
-
-<p>Example</p>
-<pre class="highlight javascript tab-javascript"><code>
-    <span class="kr">const</span> <span class="nx">myContract</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">Contract</span><span class="p">([...],</span> <span class="s1">'0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">defaultAccount</span><span class="p">:</span> <span class="s1">'0x1234567890123456789012345678901234567891'</span><span class="p">,</span> <span class="c1">// default from address</span>
-        <span class="na">defaultGasPrice</span><span class="p">:</span> <span class="s1">'20000000000'</span> <span class="c1">// default gas price in wei, 20 gwei in this case</span>
-    <span class="p">});</span>
-</code></pre><h1 id='properties'>Properties</h1>
+<h1 id='properties'>Properties</h1>
 <p><a name="contract-options"/></p>
 <h2 id='options'>options</h2>
 <p>The contract options object has the following properties:</p>
@@ -400,16 +388,11 @@ and web3 will auto convert all calls into low level ABI calls over RPC for you.<
 <h2 id='address'>address</h2><pre class="highlight javascript tab-javascript"><code>
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">address</span>
 </code></pre>
-<p>The address used for this contract instance.
-All transactions generated by web3.js from this contract will contain this address as the &quot;to&quot;.</p>
+<p>The address used for this contract instance.</p>
 
-<p>The address will be stored in lowercase.</p>
-
-<p>Property</p>
-
-<p><code>address</code> - <code>String</code> or null: The address for this contract, or <code>null</code> if it is not yet set.</p>
-
+<blockquote>
 <p>Example</p>
+</blockquote>
 <pre class="highlight javascript tab-javascript"><code>
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">address</span><span class="p">;</span>
     <span class="o">&gt;</span> <span class="s1">'0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae'</span>
@@ -417,11 +400,19 @@ All transactions generated by web3.js from this contract will contain this addre
     <span class="c1">// set a new address</span>
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">address</span> <span class="o">=</span> <span class="s1">'0x1234FFDD...'</span><span class="p">;</span>
 </code></pre>
+<p>All transactions generated by web3.js from this contract will contain this address as the &quot;to&quot;.</p>
+
+<p>The address will be stored in lowercase.</p>
+
+<p>Property</p>
+
+<p><code>address</code> - <code>String</code> or null: The address for this contract, or <code>null</code> if it is not yet set.</p>
+
 <p><a name="contract-json-interface"/></p>
 <h1 id='jsoninterface'>jsonInterface</h1><pre class="highlight javascript tab-javascript"><code>
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">jsonInterface</span>
 </code></pre>
-<p>The :ref:<code>json interface &lt;glossary-json-interface&gt;</code> object derived from the <code>ABI &lt;https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI&gt;</code>_ of this contract.</p>
+<p>The :ref:<code>json interface &lt;glossary-json-interface&gt;</code> object derived from the <a href="https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI">ABI</a> of this contract.</p>
 
 <p>Property</p>
 
@@ -436,8 +427,7 @@ All transactions generated by web3.js from this contract will contain this addre
         <span class="nx">getEventBySignature</span><span class="p">(</span><span class="nx">signature</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="nx">AbiItemModel</span><span class="p">;</span>
         <span class="nx">hasEvent</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="kr">boolean</span><span class="p">;</span>
     <span class="p">}</span>
-
-    <span class="kr">interface</span> <span class="nx">AbiItemModel</span> <span class="p">{</span>
+</code></pre><h1 id='abiitemmodel'>AbiItemModel</h1><pre class="highlight javascript tab-javascript"><code>    <span class="kr">interface</span> <span class="nx">AbiItemModel</span> <span class="p">{</span>
         <span class="nl">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
         <span class="nl">signature</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
         <span class="nl">payable</span><span class="p">:</span> <span class="kr">boolean</span><span class="p">;</span>
@@ -448,15 +438,13 @@ All transactions generated by web3.js from this contract will contain this addre
         <span class="nx">getOutputs</span><span class="p">():</span> <span class="nx">AbiOutput</span><span class="p">[];</span>
         <span class="nx">isOfType</span><span class="p">():</span> <span class="kr">boolean</span><span class="p">;</span>
     <span class="p">}</span>
-
-    <span class="kr">interface</span> <span class="nx">AbiInput</span> <span class="p">{</span>
+</code></pre><h1 id='abiinput'>AbiInput</h1><pre class="highlight javascript tab-javascript"><code>    <span class="kr">interface</span> <span class="nx">AbiInput</span> <span class="p">{</span>
         <span class="nl">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
         <span class="nl">type</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
         <span class="nx">indexed</span><span class="p">?:</span> <span class="kr">boolean</span><span class="p">;</span>
         <span class="nx">components</span><span class="p">?:</span> <span class="nx">AbiInput</span><span class="p">[];</span>
     <span class="p">}</span>
-
-    <span class="kr">interface</span> <span class="nx">AbiOutput</span> <span class="p">{</span>
+</code></pre><h1 id='abioutput'>AbiOutput</h1><pre class="highlight javascript tab-javascript"><code>    <span class="kr">interface</span> <span class="nx">AbiOutput</span> <span class="p">{</span>
         <span class="nl">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
         <span class="nl">type</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
         <span class="nx">components</span><span class="p">?:</span> <span class="nx">AbiOutput</span><span class="p">[];</span>
@@ -465,14 +453,6 @@ All transactions generated by web3.js from this contract will contain this addre
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">clone</span><span class="p">()</span>
 </code></pre>
 <p>Clones the current contract instance.</p>
-
-<p>Parameters</p>
-
-<p>none</p>
-
-<p>Returns</p>
-
-<p><code>Object</code>: The new contract instance.</p>
 
 <blockquote>
 <p>Example</p>
@@ -484,42 +464,27 @@ All transactions generated by web3.js from this contract will contain this addre
     <span class="nx">contract2</span><span class="p">.</span><span class="nx">address</span> <span class="o">=</span> <span class="nx">address2</span><span class="p">;</span>
 
     <span class="p">(</span><span class="nx">contract1</span><span class="p">.</span><span class="nx">address</span> <span class="o">!==</span> <span class="nx">contract2</span><span class="p">.</span><span class="nx">address</span><span class="p">);</span>
+
+<span class="nx">Returns</span>
+
+    <span class="o">&gt;</span> <span class="kc">true</span>
 </code></pre>
-<blockquote>
+<p>Parameters</p>
+
+<p>none</p>
+
 <p>Returns</p>
-</blockquote>
-<pre class="highlight shell"><code>    &gt; <span class="nb">true</span>
-</code></pre>
+
+<p><code>Object</code>: The new contract instance.</p>
+
 <p><a name="contract-deploy"/></p>
-<h2 id='deploy'>deploy</h2><pre class="highlight javascript tab-javascript"><code>
-    <span class="nx">myContract</span><span class="p">.</span><span class="nx">deploy</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
+<h2 id='deploy'>deploy</h2><pre class="highlight javascript tab-javascript"><code>    <span class="nx">myContract</span><span class="p">.</span><span class="nx">deploy</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
 </code></pre>
-<p>Call this function to deploy the contract to the blockchain.
-After successful deployment the promise will resolve with a new contract instance.</p>
-<h3 id='parameters'>Parameters</h3>
-<ol>
-<li><code>options</code> - <code>Object</code>: The options used for deployment.
+<p>Call this function to deploy the contract to the blockchain.</p>
 
-<ul>
-<li><code>data</code> - <code>String</code>: The byte code of the contract.</li>
-<li><code>arguments</code> - <code>Array</code> (optional): The arguments which get passed to the constructor on deployment.</li>
-</ul></li>
-</ol>
-
-<p>Returns</p>
-
-<p><code>Object</code>: The transaction object:</p>
-
-<ul>
-<li><code>Array</code> - arguments: The arguments passed to the method before. They can be changed.</li>
-<li><code>Function</code> - :ref:<code>send &lt;contract-send&gt;</code>: Will deploy the contract. The promise will resolve with the new contract instance, instead of the receipt!</li>
-<li><code>Function</code> - :ref:<code>estimateGas &lt;contract-estimateGas&gt;</code>: Will estimate the gas used for deploying.</li>
-<li><code>Function</code> - :ref:<code>encodeABI &lt;contract-encodeABI&gt;</code>: Encodes the ABI of the deployment, which is contract data + constructor parameters</li>
-</ul>
-
-<p>For details to the methods see the documentation below.</p>
-
+<blockquote>
 <p>Example</p>
+</blockquote>
 <pre class="highlight javascript tab-javascript"><code>
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">deploy</span><span class="p">({</span>
         <span class="na">data</span><span class="p">:</span> <span class="s1">'0x12345...'</span><span class="p">,</span>
@@ -573,7 +538,31 @@ After successful deployment the promise will resolve with a new contract instanc
     <span class="p">.</span><span class="nx">estimateGas</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">gas</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gas</span><span class="p">);</span>
     <span class="p">});</span>
-</code></pre><h2 id='methods-2'>methods</h2><pre class="highlight javascript tab-javascript"><code>
+</code></pre>
+<p>After successful deployment the promise will resolve with a new contract instance.</p>
+<h3 id='parameters'>Parameters</h3>
+<ol>
+<li><code>options</code> - <code>Object</code>: The options used for deployment.
+
+<ul>
+<li><code>data</code> - <code>String</code>: The byte code of the contract.</li>
+<li><code>arguments</code> - <code>Array</code> (optional): The arguments which get passed to the constructor on deployment.</li>
+</ul></li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Object</code>: The transaction object:</p>
+
+<ul>
+<li><code>Array</code> - arguments: The arguments passed to the method before. They can be changed.</li>
+<li><code>Function</code> - :ref:<code>send &lt;contract-send&gt;</code>: Will deploy the contract. The promise will resolve with the new contract instance, instead of the receipt!</li>
+<li><code>Function</code> - :ref:<code>estimateGas &lt;contract-estimateGas&gt;</code>: Will estimate the gas used for deploying.</li>
+<li><code>Function</code> - :ref:<code>encodeABI &lt;contract-encodeABI&gt;</code>: Encodes the ABI of the deployment, which is contract data + constructor parameters</li>
+</ul>
+
+<p>For details to the methods see the documentation below.</p>
+<h2 id='methods-2'>methods</h2><pre class="highlight javascript tab-javascript"><code>
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">([</span><span class="nx">param1</span><span class="p">[,</span> <span class="nx">param2</span><span class="p">[,</span> <span class="p">...]]])</span>
 </code></pre>
 <p>Creates a transaction object for that method, which then can be :ref:<code>called &lt;contract-call&gt;</code>, :ref:<code>send &lt;contract-send&gt;</code>, :ref:<code>estimated  &lt;contract-estimateGas&gt;</code>or :ref:<code>ABI encoded &lt;contract-encodeABI&gt;</code>.</p>
@@ -588,23 +577,9 @@ After successful deployment the promise will resolve with a new contract instanc
 
 <p>This allows calling functions with same name but different parameters from the JavaScript contract object.</p>
 <h3 id='parameters-2'>Parameters</h3>
-<p>Parameters of any method depend on the smart contracts methods, defined in the :ref:<code>JSON interface &lt;glossary-json-interface&gt;</code>.</p>
-
-<p>Returns</p>
-
-<p><code>Object</code>: The Transaction Object:</p>
-
-<ul>
-<li><code>Array</code> - arguments: The arguments passed to the method before. They can be changed.</li>
-<li><code>Function</code> - :ref:<code>call &lt;contract-call&gt;</code>: Will call the &quot;constant&quot; method and execute its smart contract method in the EVM without sending a transaction (Can&#39;t alter the smart contract state).</li>
-<li><code>Function</code> - :ref:<code>send &lt;contract-send&gt;</code>: Will send a transaction to the smart contract and execute its method (Can alter the smart contract state).</li>
-<li><code>Function</code> - :ref:<code>estimateGas &lt;contract-estimateGas&gt;</code>: Will estimate the gas used when the method would be executed on chain.</li>
-<li><code>Function</code> - :ref:<code>encodeABI &lt;contract-encodeABI&gt;</code>: Encodes the ABI for this method. This can be send using a transaction, call the method or passing into another smart contracts method as argument.</li>
-</ul>
-
-<p>For details to the methods see the documentation below.</p>
-
+<blockquote>
 <p>Example</p>
+</blockquote>
 <pre class="highlight javascript tab-javascript"><code>
     <span class="c1">// calling a method</span>
 
@@ -632,26 +607,31 @@ After successful deployment the promise will resolve with a new contract instanc
     <span class="p">})</span>
     <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
 </code></pre>
+<p>Parameters of any method depend on the smart contracts methods, defined in the :ref:<code>JSON interface &lt;glossary-json-interface&gt;</code>.</p>
+
+<p>Returns</p>
+
+<p><code>Object</code>: The Transaction Object:</p>
+
+<ul>
+<li><code>Array</code> - arguments: The arguments passed to the method before. They can be changed.</li>
+<li><code>Function</code> - :ref:<code>call &lt;contract-call&gt;</code>: Will call the &quot;constant&quot; method and execute its smart contract method in the EVM without sending a transaction (Can&#39;t alter the smart contract state).</li>
+<li><code>Function</code> - :ref:<code>send &lt;contract-send&gt;</code>: Will send a transaction to the smart contract and execute its method (Can alter the smart contract state).</li>
+<li><code>Function</code> - :ref:<code>estimateGas &lt;contract-estimateGas&gt;</code>: Will estimate the gas used when the method would be executed on chain.</li>
+<li><code>Function</code> - :ref:<code>encodeABI &lt;contract-encodeABI&gt;</code>: Encodes the ABI for this method. This can be send using a transaction, call the method or passing into another smart contracts method as argument.</li>
+</ul>
+
+<p>For details to the methods see the documentation below.</p>
+
 <p><a name="contract-call"/></p>
 <h3 id='methods-mymethod-call'>methods.myMethod.call</h3><pre class="highlight javascript tab-javascript"><code>
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">([</span><span class="nx">param1</span><span class="p">[,</span> <span class="nx">param2</span><span class="p">[,</span> <span class="p">...]]]).</span><span class="nx">call</span><span class="p">(</span><span class="nx">transactionObject</span><span class="p">,</span> <span class="nx">blockNumber</span><span class="p">,</span> <span class="nx">callback</span><span class="p">])</span>
 </code></pre>
 <p>Will call a &quot;constant&quot; method and execute its smart contract method in the EVM without sending any transaction. Note calling can not alter the smart contract state.</p>
 <h4 id='parameters-3'>Parameters</h4>
-<p><code>options</code> - <code>Object</code> (optional): The options used for calling.
-1.* <code>transactionObject</code>
-    * <code>from</code> - <code>String</code> (optional): The address the call &quot;transaction&quot; should be made from.
-    * <code>gasPrice</code> - <code>String</code> (optional): The gas price in wei to use for this call &quot;transaction&quot;.It is the wei per unit of gas.
-    * <code>gas</code> - <code>Number</code> (optional): The maximum gas provided for this call &quot;transaction&quot; (gas limit).
-2.<em><code>blockNumber</code> - <code>Number</code>: The block number this log was created in. <code>null</code> when still pending.
-3.</em><code>callback</code> - <code>Function</code> (optional): This callback will be fired with the result of the smart contract method execution as the second argument, or with an error object as the first argument.</p>
-
-<p>Returns</p>
-
-<p><code>Promise&lt;any&gt;</code> - The return value(s) of the smart contract method.
-If it returns a single value, it&#39;s returned as is. If it has multiple return values they are returned as an object with properties and indices:</p>
-
+<blockquote>
 <p>Example</p>
+</blockquote>
 <pre class="highlight javascript tab-javascript"><code>
     <span class="c1">// using the callback</span>
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">(</span><span class="mi">123</span><span class="p">).</span><span class="nx">call</span><span class="p">({</span><span class="na">from</span><span class="p">:</span> <span class="s1">'0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'</span><span class="p">},</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -674,7 +654,7 @@ If it returns a single value, it&#39;s returned as is. If it has multiple return
         <span class="p">}</span>
     <span class="p">}</span>
 
-    <span class="c1">// web3.js</span>
+    <span class="c1">// meterify</span>
     <span class="kr">const</span> <span class="nx">MyContract</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">Contract</span><span class="p">(</span><span class="nx">abi</span><span class="p">,</span> <span class="nx">address</span><span class="p">);</span>
     <span class="nx">MyContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">myFunction</span><span class="p">().</span><span class="nx">call</span><span class="p">()</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">);</span>
@@ -695,44 +675,30 @@ If it returns a single value, it&#39;s returned as is. If it has multiple return
         <span class="p">}</span>
     <span class="p">}</span>
 
-    <span class="c1">// web3.js</span>
+    <span class="c1">// meterify</span>
     <span class="kr">const</span> <span class="nx">MyContract</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">Contract</span><span class="p">(</span><span class="nx">abi</span><span class="p">,</span> <span class="nx">address</span><span class="p">);</span>
     <span class="nx">MyContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">myFunction</span><span class="p">().</span><span class="nx">call</span><span class="p">()</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">);</span>
     <span class="o">&gt;</span> <span class="s2">"Hello!%"</span>
 </code></pre>
+<p><code>options</code> - <code>Object</code> (optional): The options used for calling.
+1. <code>transactionObject</code>
+    * <code>from</code> - <code>String</code> (optional): The address the call &quot;transaction&quot; should be made from.
+    * <code>gasPrice</code> - <code>String</code> (optional): The gas price in wei to use for this call &quot;transaction&quot;.It is the wei per unit of gas.
+    * <code>gas</code> - <code>Number</code> (optional): The maximum gas provided for this call &quot;transaction&quot; (gas limit).
+2. <code>blockNumber</code> - <code>Number</code>: The block number this log was created in. <code>null</code> when still pending.
+3. <code>callback</code> - <code>Function</code> (optional): This callback will be fired with the result of the smart contract method execution as the second argument, or with an error object as the first argument.</p>
+
+<p>Returns</p>
+
+<p><code>Promise&lt;any&gt;</code> - The return value(s) of the smart contract method.
+If it returns a single value, it&#39;s returned as is. If it has multiple return values they are returned as an object with properties and indices.</p>
+
 <p><a name="contract-send"/></p>
 <h3 id='methods-mymethod-send'>methods.myMethod.send</h3><pre class="highlight javascript tab-javascript"><code>
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">([</span><span class="nx">param1</span><span class="p">[,</span> <span class="nx">param2</span><span class="p">[,</span> <span class="p">...]]]).</span><span class="nx">send</span><span class="p">(</span><span class="nx">options</span><span class="p">[,</span> <span class="nx">callback</span><span class="p">])</span>
 </code></pre>
 <p>Will send a transaction to the smart contract and execute its method. Note this can alter the smart contract state.</p>
-
-<p>Parameters</p>
-
-<ol>
-<li><code>options</code> - <code>Object</code>: The options used for sending.
-
-<ul>
-<li><code>from</code> - <code>String</code>: The address the transaction should be sent from.</li>
-<li><code>gasPrice</code> - <code>String</code> (optional): The gas price in wei to use for this transaction.It is the wei per unit of gas.</li>
-<li><code>gas</code> - <code>Number</code> (optional): The maximum gas provided for this transaction (gas limit).</li>
-<li><code>value</code> - <code>Number|String|BN|BigNumber</code>(optional): The value transferred for the transaction in wei.</li>
-</ul></li>
-<li><code>callback</code> - <code>Function</code> (optional): This callback will be fired first with the &quot;transactionHash&quot;, or with an error object as the first argument.</li>
-</ol>
-
-<p>Returns</p>
-
-<p>The <strong>callback</strong> will return the 32 bytes transaction hash.</p>
-
-<p><code>PromiEvent</code>: A :ref:<code>promise combined event emitter &lt;promiEvent&gt;</code>. Will be resolved when the transaction <em>receipt</em> is available, OR if this <code>send()</code> is called from a <code>someContract.deploy()</code>, then the promise will resolve with the <em>new contract instance</em>. Additionally the following events are available:</p>
-
-<ul>
-<li><code>&quot;transactionHash&quot;</code> returns <code>String</code>: is fired right after the transaction is sent and a transaction hash is available.</li>
-<li><code>&quot;receipt&quot;</code> returns <code>Object</code>: is fired when the transaction <em>receipt</em> is available. Receipts from contracts will have no <code>logs</code> property, but instead an <code>events</code> property with event names as keys and events as properties. See :ref:<code>getPastEvents return values &lt;contract-events-return&gt;</code> for details about the returned event object.</li>
-<li><code>&quot;confirmation&quot;</code> returns <code>Number</code>, <code>Object</code>: is fired for every confirmation up to the 24th confirmation. Receives the confirmation number as the first and the receipt as the second argument. Fired from confirmation 1 on, which is the block where it&#39;s mined.</li>
-<li><code>&quot;error&quot;</code> returns <code>Error</code>: is fired if an error occurs during sending. If an out of gas error, the second parameter is the receipt.</li>
-</ul>
 
 <p>Example</p>
 <pre class="highlight javascript tab-javascript"><code>
@@ -796,12 +762,58 @@ If it returns a single value, it&#39;s returned as is. If it has multiple return
     <span class="p">})</span>
     <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span> <span class="c1">// If there's an out of gas error the second parameter is the receipt.</span>
 </code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>options</code> - <code>Object</code>: The options used for sending.
+
+<ul>
+<li><code>from</code> - <code>String</code>: The address the transaction should be sent from.</li>
+<li><code>gasPrice</code> - <code>String</code> (optional): The gas price in wei to use for this transaction.It is the wei per unit of gas.</li>
+<li><code>gas</code> - <code>Number</code> (optional): The maximum gas provided for this transaction (gas limit).</li>
+<li><code>value</code> - <code>Number|String|BN|BigNumber</code>(optional): The value transferred for the transaction in wei.</li>
+</ul></li>
+<li><code>callback</code> - <code>Function</code> (optional): This callback will be fired first with the &quot;transactionHash&quot;, or with an error object as the first argument.</li>
+</ol>
+
+<p>Returns</p>
+
+<p>The <strong>callback</strong> will return the 32 bytes transaction hash.</p>
+
+<p><code>PromiEvent</code>: A :ref:<code>promise combined event emitter &lt;promiEvent&gt;</code>. Will be resolved when the transaction <em>receipt</em> is available, OR if this <code>send()</code> is called from a <code>someContract.deploy()</code>, then the promise will resolve with the <em>new contract instance</em>. Additionally the following events are available:</p>
+
+<ul>
+<li><code>&quot;transactionHash&quot;</code> returns <code>String</code>: is fired right after the transaction is sent and a transaction hash is available.</li>
+<li><code>&quot;receipt&quot;</code> returns <code>Object</code>: is fired when the transaction <em>receipt</em> is available. Receipts from contracts will have no <code>logs</code> property, but instead an <code>events</code> property with event names as keys and events as properties. See :ref:<code>getPastEvents return values &lt;contract-events-return&gt;</code> for details about the returned event object.</li>
+<li><code>&quot;confirmation&quot;</code> returns <code>Number</code>, <code>Object</code>: is fired for every confirmation up to the 24th confirmation. Receives the confirmation number as the first and the receipt as the second argument. Fired from confirmation 1 on, which is the block where it&#39;s mined.</li>
+<li><code>&quot;error&quot;</code> returns <code>Error</code>: is fired if an error occurs during sending. If an out of gas error, the second parameter is the receipt.</li>
+</ul>
+
 <p><a name="contract-estimateGas"/></p>
-<h3 id='methods-mymethod-estimategas'>methods.myMethod.estimateGas</h3><pre class="highlight javascript tab-javascript"><code>
-    <span class="nx">myContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">([</span><span class="nx">param1</span><span class="p">[,</span> <span class="nx">param2</span><span class="p">[,</span> <span class="p">...]]]).</span><span class="nx">estimateGas</span><span class="p">(</span><span class="nx">options</span><span class="p">[,</span> <span class="nx">callback</span><span class="p">])</span>
+<h3 id='methods-mymethod-estimategas'>methods.myMethod.estimateGas</h3><pre class="highlight javascript tab-javascript"><code>    <span class="nx">myContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">([</span><span class="nx">param1</span><span class="p">[,</span> <span class="nx">param2</span><span class="p">[,</span> <span class="p">...]]]).</span><span class="nx">estimateGas</span><span class="p">(</span><span class="nx">options</span><span class="p">[,</span> <span class="nx">callback</span><span class="p">])</span>
 </code></pre>
-<p>Will call estimate the gas a method execution will take when executed in the EVM without sending a transaction.
-The estimation can differ from the actual gas used when later sending a transaction, as the state of the smart contract can be different at that time.</p>
+<p>Will call estimate the gas a method execution will take when executed in the EVM without sending a transaction.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="c1">// using the callback</span>
+    <span class="nx">myContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">(</span><span class="mi">123</span><span class="p">).</span><span class="nx">estimateGas</span><span class="p">({</span><span class="na">gas</span><span class="p">:</span> <span class="mi">5000000</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">gasAmount</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">gasAmount</span> <span class="o">==</span> <span class="mi">5000000</span><span class="p">)</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Method ran out of gas'</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="c1">// using the promise</span>
+    <span class="nx">myContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">(</span><span class="mi">123</span><span class="p">).</span><span class="nx">estimateGas</span><span class="p">({</span><span class="na">from</span><span class="p">:</span> <span class="s1">'0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'</span><span class="p">})</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">gasAmount</span><span class="p">){</span>
+        <span class="p">...</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+        <span class="p">...</span>
+    <span class="p">});</span>
+</code></pre>
+<p>The estimation can differ from the actual gas used when later sending a transaction, as the state of the smart contract can be different at that time.</p>
 
 <p>Parameters</p>
 
@@ -820,29 +832,19 @@ The estimation can differ from the actual gas used when later sending a transact
 
 <p><code>Promise&lt;number&gt;</code> - The gas amount estimated.</p>
 
-<p>Example</p>
-<pre class="highlight javascript tab-javascript"><code>
-    <span class="c1">// using the callback</span>
-    <span class="nx">myContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">(</span><span class="mi">123</span><span class="p">).</span><span class="nx">estimateGas</span><span class="p">({</span><span class="na">gas</span><span class="p">:</span> <span class="mi">5000000</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">gasAmount</span><span class="p">){</span>
-        <span class="k">if</span><span class="p">(</span><span class="nx">gasAmount</span> <span class="o">==</span> <span class="mi">5000000</span><span class="p">)</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Method ran out of gas'</span><span class="p">);</span>
-    <span class="p">});</span>
-
-    <span class="c1">// using the promise</span>
-    <span class="nx">myContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">(</span><span class="mi">123</span><span class="p">).</span><span class="nx">estimateGas</span><span class="p">({</span><span class="na">from</span><span class="p">:</span> <span class="s1">'0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'</span><span class="p">})</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">gasAmount</span><span class="p">){</span>
-        <span class="p">...</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
-        <span class="p">...</span>
-    <span class="p">});</span>
-</code></pre>
 <p><a name="contract-encodeABI"/></p>
 <h3 id='methods-mymethod-encodeabi'>methods.myMethod.encodeABI</h3><pre class="highlight javascript tab-javascript"><code>
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">([</span><span class="nx">param1</span><span class="p">[,</span> <span class="nx">param2</span><span class="p">[,</span> <span class="p">...]]]).</span><span class="nx">encodeABI</span><span class="p">()</span>
 </code></pre>
 <p>Encodes the ABI for this method. This can be used to send a transaction, call a method, or pass it into another smart contracts method as arguments.</p>
 
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">myContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">(</span><span class="mi">123</span><span class="p">).</span><span class="nx">encodeABI</span><span class="p">();</span>
+    <span class="o">&gt;</span> <span class="s1">'0x58cf5f1000000000000000000000000000000000000000000000000000000000000007B'</span>
+</code></pre>
 <p>Parameters</p>
 
 <p>none</p>
@@ -850,34 +852,14 @@ The estimation can differ from the actual gas used when later sending a transact
 <p>Returns</p>
 
 <p><code>String</code>: The encoded ABI byte code to send via a transaction or call.</p>
-
-<p>Example</p>
-<pre class="highlight javascript tab-javascript"><code>
-    <span class="nx">myContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">(</span><span class="mi">123</span><span class="p">).</span><span class="nx">encodeABI</span><span class="p">();</span>
-    <span class="o">&gt;</span> <span class="s1">'0x58cf5f1000000000000000000000000000000000000000000000000000000000000007B'</span>
-</code></pre><h1 id='events'>Events</h1><h2 id='once'>once</h2><pre class="highlight javascript tab-javascript"><code>
+<h1 id='events'>Events</h1><h2 id='once'>once</h2><pre class="highlight javascript tab-javascript"><code>
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="nx">event</span><span class="p">[,</span> <span class="nx">options</span><span class="p">],</span> <span class="nx">callback</span><span class="p">)</span>
 </code></pre>
 <p>Subscribes to an event and unsubscribes immediately after the first event or error. Will only fire for a single event.</p>
 
-<p>Parameters</p>
-
-<ol>
-<li><code>event</code> - <code>String</code>: The name of the event in the contract, or <code>&quot;allEvents&quot;</code> to get all events.</li>
-<li><code>options</code> - <code>Object</code> (optional): The options used for deployment.
-
-<ul>
-<li><code>filter</code> - <code>Object</code> (optional): Lets you filter events by indexed parameters, e.g. <code>{filter: {myNumber: [12,13]}}</code> means all events where &quot;myNumber&quot; is 12 or 13.</li>
-<li><code>topics</code> - <code>Array</code> (optional): This allows you to manually set the topics for the event filter. If given the filter property and event signature, (topic[0]) will not be set automatically.</li>
-</ul></li>
-<li><code>callback</code> - <code>Function</code>: This callback will be fired for the first <em>event</em> as the second argument, or an error as the first argument. See :ref:<code>getPastEvents return values &lt;contract-events-return&gt;</code> for details about the event structure.</li>
-</ol>
-
-<p>Returns</p>
-
-<p><code>undefined</code></p>
-
+<blockquote>
 <p>Example</p>
+</blockquote>
 <pre class="highlight javascript tab-javascript"><code>
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s1">'MyEvent'</span><span class="p">,</span> <span class="p">{</span>
         <span class="na">filter</span><span class="p">:</span> <span class="p">{</span><span class="na">myIndexedParam</span><span class="p">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">23</span><span class="p">],</span> <span class="na">myOtherIndexedParam</span><span class="p">:</span> <span class="s1">'0x123456789...'</span><span class="p">},</span> <span class="c1">// Using an array means OR: e.g. 20 or 23</span>
@@ -905,12 +887,66 @@ The estimation can differ from the actual gas used when later sending a transact
         <span class="na">address</span><span class="p">:</span> <span class="s1">'0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'</span>
     <span class="p">}</span>
 </code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>event</code> - <code>String</code>: The name of the event in the contract, or <code>&quot;allEvents&quot;</code> to get all events.</li>
+<li><code>options</code> - <code>Object</code> (optional): The options used for deployment.
+
+<ul>
+<li><code>filter</code> - <code>Object</code> (optional): Lets you filter events by indexed parameters, e.g. <code>{filter: {myNumber: [12,13]}}</code> means all events where &quot;myNumber&quot; is 12 or 13.</li>
+<li><code>topics</code> - <code>Array</code> (optional): This allows you to manually set the topics for the event filter. If given the filter property and event signature, (topic[0]) will not be set automatically.</li>
+</ul></li>
+<li><code>callback</code> - <code>Function</code>: This callback will be fired for the first <em>event</em> as the second argument, or an error as the first argument. See :ref:<code>getPastEvents return values &lt;contract-events-return&gt;</code> for details about the event structure.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>undefined</code></p>
+
 <p><a name="contract-events"/></p>
 <h2 id='events-2'>events</h2><pre class="highlight javascript tab-javascript"><code>
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">MyEvent</span><span class="p">([</span><span class="nx">options</span><span class="p">][,</span> <span class="nx">callback</span><span class="p">])</span>
 </code></pre>
 <p>Subscribe to an event</p>
 
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">myContract</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">MyEvent</span><span class="p">({</span>
+        <span class="na">filter</span><span class="p">:</span> <span class="p">{</span><span class="na">myIndexedParam</span><span class="p">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">23</span><span class="p">],</span> <span class="na">myOtherIndexedParam</span><span class="p">:</span> <span class="s1">'0x123456789...'</span><span class="p">},</span> <span class="c1">// Using an array means OR: e.g. 20 or 23</span>
+        <span class="na">fromBlock</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="p">},</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span> <span class="c1">// same results as the optional callback above</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'changed'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="c1">// remove event from local database</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
+
+    <span class="c1">// event output example</span>
+    <span class="o">&gt;</span> <span class="p">{</span>
+        <span class="na">returnValues</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">myIndexedParam</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+            <span class="na">myOtherIndexedParam</span><span class="p">:</span> <span class="s1">'0x123456789...'</span><span class="p">,</span>
+            <span class="na">myNonIndexParam</span><span class="p">:</span> <span class="s1">'My String'</span>
+        <span class="p">},</span>
+        <span class="na">raw</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">data</span><span class="p">:</span> <span class="s1">'0x7f9fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385'</span><span class="p">,</span>
+            <span class="na">topics</span><span class="p">:</span> <span class="p">[</span><span class="s1">'0xfd43ade1c09fade1c0d57a7af66ab4ead7c2c2eb7b11a91ffdd57a7af66ab4ead7'</span><span class="p">,</span> <span class="s1">'0x7f9fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385'</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="na">event</span><span class="p">:</span> <span class="s1">'MyEvent'</span><span class="p">,</span>
+        <span class="na">signature</span><span class="p">:</span> <span class="s1">'0xfd43ade1c09fade1c0d57a7af66ab4ead7c2c2eb7b11a91ffdd57a7af66ab4ead7'</span><span class="p">,</span>
+        <span class="na">logIndex</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="na">transactionIndex</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="na">transactionHash</span><span class="p">:</span> <span class="s1">'0x7f9fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385'</span><span class="p">,</span>
+        <span class="na">blockHash</span><span class="p">:</span> <span class="s1">'0xfd43ade1c09fade1c0d57a7af66ab4ead7c2c2eb7b11a91ffdd57a7af66ab4ead7'</span><span class="p">,</span>
+        <span class="na">blockNumber</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span>
+        <span class="na">address</span><span class="p">:</span> <span class="s1">'0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'</span>
+    <span class="p">}</span>
+</code></pre>
 <p>Parameters</p>
 
 <ol>
@@ -951,42 +987,7 @@ The estimation can differ from the actual gas used when later sending a transact
 <li><code>raw.data</code> - <code>String</code>: The data containing non-indexed log parameter.</li>
 <li><code>raw.topics</code> - <code>Array</code>: An array with max 4 32 Byte topics, topic 1-3 contains indexed parameters of the event.</li>
 </ul>
-
-<p>Example</p>
-<pre class="highlight javascript tab-javascript"><code>
-    <span class="nx">myContract</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">MyEvent</span><span class="p">({</span>
-        <span class="na">filter</span><span class="p">:</span> <span class="p">{</span><span class="na">myIndexedParam</span><span class="p">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">23</span><span class="p">],</span> <span class="na">myOtherIndexedParam</span><span class="p">:</span> <span class="s1">'0x123456789...'</span><span class="p">},</span> <span class="c1">// Using an array means OR: e.g. 20 or 23</span>
-        <span class="na">fromBlock</span><span class="p">:</span> <span class="mi">0</span>
-    <span class="p">},</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span> <span class="p">})</span>
-    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span> <span class="c1">// same results as the optional callback above</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'changed'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="c1">// remove event from local database</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
-
-    <span class="c1">// event output example</span>
-    <span class="o">&gt;</span> <span class="p">{</span>
-        <span class="na">returnValues</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">myIndexedParam</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-            <span class="na">myOtherIndexedParam</span><span class="p">:</span> <span class="s1">'0x123456789...'</span><span class="p">,</span>
-            <span class="na">myNonIndexParam</span><span class="p">:</span> <span class="s1">'My String'</span>
-        <span class="p">},</span>
-        <span class="na">raw</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">data</span><span class="p">:</span> <span class="s1">'0x7f9fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385'</span><span class="p">,</span>
-            <span class="na">topics</span><span class="p">:</span> <span class="p">[</span><span class="s1">'0xfd43ade1c09fade1c0d57a7af66ab4ead7c2c2eb7b11a91ffdd57a7af66ab4ead7'</span><span class="p">,</span> <span class="s1">'0x7f9fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385'</span><span class="p">]</span>
-        <span class="p">},</span>
-        <span class="na">event</span><span class="p">:</span> <span class="s1">'MyEvent'</span><span class="p">,</span>
-        <span class="na">signature</span><span class="p">:</span> <span class="s1">'0xfd43ade1c09fade1c0d57a7af66ab4ead7c2c2eb7b11a91ffdd57a7af66ab4ead7'</span><span class="p">,</span>
-        <span class="na">logIndex</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="na">transactionIndex</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="na">transactionHash</span><span class="p">:</span> <span class="s1">'0x7f9fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385'</span><span class="p">,</span>
-        <span class="na">blockHash</span><span class="p">:</span> <span class="s1">'0xfd43ade1c09fade1c0d57a7af66ab4ead7c2c2eb7b11a91ffdd57a7af66ab4ead7'</span><span class="p">,</span>
-        <span class="na">blockNumber</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span>
-        <span class="na">address</span><span class="p">:</span> <span class="s1">'0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'</span>
-    <span class="p">}</span>
-</code></pre><h2 id='events-allevents'>events.allEvents</h2><pre class="highlight javascript tab-javascript"><code>
+<h2 id='events-allevents'>events.allEvents</h2><pre class="highlight javascript tab-javascript"><code>
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">allEvents</span><span class="p">([</span><span class="nx">options</span><span class="p">][,</span> <span class="nx">callback</span><span class="p">])</span>
 </code></pre>
 <p>Same as :ref:<code>events &lt;contract-events&gt;</code> but receives all events from this smart contract.
@@ -996,28 +997,9 @@ Optionally the filter property can filter those events.</p>
 </code></pre>
 <p>Gets past events for this contract.</p>
 
-<p>Parameters</p>
-
-<ol>
-<li><code>event</code> - <code>String</code>: The name of the event in the contract, or <code>&quot;allEvents&quot;</code> to get all events.</li>
-<li><code>options</code> - <code>Object</code> (optional): The options used for deployment.
-
-<ul>
-<li><code>filter</code> - <code>Object</code> (optional): Lets you filter events by indexed parameters, e.g. <code>{filter: {myNumber: [12,13]}}</code> means all events where &quot;myNumber&quot; is 12 or 13.</li>
-<li><code>fromBlock</code> - <code>Number</code> (optional): The block number from which to get events on.</li>
-<li><code>toBlock</code> - <code>Number</code> (optional): The block number to get events up to (Defaults to <code>&quot;latest&quot;</code>).</li>
-<li><code>topics</code> - <code>Array</code> (optional): This allows manually setting the topics for the event filter. If given the filter property and event signature, (topic[0]) will not be set automatically.</li>
-</ul></li>
-<li><code>callback</code> - <code>Function</code> (optional): This callback will be fired with an array of event logs as the second argument, or an error as the first argument.</li>
-</ol>
-
-<p>Returns</p>
-
-<p><code>Promise</code> returns <code>Array</code>: An array with the past event <code>Objects</code>, matching the given event name and filter.</p>
-
-<p>For the structure of a returned event <code>Object</code> see :ref:<code>getPastEvents return values &lt;contract-events-return&gt;</code>.</p>
-
+<blockquote>
 <p>Example</p>
+</blockquote>
 <pre class="highlight javascript tab-javascript"><code>
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">getPastEvents</span><span class="p">(</span><span class="s1">'MyEvent'</span><span class="p">,</span> <span class="p">{</span>
         <span class="na">filter</span><span class="p">:</span> <span class="p">{</span><span class="na">myIndexedParam</span><span class="p">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">23</span><span class="p">],</span> <span class="na">myOtherIndexedParam</span><span class="p">:</span> <span class="s1">'0x123456789...'</span><span class="p">},</span> <span class="c1">// Using an array means OR: e.g. 20 or 23</span>
@@ -1050,6 +1032,27 @@ Optionally the filter property can filter those events.</p>
         <span class="p">...</span>
     <span class="p">}]</span>
 </code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>event</code> - <code>String</code>: The name of the event in the contract, or <code>&quot;allEvents&quot;</code> to get all events.</li>
+<li><code>options</code> - <code>Object</code> (optional): The options used for deployment.
+
+<ul>
+<li><code>filter</code> - <code>Object</code> (optional): Lets you filter events by indexed parameters, e.g. <code>{filter: {myNumber: [12,13]}}</code> means all events where &quot;myNumber&quot; is 12 or 13.</li>
+<li><code>fromBlock</code> - <code>Number</code> (optional): The block number from which to get events on.</li>
+<li><code>toBlock</code> - <code>Number</code> (optional): The block number to get events up to (Defaults to <code>&quot;latest&quot;</code>).</li>
+<li><code>topics</code> - <code>Array</code> (optional): This allows manually setting the topics for the event filter. If given the filter property and event signature, (topic[0]) will not be set automatically.</li>
+</ul></li>
+<li><code>callback</code> - <code>Function</code> (optional): This callback will be fired with an array of event logs as the second argument, or an error as the first argument.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Promise</code> returns <code>Array</code>: An array with the past event <code>Objects</code>, matching the given event name and filter.</p>
+
+<p>For the structure of a returned event <code>Object</code> see :ref:<code>getPastEvents return values &lt;contract-events-return&gt;</code>.</p>
+
       </div>
       <div class="dark-box">
           <div class="lang-selector">

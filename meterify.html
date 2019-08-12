@@ -209,7 +209,7 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.svg" class="logo" alt="Logo" />
+      <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="javascript">javascript</a>
         </div>
@@ -220,6 +220,11 @@
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#meterify" class="toc-h1 toc-link" data-title="meterify">meterify</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#notes-on-meterify-and-web3" class="toc-h2 toc-link" data-title="Notes on meterify and web3">Notes on <code>meterify</code> and <code>web3</code></a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#modules" class="toc-h1 toc-link" data-title="MODULES">MODULES</a>
@@ -302,17 +307,15 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='meterify'>meterify</h1>
-<p>The <code>meterify</code> package is a wrapper to house all Meter related modules.</p>
-
-<p><code>meterify</code> depends on the <code>web3.js</code> library. Developers will work primarily with the <code>meterify.eth</code> module in the vast majority of cases.</p>
-
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">meterify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"meterify"</span><span class="p">).</span><span class="nx">meterify</span><span class="p">;</span>
+<pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">meter</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"meterify"</span><span class="p">).</span><span class="nx">meterify</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">Web3</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"web3"</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">web3</span> <span class="o">=</span> <span class="nx">meterify</span><span class="p">(</span><span class="k">new</span> <span class="nx">Web3</span><span class="p">(),</span> <span class="s2">"http://test.meter.io:8669"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">meterify</span> <span class="o">=</span> <span class="nx">meter</span><span class="p">(</span><span class="k">new</span> <span class="nx">Web3</span><span class="p">(),</span> <span class="s2">"http://test.meter.io:8669"</span><span class="p">);</span>
 </code></pre>
+<p>The <code>meterify</code> package is a wrapper to house all Meter related modules, and depends on the <code>web3.js</code> library. If you are writing applications or scripts executing in Node.js or a browser environment, you should use Meterify.</p>
+
 <table><thead>
 <tr>
 <th>Property</th>
@@ -338,17 +341,10 @@
 </tbody></table>
 
 <blockquote>
-<p>Returns an <code>Object</code></p>
+<p>Returns an Object</p>
 </blockquote>
 <pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
-  <span class="nl">bzz</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nl">givenProvider</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="nx">pick</span><span class="p">:</span> <span class="p">{</span><span class="err">…</span><span class="p">},</span>
-    <span class="nx">currentProvider</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-    <span class="nx">isAvailable</span><span class="p">:</span> <span class="err">ƒ</span><span class="p">,</span>
-    <span class="nx">upload</span><span class="p">:</span> <span class="err">ƒ</span><span class="p">,</span><span class="err"> …</span>
-  <span class="p">},</span>
-  <span class="nx">eth</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nl">eth</span><span class="p">:</span> <span class="p">{</span>
     <span class="nl">_requestManager</span><span class="p">:</span> <span class="nx">RequestManager</span><span class="p">,</span>
     <span class="nx">givenProvider</span><span class="p">:</span> <span class="nx">MetamaskInpageProvider</span><span class="p">,</span>
     <span class="nx">providers</span><span class="p">:</span> <span class="p">{</span><span class="err">…</span><span class="p">},</span>
@@ -365,13 +361,6 @@
     <span class="nl">WebsocketProvider</span><span class="p">:</span> <span class="err">ƒ</span><span class="p">,</span>
     <span class="nx">HttpProvider</span><span class="p">:</span> <span class="err">ƒ</span><span class="p">,</span>
     <span class="nx">IpcProvider</span><span class="p">:</span> <span class="err">ƒ</span>
-  <span class="p">},</span>
-  <span class="nx">shh</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nl">_requestManager</span><span class="p">:</span> <span class="nx">RequestManager</span><span class="p">,</span>
-    <span class="nx">givenProvider</span><span class="p">:</span> <span class="nx">MetamaskInpageProvider</span><span class="p">,</span>
-    <span class="nx">providers</span><span class="p">:</span> <span class="p">{</span><span class="err">…</span><span class="p">},</span>
-    <span class="nx">_provider</span><span class="p">:</span> <span class="nx">MeterProvider</span><span class="p">,</span><span class="err"> </span>
-    <span class="err">…</span>
   <span class="p">},</span>
   <span class="nx">utils</span><span class="p">:</span> <span class="p">{</span>
     <span class="nl">_fireError</span><span class="p">:</span> <span class="err">ƒ</span><span class="p">,</span>
@@ -395,6 +384,7 @@
     <span class="nx">providers</span><span class="p">:</span> <span class="p">{</span><span class="err">…</span><span class="p">},</span>
     <span class="nx">subscriptions</span><span class="p">:</span> <span class="p">{</span><span class="err">…</span><span class="p">}</span>
   <span class="p">}</span>
+  <span class="p">...</span>
 <span class="p">}</span>
 </code></pre>
 <p>Parameters of the <code>meterify</code> return object</p>
@@ -412,11 +402,6 @@
 <td>Sets a <code>RequestManager</code> object and initiates batch requests (see: ).</td>
 </tr>
 <tr>
-<td>bzz</td>
-<td><code>Object</code></td>
-<td>A <code>Bzz</code> object (see: ).</td>
-</tr>
-<tr>
 <td>currentProvider</td>
 <td><code>function</code></td>
 <td>Get or set the current provider.</td>
@@ -424,7 +409,12 @@
 <tr>
 <td>eth</td>
 <td><code>Object</code></td>
-<td>An <code>Eth</code> object (see: ).</td>
+<td>An <code>Eth</code> object (see: <a href="meterify.eth.html"><code>eth</code></a>).</td>
+</tr>
+<tr>
+<td>extension</td>
+<td><code>extension</code></td>
+<td></td>
 </tr>
 <tr>
 <td>givenProvider</td>
@@ -452,16 +442,51 @@
 <td>Set the current provider.</td>
 </tr>
 <tr>
-<td>shh</td>
-<td><code>Object</code></td>
-<td>An <code>Shh</code> object (see: )</td>
-</tr>
-<tr>
 <td>utils</td>
 <td><code>Object</code></td>
 <td>A <code>utils</code> object (see: )</td>
 </tr>
 </tbody></table>
+<h2 id='notes-on-meterify-and-web3'>Notes on <code>meterify</code> and <code>web3</code></h2>
+<p>The RESTful API of Meter differs from Ethereum&#39;s JSON-RPC, and there are some methods in <code>web3</code> are not supported by <code>meterify</code>.</p>
+
+<p><em>Supported Web3 Methods</em></p>
+
+<p>web3 instance
+├── eth
+│   ├── getBlockNumber
+│   ├── getBalance
+│   ├── getStorageAt
+│   ├── getCode
+│   ├── getBlock
+│   ├── getTransaction
+│   ├── getTransactionReceipt
+│   ├── sendTransaction
+│   ├── sendSignedTransaction
+│   ├── call
+│   ├── estimateGas
+│   ├── getPastLogs
+│   ├── subscribe
+│   ├── clearSubscriptions
+│   ├── getEnergy
+│   ├── getChainTag
+│   ├── getBlockRef
+│   ├── accounts
+│   └── Contract
+│       ├── Constructor(new Contract())
+│       ├── clone
+│       ├── deploy
+│       ├── methods
+│       ├── methods.myMethod.call
+│       ├── methods.myMethod.send
+│       ├── methods.myMethod.estimateGas
+│       ├── methods.myMethod.encodeABI
+│       ├── events
+│       ├── once
+│       ├── events.myEvent
+│       ├── events.allEvents
+│       └── getPastEvents
+└── utils</p>
 <h1 id='modules'>MODULES</h1><h2 id='eth'>eth</h2>
 <p>For <code>meterify.eth</code> see the <a href="meterify.eth.html"><code>eth</code></a> reference documentation.</p>
 <h2 id='shh'>shh</h2>

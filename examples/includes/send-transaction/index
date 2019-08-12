@@ -1,0 +1,7 @@
+<h1 id='send-transaction-example'>Send Transaction Example</h1><h2 id='install'>Install</h2><pre class="highlight shell"><code>npm install
+</code></pre><h2 id='run'>Run</h2><pre class="highlight shell"><code>
+<span class="gp">$ </span>node createAccount.js
+
+<span class="gp">$ </span>node sendTransaction.js
+
+</code></pre>
