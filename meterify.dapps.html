@@ -463,7 +463,7 @@ services:
 <h2 id='load-deploy-and-test-a-smart-contract'>Load, Deploy, and Test a Smart Contract</h2>
 <p>The following modifications to the example demonstrate the use of a sample smart contract on the Meter blockchain. Again, follow the steps to add code snippets to the existing <code>index.js</code> file.</p>
 <h3 id='step-1-load-the-sample-smart-contract'>Step 1: Load the sample smart contract.</h3>
-<p>The file can be found here: <a href="https://github.com/xiaohanzhu/docs/blob/master/examples/meter-daap/sample_token.sol">examples/meter-dapp/sample_token.sol</a></p>
+<p>The file can be found here: <a href="examples/includes/meter-dapp/sample_token.sol">examples/meter-dapp/sample_token.sol</a></p>
 <pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">loadContract</span><span class="p">(</span><span class="nx">file</span><span class="p">){</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Loading contract: "</span><span class="o">+</span><span class="nx">file</span><span class="p">);</span>
   <span class="kr">const</span> <span class="nx">contractFile</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">file</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
