@@ -289,7 +289,7 @@ docker-compose version 1.24.1, build 4667896b
 <span class="gp">$ </span><span class="nb">cd </span>meter-dapp
 </code></pre><h3 id='step-4-initialize-the-app-directory'>Step 4: Initialize the app directory.</h3><pre class="highlight shell"><code><span class="gp">$ </span>npm init
 </code></pre><h3 id='step-5-create-a-docker-compose-yml-file'>Step 5: Create a <code>docker-compose.yml</code> file.</h3>
-<p>A copy of this file can be found here: <a href="examples/meter-daap/includes/docker-compose.yml">examples/meter-daap/includes/docker-compose.yml</a></p>
+<p>A copy of this file can be found here: <a href="examples/includes/meter-daap/docker-compose.yml">examples/includes/meter-daap/docker-compose.yml</a></p>
 <pre class="highlight plaintext"><code>version: '3.5'
 services:
   node:
@@ -348,9 +348,9 @@ npm install solc@0.4.24 --save
 <p>Next, follow each step to add function and other code snippets <code>index.js</code>. The full file project files can also be found here:</p>
 
 <ul>
-<li><a href="examples/meter-daap/includes/meter-daap/index.js">examples/meter-daap/includes/index.js</a></li>
-<li><a href="examples/meter-daap/includes/sample_token.sol">examples/meter-daap/includes/sample_token.sol</a></li>
-<li><a href="examples/meter-daap/includes/docker-compose.yml">examples/meter-daap/includes/docker-compose.yml</a></li>
+<li><a href="examples/includes/meter-daap/meter-daap/index.js">examples/includes/meter-daap/index.js</a></li>
+<li><a href="examples/includes/meter-daap/sample_token.sol">examples/includes/meter-daap/sample_token.sol</a></li>
+<li><a href="examples/includes/meter-daap/docker-compose.yml">examples/includes/meter-daap/docker-compose.yml</a></li>
 </ul>
 <h3 id='step-1-quot-create-two-accounts-one-for-alice-and-one-for-bob'>Step 1:&quot; Create two accounts, one for Alice and one for Bob.</h3><pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">createAccounts</span><span class="p">(</span><span class="nx">accounts</span><span class="p">){</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Creating Accounts"</span><span class="p">);</span>
