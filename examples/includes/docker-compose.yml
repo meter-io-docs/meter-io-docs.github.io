@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+  node:
+    image: "node:10"
+    user: "node"
+    working_dir: /home/node/meter-daap
+    volumes:
+      - ./:/home/node/meter-daap
+    command: >
+      sh -c "rm -rf node_modules
+            npm init -y &&
+            npm install meterify --save &&
+            rm -rf node_modules/*/.git/
+            npm install web3@1.0.0-beta.37 --save &&
+            npm install solc@0.4.24 --save &&
+            node index.js"

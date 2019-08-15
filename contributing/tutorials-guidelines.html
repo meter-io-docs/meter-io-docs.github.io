@@ -1,0 +1,300 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Meter Documentation</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="../stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all.js"></script>
+  </head>
+
+  <body class="contributing contributing_tutorials-guidelines" data-languages="[&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="../images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#tutorial-guidelines" class="toc-h1 toc-link" data-title="Tutorial Guidelines">Tutorial Guidelines</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#audience" class="toc-h2 toc-link" data-title="Audience">Audience</a>
+                  </li>
+                  <li>
+                    <a href="#structure" class="toc-h2 toc-link" data-title="Structure">Structure</a>
+                  </li>
+                  <li>
+                    <a href="#use-of-examples" class="toc-h2 toc-link" data-title="Use of Examples">Use of Examples</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='./index.html'>Meter Documentation</a></li>
+            <li><hr></li>
+            <li>Contributing</li>
+            <li><a href='./index.html'>Contributing Home</a></li>
+            <li><a href='./documentation-guidelines.html'>Documentation Guidelines</a></li>
+            <li><a href='./api-doc-guidelines.html'>Writing API Docs</a></li>
+            <li><a href='./tutorials-guidelines.html'>How to Create Tutorials</a></li>
+            <li><a href='./article-guidelines.html'>What is an Article</a></li>
+            <li><a href='./code-example-guidelines.html'>Instructions for Examples</a></li>
+            <li><hr></li>
+            <li><a href='../meterify.html'>API Documentation</a></li>
+            <li><a href='../meterify.dapps.html'>DApp Tutorial</a></li>
+            <li><a href='../examples/index.html'>Examples</a></li>
+            <li><a href='../mining.html'>Mining Guide</a></li>
+            <li><hr></li>
+            <li><a href='https://www.meter.io/claim-your-meter/'>Request Test Tokens</a></li>
+            <li><a href='https://www.meter.io'>Meter.io</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='tutorial-guidelines'>Tutorial Guidelines</h1>
+<p>The value of tutorials as an instructional tool cannot be underestimated. Tutorials help guide a reader through a sequence of instructional steps, including relevant and informative explanations, in a way that other types of content are not designed for.</p>
+
+<p>Writing attention grabbing tutorials that provide a solution to a clearly identified problem or challenge is important for the Meter technical documentation. The objective is to explain how to accomplish a set of tasks that work towards developing the solution, and also why each step or instruction is important. Explanations should be brief, informative, and focused on the main topic.</p>
+
+<p>This guide is provided to ensure writers are equipped to create clear and interesting Meter specific tutorials, for both <a href="../meterify.daaps.html">development</a> and <a href="../mining.html">non-development</a> purposes. It will outline some important features of tutorials, and include best practices, but is a work in progress. There is a lot that goes into tutorial writing, and as this guide further develops will become a more robust tutorial in itself.</p>
+
+<p><a href="#audience">Audience</a>
+<a href="#structure">Structure</a>
+<a href="#use-of-examples">Use of Examples</a></p>
+
+<p><a name="audience"></p>
+<h3 id='audience'>Audience</h3>
+<p>Avoid promoting generic third-party tools, that don&#39;t add much value in a Meter context. For example, it may be safely assumed that the reader is already a developer familiar with code editors and syntax highlighting. However, something that is blockchain-centric, and can make the reader&#39;s job easier when it comes to the specifics of the Meter blockchain, it may be worthwhile suggesting. It might even be worth writing a full tutorial about how to use it in a Meter context. An example of this could be an IDE that is focused on <code>web3</code>, which would likely then be relevant for <code>meterify</code> as well.</p>
+
+<p><a name="structure"></p>
+<h3 id='structure'>Structure</h3>
+<p>Tutorials have three main sections: an introduction, a body, and a conclusion.</p>
+
+<p>The introduction should begin with a problem statement or an objective, and describe a proposed solution. It should be 2 or 3 paragraphs long. This does not include any table of contents, which should also be included in the same section, just before the tutorial body.</p>
+
+<p>The body is where to include sub-headings representing the sequential steps of the tutorial. It might also include other sub-headings, such as those that provide links to further reading. These sub-headings should be arranged in sequence, starting off small, and then building up the knowledge necessary to understand the final product.</p>
+
+<p>A concluding statement at the end should be one paragraph long. It should be a review of the tutorial, to help consolidate what the reader has learned, and insight into how the solution solves the original problem. The conclusion can also provide one or more links to further reading.</p>
+
+<p><a name="use-of-examples"></p>
+<h3 id='use-of-examples'>Use of Examples</h3>
+<p>Tutorials address the need for better context than is typically possible with the API documentation alone. Building an example, showing each sequential modification, and explaining each step, is a great tutorial strategy. It helps to organize the overall flow of the tutorial, delivers the necessary context, and is an opportunity to provide insight into how each step fits into the overall objective.</p>
+
+<p>Tutorials for developers will almost always focus on the use of <code>meterify</code>, and therefore should almost always correspond to a working <a href="code-example-guidelines.html">code example</a>. There may however be topics of interest to a developer that are less code related, or perhaps not specific to <code>meterify</code>, and therefore will not require any code example. One example might be a tutorial for using a development tool or framework that is compatible with <code>meterify</code> development. Relevant code snippets within the tutorial itself may suffice in that type of scenario, rather than including a corresponding example as well.</p>
+
+<p>Keep the code blocks short, representing only the portions of code relevant to that step. Put a link to the full working example code somewhere at the start of the tutorial. This is convenient for the reader to see what the end result is going to look like before they start any further reading. And above all, make sure the example works.</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
