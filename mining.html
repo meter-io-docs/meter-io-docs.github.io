@@ -369,13 +369,11 @@ stratum+tcp://54.184.235.97:3256
 <li><a href="http://redis.io/">Redis</a> v2.6+ (<a href="http://redis.io/topics/quickstart">follow these instructions</a>)</li>
 </ul>
 
-<p>In Ubuntu, you could use the following command to install nodejs and Redis:
-<code>bash
-sudo apt install npm
-sudo apt install nodejs
-sudo apt install redis
-</code></p>
-
+<p>In Ubuntu, you could use the following command to install nodejs and Redis:</p>
+<pre class="highlight shell"><code><span class="gp">$ </span>sudo apt install npm
+<span class="gp">$ </span>sudo apt install nodejs
+<span class="gp">$ </span>sudo apt install redis
+</code></pre>
 <p><strong>Important Warning!</strong> It is always a good idea to learn about and understand any software that you are using. An important security measure to implement for nomp is to secure the database so it cannot be accessed externally. An easy way to do this for Redis is to include <code>bind 127.0.0.1</code> in your <code>redis.conf</code> file, and use a firewall with strict rules in place to only allow accessing Redis locally. For more information please read <a href="http://redis.io/topics/security">Security</a>. Another good place to start for additional information about using Redis for nomp is <a href="http://redis.io/topics/persistence">Data Persistence</a>.</p>
 <h3 id='downloading-amp-installing'>Downloading &amp; Installing</h3>
 <p>Clone the repository and run <code>npm update</code> for all the dependencies to be installed:</p>
