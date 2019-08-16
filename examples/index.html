@@ -220,26 +220,41 @@
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#create-account-example" class="toc-h1 toc-link" data-title="Create Account Example">Create Account Example</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#source-files-includes-create-account" class="toc-h2 toc-link" data-title="Source Files](includes/create-account)">Source Files](includes/create-account)</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#send-transaction-cli-example" class="toc-h1 toc-link" data-title="Send Transaction CLI Example">Send Transaction CLI Example</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#source-files-includes-create-account" class="toc-h2 toc-link" data-title="Source Files](includes/create-account)">Source Files](includes/create-account)</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#deploy-a-contract-example" class="toc-h1 toc-link" data-title="Deploy a Contract Example">Deploy a Contract Example</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#source-files" class="toc-h2 toc-link" data-title="Source Files">Source Files</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#call-a-contract-cli-example" class="toc-h1 toc-link" data-title="Call a Contract CLI Example">Call a Contract CLI Example</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#source-files-includes-create-account" class="toc-h2 toc-link" data-title="Source Files](includes/create-account)">Source Files](includes/create-account)</a>
+                  </li>
+              </ul>
           </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='./index.html'>Meter Documentation</a></li>
             <li><hr></li>
-            <li>Examples</li>
-            <li><a href='./index.html'>Examples Home</a></li>
-            <li><a href='./includes/create-account'>Create an Account</a></li>
-            <li><a href='./includes/send-transaction'>Send a Transaction</a></li>
-            <li><a href='./includes/deploy-contract'>Deploy a Contract</a></li>
-            <li><a href='./includes/call-contract'>Call a Contract</a></li>
+            <li><a href='./index.html'>Examples</a></li>
             <li><hr></li>
             <li><a href='../meterify.html'>API Documentation</a></li>
             <li><a href='../meterify.dapps.html'>DApp Tutorial</a></li>
@@ -253,8 +268,11 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='create-account-example'>Create Account Example</h1>
-<p><a href="includes/create-account">Source Files</a></p>
+        <h1 id='create-account-example'>Create Account Example</h1><h2 id='source-files-includes-create-account'>Source Files](includes/create-account)</h2>
+<p><a href="includes/create-account/createAccount.js">createAccount.js</a>
+<a href="includes/create-account/meterifiedWeb3.js">meterifiedWeb3.js</a>
+<a href="includes/create-account/utils.js">utils.js</a>
+<a href="includes/create-account/package.json">package.json</a></p>
 
 <blockquote>
 <p>Install</p>
@@ -265,8 +283,12 @@
 <p>Run</p>
 </blockquote>
 <pre class="highlight shell"><code><span class="gp">$ </span>node createAccount.js
-</code></pre><h1 id='send-transaction-cli-example'>Send Transaction CLI Example</h1>
-<p><a href="includes/send-transaction">Source Files</a></p>
+</code></pre><h1 id='send-transaction-cli-example'>Send Transaction CLI Example</h1><h2 id='source-files-includes-create-account'>Source Files](includes/create-account)</h2>
+<p><a href="includes/create-account/createAccount.js">createAccount.js</a>
+<a href="includes/create-account/sendTransaction.js">sendTransaction.js</a>
+<a href="includes/create-account/meterifiedWeb3.js">meterifiedWeb3.js</a>
+<a href="includes/create-account/utils.js">utils.js</a>
+<a href="includes/create-account/package.json">package.json</a></p>
 
 <blockquote>
 <p>Install</p>
@@ -281,8 +303,14 @@
 
 <span class="gp">$ </span>node sendTransaction.js
 
-</code></pre><h1 id='deploy-a-contract-example'>Deploy a Contract Example</h1>
-<p><a href="includes/deploy-contract">Source Files</a></p>
+</code></pre><h1 id='deploy-a-contract-example'>Deploy a Contract Example</h1><h2 id='source-files'>Source Files</h2>
+<p><a href="includes/create-account/createAccount.js">createAccount.js</a>
+<a href="includes/create-account/sendTransaction.js">sendTransaction.js</a>
+<a href="includes/create-account/deployContract.js">deployContract.js</a>
+<a href="includes/create-account/sample-token.sol">sample-token.sol</a>
+<a href="includes/create-account/meterifiedWeb3.js">meterifiedWeb3.js</a>
+<a href="includes/create-account/utils.js">utils.js</a>
+<a href="includes/create-account/package.json">package.json</a></p>
 
 <blockquote>
 <p>Install</p>
@@ -298,8 +326,15 @@
 <span class="gp">$ </span>node sendTransaction.js
 
 <span class="gp">$ </span>node deployContract.js
-</code></pre><h1 id='call-a-contract-cli-example'>Call a Contract CLI Example</h1>
-<p><a href="includes/call-contract">Source Files</a></p>
+</code></pre><h1 id='call-a-contract-cli-example'>Call a Contract CLI Example</h1><h2 id='source-files-includes-create-account'>Source Files](includes/create-account)</h2>
+<p><a href="includes/create-account/createAccount.js">createAccount.js</a>
+<a href="includes/create-account/sendTransaction.js">sendTransaction.js</a>
+<a href="includes/create-account/deployContract.js">deployContract.js</a>
+<a href="includes/create-account/callContract.js">callContract.js</a>
+<a href="includes/create-account/sample-token.sol">sample-token.sol</a>
+<a href="includes/create-account/meterifiedWeb3.js">meterifiedWeb3.js</a>
+<a href="includes/create-account/utils.js">utils.js</a>
+<a href="includes/create-account/package.json">package.json</a></p>
 
 <blockquote>
 <p>Install</p>
