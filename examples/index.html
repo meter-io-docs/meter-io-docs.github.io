@@ -1,0 +1,371 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Examples</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="../stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all.js"></script>
+  </head>
+
+  <body class="examples examples_index" data-languages="[&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="../images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#create-account-example" class="toc-h1 toc-link" data-title="Create Account Example">Create Account Example</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#source-files" class="toc-h2 toc-link" data-title="Source Files">Source Files</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#send-transaction-cli-example" class="toc-h1 toc-link" data-title="Send Transaction CLI Example">Send Transaction CLI Example</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#source-files" class="toc-h2 toc-link" data-title="Source Files">Source Files</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#deploy-a-contract-example" class="toc-h1 toc-link" data-title="Deploy a Contract Example">Deploy a Contract Example</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#source-files" class="toc-h2 toc-link" data-title="Source Files">Source Files</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#call-a-contract-cli-example" class="toc-h1 toc-link" data-title="Call a Contract CLI Example">Call a Contract CLI Example</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#source-files" class="toc-h2 toc-link" data-title="Source Files">Source Files</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='./index.html'>Meter Documentation</a></li>
+            <li><hr></li>
+            <li><a href='./index.html'>Examples</a></li>
+            <li><hr></li>
+            <li><a href='../meterify.html'>API Documentation</a></li>
+            <li><a href='../meterify.dapps.html'>DApp Tutorial</a></li>
+            <li><a href='../mining.html'>Mining Guide</a></li>
+            <li><a href='../index.html'>Contributing Home</a></li>
+            <li><hr></li>
+            <li><a href='https://www.meter.io/claim-your-meter/'>Request Test Tokens</a></li>
+            <li><a href='https://www.meter.io'>Meter.io</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='create-account-example'>Create Account Example</h1><h2 id='source-files'>Source Files</h2>
+<ul>
+<li><a href="includes/create-account/createAccount.js">createAccount.js</a></li>
+<li><a href="includes/create-account/meterifiedWeb3.js">meterifiedWeb3.js</a></li>
+<li><a href="includes/create-account/utils.js">utils.js</a></li>
+<li><a href="includes/create-account/package.json">package.json</a></li>
+</ul>
+
+<blockquote>
+<p>Install</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="gp">$ </span>npm install
+</code></pre>
+<blockquote>
+<p>Run</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="gp">$ </span>node createAccount.js
+</code></pre><h1 id='send-transaction-cli-example'>Send Transaction CLI Example</h1><h2 id='source-files'>Source Files</h2>
+<ul>
+<li><a href="includes/send-transaction/createAccount.js">createAccount.js</a></li>
+<li><a href="includes/send-transaction/sendTransaction.js">sendTransaction.js</a></li>
+<li><a href="includes/send-transaction/meterifiedWeb3.js">meterifiedWeb3.js</a></li>
+<li><a href="includes/send-transaction/utils.js">utils.js</a></li>
+<li><a href="includes/send-transaction/package.json">package.json</a></li>
+</ul>
+
+<blockquote>
+<p>Install</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="gp">$ </span>npm install
+</code></pre>
+<blockquote>
+<p>Run</p>
+</blockquote>
+<pre class="highlight shell"><code>
+<span class="gp">$ </span>node createAccount.js
+
+<span class="gp">$ </span>node sendTransaction.js
+
+</code></pre><h1 id='deploy-a-contract-example'>Deploy a Contract Example</h1><h2 id='source-files'>Source Files</h2>
+<ul>
+<li><a href="includes/deploy-contract/createAccount.js">createAccount.js</a></li>
+<li><a href="includes/deploy-contract/sendTransaction.js">sendTransaction.js</a></li>
+<li><a href="includes/deploy-contract/deployContract.js">deployContract.js</a></li>
+<li><a href="includes/deploy-contract/sample_token.sol">sample_token.sol</a></li>
+<li><a href="includes/deploy-contract/meterifiedWeb3.js">meterifiedWeb3.js</a></li>
+<li><a href="includes/deploy-contract/utils.js">utils.js</a></li>
+<li><a href="includes/deploy-contract/package.json">package.json</a></li>
+</ul>
+
+<blockquote>
+<p>Install</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="gp">$ </span>npm install
+</code></pre>
+<blockquote>
+<p>Run</p>
+</blockquote>
+<pre class="highlight shell"><code>
+<span class="gp">$ </span>node createAccount.js
+
+<span class="gp">$ </span>node sendTransaction.js
+
+<span class="gp">$ </span>node deployContract.js
+</code></pre><h1 id='call-a-contract-cli-example'>Call a Contract CLI Example</h1><h2 id='source-files'>Source Files</h2>
+<ul>
+<li><a href="includes/call-contract/createAccount.js">createAccount.js</a></li>
+<li><a href="includes/call-contract/sendTransaction.js">sendTransaction.js</a></li>
+<li><a href="includes/call-contract/deployContract.js">deployContract.js</a></li>
+<li><a href="includes/call-contract/callContract.js">callContract.js</a></li>
+<li><a href="includes/call-contract/sample_token.sol">sample_token.sol</a></li>
+<li><a href="includes/call-contract/meterifiedWeb3.js">meterifiedWeb3.js</a></li>
+<li><a href="includes/call-contract/utils.js">utils.js</a></li>
+<li><a href="includes/call-contract/package.json">package.json</a></li>
+</ul>
+
+<blockquote>
+<p>Install</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="gp">$ </span>npm install
+</code></pre>
+<blockquote>
+<p>Run</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="gp">$ </span>node createAccount.js
+
+<span class="gp">$ </span>node sendTransaction.js
+
+<span class="gp">$ </span>node deployContract.js
+
+<span class="gp">$ </span>node callContract.js
+</code></pre>
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

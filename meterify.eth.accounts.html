@@ -1,0 +1,1021 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>meterify.eth.accounts</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="meterify" data-languages="[&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#meterify-eth-accounts" class="toc-h1 toc-link" data-title="meterify.eth.accounts">meterify.eth.accounts</a>
+          </li>
+          <li>
+            <a href="#create" class="toc-h1 toc-link" data-title="create">create</a>
+          </li>
+          <li>
+            <a href="#privatekeytoaccount" class="toc-h1 toc-link" data-title="privateKeyToAccount">privateKeyToAccount</a>
+          </li>
+          <li>
+            <a href="#signtransaction" class="toc-h1 toc-link" data-title="signTransaction">signTransaction</a>
+          </li>
+          <li>
+            <a href="#recovertransaction" class="toc-h1 toc-link" data-title="recoverTransaction">recoverTransaction</a>
+          </li>
+          <li>
+            <a href="#hashmessage" class="toc-h1 toc-link" data-title="hashMessage">hashMessage</a>
+          </li>
+          <li>
+            <a href="#sign" class="toc-h1 toc-link" data-title="sign">sign</a>
+          </li>
+          <li>
+            <a href="#recover" class="toc-h1 toc-link" data-title="recover">recover</a>
+          </li>
+          <li>
+            <a href="#encrypt" class="toc-h1 toc-link" data-title="encrypt">encrypt</a>
+          </li>
+          <li>
+            <a href="#decrypt" class="toc-h1 toc-link" data-title="decrypt">decrypt</a>
+          </li>
+          <li>
+            <a href="#wallet" class="toc-h1 toc-link" data-title="wallet">wallet</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#wallet-create" class="toc-h2 toc-link" data-title="wallet.create">wallet.create</a>
+                  </li>
+                  <li>
+                    <a href="#wallet-add" class="toc-h2 toc-link" data-title="wallet.add">wallet.add</a>
+                  </li>
+                  <li>
+                    <a href="#wallet-remove" class="toc-h2 toc-link" data-title="wallet.remove">wallet.remove</a>
+                  </li>
+                  <li>
+                    <a href="#wallet-clear" class="toc-h2 toc-link" data-title="wallet.clear">wallet.clear</a>
+                  </li>
+                  <li>
+                    <a href="#wallet-encrypt" class="toc-h2 toc-link" data-title="wallet.encrypt">wallet.encrypt</a>
+                  </li>
+                  <li>
+                    <a href="#wallet-decrypt" class="toc-h2 toc-link" data-title="wallet.decrypt">wallet.decrypt</a>
+                  </li>
+                  <li>
+                    <a href="#wallet-save" class="toc-h2 toc-link" data-title="wallet.save">wallet.save</a>
+                  </li>
+                  <li>
+                    <a href="#wallet-load" class="toc-h2 toc-link" data-title="wallet.load">wallet.load</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='./index.html'>Documentation Home</a></li>
+            <li><hr></li>
+            <li>API Documentation</li>
+            <li><a href='./meterify.html'>meterify</a></li>
+            <li><a href='./meterify.module.options.html'>meterify.module.options</a></li>
+            <li><a href='./meterify.eth.html'>meterify.eth</a></li>
+            <li><a href='./meterify.eth.Contract.html'>meterify.eth.Contract</a></li>
+            <li><a href='./meterify.eth.accounts.html'>meterify.eth.accounts</a></li>
+            <li><a href='./meterify.utils.html'>meterify.utils</a></li>
+            <li><!--<a href='./meterify.eth.subscribe.html'>meterify.eth.subscribe</a></li>
+            <li><a href='./meterify.eth.Iban.html'>meterify.eth.Iban</a></li>
+            <li><a href='./meterify.eth.personal.html'>meterify.eth.personal</a></li>
+            <li><a href='./meterify.eth.ens.html'>meterify.eth.ens</a></li>
+            <li><a href='./meterify.eth.abi.html'>meterify.eth.abi</a></li>
+            <li><a href='./meterify.eth.net.html'>meterify.eth.net</a></li>
+            <li><a href='./meterify.shh.html'>meterify.shh</a>--></li>
+            <li><hr></li>
+            <li><a href='./meterify.dapps.html'>DApp Tutorial</a></li>
+            <li><a href='./examples/index.html'>Examples</a></li>
+            <li><a href='./mining.html'>Mining Guide</a></li>
+            <li><a href='./contributing/index.html'>Contributing</a></li>
+            <li><hr></li>
+            <li><a href='https://www.meter.io/claim-your-meter/'>Request Test Tokens</a></li>
+            <li><a href='https://www.meter.io'>Meter.io</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <p><a name="eth-accounts"/></p>
+<h1 id='meterify-eth-accounts'>meterify.eth.accounts</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="kr">import</span> <span class="p">{</span><span class="nx">Accounts</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">'web3-eth-accounts'</span><span class="p">;</span>
+
+    <span class="c1">// Passing in the eth or web3 package is necessary to allow retrieving chainId, gasPrice and nonce automatically</span>
+    <span class="c1">// for accounts.signTransaction().</span>
+    <span class="kr">const</span> <span class="nx">accounts</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Accounts</span><span class="p">(</span><span class="s1">'ws://localhost:8546'</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</code></pre>
+<p>The <code>meterify.eth.accounts</code> contains functions to generate Meter accounts and sign transactions and data.</p>
+
+<p>Note: This package got NOT audited until now. Take precautions to clear memory properly, store the private keys safely, and test transaction receiving and sending functionality properly before using in production!</p>
+
+<p><a name="accounts-create"/></p>
+<h1 id='create'>create</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">create</span><span class="p">([</span><span class="nx">entropy</span><span class="p">]);</span>
+</code></pre>
+<p>Generates an account object with private key and public key. It is different from
+:ref:<code>web3.eth.personal.newAccount() &lt;personal-newaccount&gt;</code> which creates an account
+over the network on the node via an RPC call.</p>
+
+<blockquote>
+<p>Examples</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+    <span class="o">&gt;</span> <span class="p">{</span>
+        <span class="na">address</span><span class="p">:</span> <span class="s2">"0xb8CE9ab6943e0eCED004cDe8e3bBed6568B2Fa01"</span><span class="p">,</span>
+        <span class="na">privateKey</span><span class="p">:</span> <span class="s2">"0x348ce564d427a3311b6536bbcff9390d69395b06ed6c486954e971d960fe8709"</span><span class="p">,</span>
+        <span class="na">signTransaction</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">tx</span><span class="p">){...},</span>
+        <span class="na">sign</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){...},</span>
+        <span class="na">encrypt</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">password</span><span class="p">){...}</span>
+    <span class="p">}</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'2435@#@#@±±±±!!!!678543213456764321§34567543213456785432134567'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="p">{</span>
+        <span class="na">address</span><span class="p">:</span> <span class="s2">"0xF2CD2AA0c7926743B1D4310b2BC984a0a453c3d4"</span><span class="p">,</span>
+        <span class="na">privateKey</span><span class="p">:</span> <span class="s2">"0xd7325de5c2c1cf0009fac77d3d04a9c004b038883446b065871bc3e831dcd098"</span><span class="p">,</span>
+        <span class="na">signTransaction</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">tx</span><span class="p">){...},</span>
+        <span class="na">sign</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){...},</span>
+        <span class="na">encrypt</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">password</span><span class="p">){...}</span>
+    <span class="p">}</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">web3</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">randomHex</span><span class="p">(</span><span class="mi">32</span><span class="p">));</span>
+    <span class="o">&gt;</span> <span class="p">{</span>
+        <span class="na">address</span><span class="p">:</span> <span class="s2">"0xe78150FaCD36E8EB00291e251424a0515AA1FF05"</span><span class="p">,</span>
+        <span class="na">privateKey</span><span class="p">:</span> <span class="s2">"0xcc505ee6067fba3f6fc2050643379e190e087aeffe5d958ab9f2f3ed3800fa4e"</span><span class="p">,</span>
+        <span class="na">signTransaction</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">tx</span><span class="p">){...},</span>
+        <span class="na">sign</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){...},</span>
+        <span class="na">encrypt</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">password</span><span class="p">){...}</span>
+    <span class="p">}</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>entropy</code> - <code>String</code>(optional): A random string to increase entropy. If given it should be at least 32 characters. If none is given a random string will be generated using :ref:<code>randomhex &lt;randomhex&gt;</code>.</li>
+</ol>
+
+<p><a name="eth-accounts-create-return"/></p>
+
+<p>Returns</p>
+
+<p><code>Object</code> - The account object with the following structure:</p>
+
+<p>- <code>address</code> - <code>String</code>: The account address.
+    - <code>privateKey</code> - <code>String</code>: The accounts private key. This should never be shared or stored unencrypted in localstorage! Also make sure to <code>null</code> the memory after usage.
+    - <code>signTransaction(tx [, callback])</code> - <code>Function</code>: The function to sign transactions. See :ref:<code>meterify.eth.accounts.signTransaction() &lt;eth-accounts-signtransaction&gt;</code> for more.
+    - <code>sign(data)</code> - <code>Function</code>: The function to sign transactions. See :ref:<code>meterify.eth.accounts.sign() &lt;eth-accounts-sign&gt;</code> for more.</p>
+<h1 id='privatekeytoaccount'>privateKeyToAccount</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">privateKeyToAccount</span><span class="p">(</span><span class="nx">privateKey</span><span class="p">);</span>
+</code></pre>
+<p>Creates an account object from a private key.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">privateKeyToAccount</span><span class="p">(</span><span class="s1">'0x348ce564d427a3311b6536bbcff9390d69395b06ed6c486954e971d960fe8709'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="p">{</span>
+        <span class="na">address</span><span class="p">:</span> <span class="s1">'0xb8CE9ab6943e0eCED004cDe8e3bBed6568B2Fa01'</span><span class="p">,</span>
+        <span class="na">privateKey</span><span class="p">:</span> <span class="s1">'0x348ce564d427a3311b6536bbcff9390d69395b06ed6c486954e971d960fe8709'</span><span class="p">,</span>
+        <span class="na">signTransaction</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">tx</span><span class="p">){...},</span>
+        <span class="na">sign</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){...},</span>
+        <span class="na">encrypt</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">password</span><span class="p">){...}</span>
+    <span class="p">}</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>privateKey</code> - <code>String</code>: The private key hex string beginning with <code>0x</code>.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Object</code> - The account object with the :ref:<code>structure seen here &lt;eth-accounts-create-return&gt;</code>.</p>
+
+<p><a name="eth-accounts-signtransaction"/></p>
+<h1 id='signtransaction'>signTransaction</h1>
+<blockquote>
+<p>Format</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">signTransaction</span><span class="p">(</span><span class="nx">tx</span><span class="p">,</span> <span class="nx">privateKey</span> <span class="p">[,</span> <span class="nx">callback</span><span class="p">]);</span>
+</code></pre>
+<p>Signs a Meter transaction with a given private key.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">signTransaction</span><span class="p">({</span>
+        <span class="na">to</span><span class="p">:</span> <span class="s1">'0xF0109fC8DF283027b6285cc889F5aA624EaC1F55'</span><span class="p">,</span>
+        <span class="na">value</span><span class="p">:</span> <span class="s1">'1000000000'</span><span class="p">,</span>
+        <span class="na">gas</span><span class="p">:</span> <span class="mi">2000000</span>
+    <span class="p">},</span> <span class="s1">'0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Output</p>
+</blockquote>
+<pre class="highlight shell"><code>    &gt; <span class="o">{</span>
+        messageHash: <span class="s1">'0x88cfbd7e51c7a40540b233cf68b62ad1df3e92462f1c6018d6d67eae0f3b08f5'</span>,
+        v: <span class="s1">'0x25'</span>,
+        r: <span class="s1">'0xc9cf86333bcb065d140032ecaab5d9281bde80f21b9687b3e94161de42d51895'</span>,
+        s: <span class="s1">'0x727a108a0b8d101465414033c3f705a9c7b826e596766046ee1183dbc8aeaa68'</span>,
+        rawTransaction: <span class="s1">'0xf869808504e3b29200831e848094f0109fc8df283027b6285cc889f5aa624eac1f55843b9aca008025a0c9cf86333bcb065d140032ecaab5d9281bde80f21b9687b3e94161de42d51895a0727a108a0b8d101465414033c3f705a9c7b826e596766046ee1183dbc8aeaa68'</span>,
+        transactionHash: <span class="s1">'0xde8db924885b0803d2edc335f745b2b8750c8848744905684c20b987443a9593'</span>
+    <span class="o">}</span>
+</code></pre>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">signTransaction</span><span class="p">({</span>
+        <span class="na">to</span><span class="p">:</span> <span class="s1">'0xF0109fC8DF283027b6285cc889F5aA624EaC1F55'</span><span class="p">,</span>
+        <span class="na">value</span><span class="p">:</span> <span class="s1">'1000000000'</span><span class="p">,</span>
+        <span class="na">gas</span><span class="p">:</span> <span class="mi">2000000</span><span class="p">,</span>
+        <span class="na">gasPrice</span><span class="p">:</span> <span class="s1">'234567897654321'</span><span class="p">,</span>
+        <span class="na">nonce</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="na">chainId</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span> <span class="s1">'0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Output</p>
+</blockquote>
+<pre class="highlight shell"><code>    &gt; <span class="o">{</span>
+        messageHash: <span class="s1">'0x6893a6ee8df79b0f5d64a180cd1ef35d030f3e296a5361cf04d02ce720d32ec5'</span>,
+        r: <span class="s1">'0x9ebb6ca057a0535d6186462bc0b465b561c94a295bdb0621fc19208ab149a9c'</span>,
+        s: <span class="s1">'0x440ffd775ce91a833ab410777204d5341a6f9fa91216a6f3ee2c051fea6a0428'</span>,
+        v: <span class="s1">'0x25'</span>,
+        rawTransaction: <span class="s1">'0xf86a8086d55698372431831e848094f0109fc8df283027b6285cc889f5aa624eac1f55843b9aca008025a009ebb6ca057a0535d6186462bc0b465b561c94a295bdb0621fc19208ab149a9ca0440ffd775ce91a833ab410777204d5341a6f9fa91216a6f3ee2c051fea6a0428'</span>,
+        transactionHash: <span class="s1">'0xd8f64a42b57be0d565f385378db2f6bf324ce14a594afc05de90436e9ce01f60'</span>
+    <span class="o">}</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>tx</code> - <code>Object</code>: The transaction&#39;s properties object as follows:
+
+<ul>
+<li><code>nonce</code> - <code>String</code>: (optional) The nonce to use when signing this transaction. Default will use :ref:<code>web3.eth.getTransactionCount() &lt;eth-gettransactioncount&gt;</code>.</li>
+<li><code>chainId</code> - <code>String</code>: (optional) The chain id to use when signing this transaction. Default will use :ref:<code>web3.eth.net.getId() &lt;net-getid&gt;</code>.</li>
+<li><code>to</code> - <code>String</code>: (optional) The receiver of the transaction, can be empty when deploying a contract.</li>
+<li><code>data</code> - <code>String</code>: (optional) The call data of the transaction, can be empty for simple value transfers.</li>
+<li><code>value</code> - <code>String</code>: (optional) The value of the transaction in wei.</li>
+<li><code>gasPrice</code> - <code>String</code>: (optional) The gas price set by this transaction, if empty, it will use :ref:<code>web3.eth.gasPrice() &lt;eth-gasprice&gt;</code></li>
+<li><code>gas</code> - <code>String</code>: The gas provided by the transaction.</li>
+</ul></li>
+<li><code>privateKey</code> - <code>String</code>: The private key to sign with.</li>
+<li><code>callback</code> - <code>Function</code>: (optional) Optional callback, returns an error object as first parameter and the result as second.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Promise</code> returning <code>Object</code>: The signed data RLP encoded transaction, or if <code>returnSignature</code> is <code>true</code> the signature values as follows:
+    - <code>messageHash</code> - <code>String</code>: The hash of the given message.
+    - <code>r</code> - <code>String</code>: First 32 bytes of the signature
+    - <code>s</code> - <code>String</code>: Next 32 bytes of the signature
+    - <code>v</code> - <code>String</code>: Recovery value + 27
+    - <code>rawTransaction</code> - <code>String</code>: The RLP encoded transaction, ready to be send using :ref:<code>web3.eth.sendSignedTransaction &lt;eth-sendsignedtransaction&gt;</code>.
+    - <code>transactionHash</code> - <code>String</code>: The transaction hash for the RLP encoded transaction.</p>
+<h1 id='recovertransaction'>recoverTransaction</h1><pre class="highlight javascript tab-javascript"><code>    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">recoverTransaction</span><span class="p">(</span><span class="nx">rawTransaction</span><span class="p">);</span>
+</code></pre>
+<p>Recovers the Meter address which was used to sign the given RLP encoded transaction.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">recoverTransaction</span><span class="p">(</span><span class="s1">'0xf86180808401ef364594f0109fc8df283027b6285cc889f5aa624eac1f5580801ca031573280d608f75137e33fc14655f097867d691d5c4c44ebe5ae186070ac3d5ea0524410802cdc025034daefcdfa08e7d2ee3f0b9d9ae184b2001fe0aff07603d9'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0xF0109fC8DF283027b6285cc889F5aA624EaC1F55"</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>signature</code> - <code>String</code>: The RLP encoded transaction.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String</code>: The Meter address used to sign this transaction.</p>
+<h1 id='hashmessage'>hashMessage</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">hashMessage</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+</code></pre>
+<p>Hashes the given message to be passed :ref:<code>meterify.eth.accounts.recover() &lt;accounts-recover&gt;</code> function. The data  will be UTF-8 HEX decoded and enveloped as follows: <code>&quot;\x19Ethereum Signed Message:\n&quot; + message.length + message</code> and hashed using keccak256.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">hashMessage</span><span class="p">(</span><span class="s2">"Hello World"</span><span class="p">)</span>
+    <span class="o">&gt;</span> <span class="s2">"0xa1de988600a42c4b4ab089b619297c17d53cffae5d5120d82d8a92d0bb3b78f2"</span>
+
+    <span class="c1">// the below results in the same hash</span>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">hashMessage</span><span class="p">(</span><span class="nx">web3</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">utf8ToHex</span><span class="p">(</span><span class="s2">"Hello World"</span><span class="p">))</span>
+    <span class="o">&gt;</span> <span class="s2">"0xa1de988600a42c4b4ab089b619297c17d53cffae5d5120d82d8a92d0bb3b78f2"</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>message</code> - <code>String</code>: A message to hash, if its HEX it will be UTF8 decoded before.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String</code>: The hashed message</p>
+
+<p><a name="eth-accounts-sign"/></p>
+<h1 id='sign'>sign</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">privateKey</span><span class="p">);</span>
+</code></pre>
+<p>Signs arbitrary data. This data is before UTF-8 HEX decoded and enveloped as follows: <code>&quot;\x19Ethereum Signed Message:\n&quot; + message.length + message</code>.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="s1">'Some data'</span><span class="p">,</span> <span class="s1">'0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="p">{</span>
+        <span class="na">message</span><span class="p">:</span> <span class="s1">'Some data'</span><span class="p">,</span>
+        <span class="na">messageHash</span><span class="p">:</span> <span class="s1">'0x1da44b586eb0729ff70a73c326926f6ed5a25f5b056e7f47fbc6e58d86871655'</span><span class="p">,</span>
+        <span class="na">v</span><span class="p">:</span> <span class="s1">'0x1c'</span><span class="p">,</span>
+        <span class="na">r</span><span class="p">:</span> <span class="s1">'0xb91467e570a6466aa9e9876cbcd013baba02900b8979d43fe208a4a4f339f5fd'</span><span class="p">,</span>
+        <span class="na">s</span><span class="p">:</span> <span class="s1">'0x6007e74cd82e037b800186422fc2da167c747ef045e5d18a5f5d4300f8e1a029'</span><span class="p">,</span>
+        <span class="na">signature</span><span class="p">:</span> <span class="s1">'0xb91467e570a6466aa9e9876cbcd013baba02900b8979d43fe208a4a4f339f5fd6007e74cd82e037b800186422fc2da167c747ef045e5d18a5f5d4300f8e1a0291c'</span>
+    <span class="p">}</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>data</code> - <code>String</code>: The data to sign. If its a string it will be</li>
+<li><code>privateKey</code> - <code>String</code>: The private key to sign with.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Object</code>: The signed data RLP encoded signature, or if <code>returnSignature</code> is <code>true</code> the signature values as follows:
+    - <code>message</code> - <code>String</code>: The the given message.
+    - <code>messageHash</code> - <code>String</code>: The hash of the given message.
+    - <code>r</code> - <code>String</code>: First 32 bytes of the signature
+    - <code>s</code> - <code>String</code>: Next 32 bytes of the signature
+    - <code>v</code> - <code>String</code>: Recovery value + 27</p>
+
+<p><a name="accounts-recover"/></p>
+<h1 id='recover'>recover</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">recover</span><span class="p">(</span><span class="nx">signatureObject</span><span class="p">);</span>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">recover</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span> <span class="nx">signature</span> <span class="p">[,</span> <span class="nx">preFixed</span><span class="p">]);</span>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">recover</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span> <span class="nx">v</span><span class="p">,</span> <span class="nx">r</span><span class="p">,</span> <span class="nx">s</span> <span class="p">[,</span> <span class="nx">preFixed</span><span class="p">]);</span>
+</code></pre>
+<p>Recovers the Meter address which was used to sign the given data.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">recover</span><span class="p">({</span>
+        <span class="na">messageHash</span><span class="p">:</span> <span class="s1">'0x1da44b586eb0729ff70a73c326926f6ed5a25f5b056e7f47fbc6e58d86871655'</span><span class="p">,</span>
+        <span class="na">v</span><span class="p">:</span> <span class="s1">'0x1c'</span><span class="p">,</span>
+        <span class="na">r</span><span class="p">:</span> <span class="s1">'0xb91467e570a6466aa9e9876cbcd013baba02900b8979d43fe208a4a4f339f5fd'</span><span class="p">,</span>
+        <span class="na">s</span><span class="p">:</span> <span class="s1">'0x6007e74cd82e037b800186422fc2da167c747ef045e5d18a5f5d4300f8e1a029'</span>
+    <span class="p">})</span>
+    <span class="o">&gt;</span> <span class="s2">"0x2c7536E3605D9C16a7a3D7b1898e529396a65c23"</span>
+
+    <span class="c1">// message, signature</span>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">recover</span><span class="p">(</span><span class="s1">'Some data'</span><span class="p">,</span> <span class="s1">'0xb91467e570a6466aa9e9876cbcd013baba02900b8979d43fe208a4a4f339f5fd6007e74cd82e037b800186422fc2da167c747ef045e5d18a5f5d4300f8e1a0291c'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0x2c7536E3605D9C16a7a3D7b1898e529396a65c23"</span>
+
+    <span class="c1">// message, v, r, s</span>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">recover</span><span class="p">(</span><span class="s1">'Some data'</span><span class="p">,</span> <span class="s1">'0x1c'</span><span class="p">,</span> <span class="s1">'0xb91467e570a6466aa9e9876cbcd013baba02900b8979d43fe208a4a4f339f5fd'</span><span class="p">,</span> <span class="s1">'0x6007e74cd82e037b800186422fc2da167c747ef045e5d18a5f5d4300f8e1a029'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0x2c7536E3605D9C16a7a3D7b1898e529396a65c23"</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>message</code> or <code>signatureObject</code> - <code>String</code> or <code>Object</code>: Either signed message or hash, or the signature object as following values:
+
+<ul>
+<li><code>messageHash</code> - <code>String</code>: The hash of the given message already prefixed with <code>&quot;\x19Ethereum Signed Message:\n&quot; + message.length + message</code>.</li>
+<li><code>r</code> - <code>String</code>: First 32 bytes of the signature</li>
+<li><code>s</code> - <code>String</code>: Next 32 bytes of the signature</li>
+<li><code>v</code> - <code>String</code>: Recovery value + 27</li>
+</ul></li>
+<li><code>signature</code> - <code>String</code>: The raw RLP encoded signature, OR parameter 2-4 as v, r, s values.</li>
+<li><code>preFixed</code> - <code>Boolean</code> (optional, default: <code>false</code>): If the last parameter is <code>true</code>, the given message will NOT automatically be prefixed with <code>&quot;\x19Ethereum Signed Message:\n&quot; + message.length + message</code>, and assumed to be already prefixed.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String</code>: The Meter address used to sign this data.</p>
+<h1 id='encrypt'>encrypt</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="nx">privateKey</span><span class="p">,</span> <span class="nx">password</span><span class="p">);</span>
+</code></pre>
+<p>Encrypts a private key to the web3 keystore v3 standard.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="s1">'0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318'</span><span class="p">,</span> <span class="s1">'test!'</span><span class="p">)</span>
+    <span class="o">&gt;</span> <span class="p">{</span>
+        <span class="na">version</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="na">id</span><span class="p">:</span> <span class="s1">'04e9bcbb-96fa-497b-94d1-14df4cd20af6'</span><span class="p">,</span>
+        <span class="na">address</span><span class="p">:</span> <span class="s1">'2c7536e3605d9c16a7a3d7b1898e529396a65c23'</span><span class="p">,</span>
+        <span class="na">crypto</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">ciphertext</span><span class="p">:</span> <span class="s1">'a1c25da3ecde4e6a24f3697251dd15d6208520efc84ad97397e906e6df24d251'</span><span class="p">,</span>
+            <span class="na">cipherparams</span><span class="p">:</span> <span class="p">{</span> <span class="na">iv</span><span class="p">:</span> <span class="s1">'2885df2b63f7ef247d753c82fa20038a'</span> <span class="p">},</span>
+            <span class="na">cipher</span><span class="p">:</span> <span class="s1">'aes-128-ctr'</span><span class="p">,</span>
+            <span class="na">kdf</span><span class="p">:</span> <span class="s1">'scrypt'</span><span class="p">,</span>
+            <span class="na">kdfparams</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">dklen</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+                <span class="na">salt</span><span class="p">:</span> <span class="s1">'4531b3c174cc3ff32a6a7a85d6761b410db674807b2d216d022318ceee50be10'</span><span class="p">,</span>
+                <span class="na">n</span><span class="p">:</span> <span class="mi">262144</span><span class="p">,</span>
+                <span class="na">r</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+                <span class="na">p</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="p">},</span>
+            <span class="na">mac</span><span class="p">:</span> <span class="s1">'b8b010fff37f9ae5559a352a185e86f9b9c1d7f7a9f1bd4e82a5dd35468fc7f6'</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>privateKey</code> - <code>String</code>: The private key to encrypt.</li>
+<li><code>password</code> - <code>String</code>: The password used for encryption.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Object</code>: The encrypted keystore v3 JSON.</p>
+<h1 id='decrypt'>decrypt</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">decrypt</span><span class="p">(</span><span class="nx">keystoreJsonV3</span><span class="p">,</span> <span class="nx">password</span><span class="p">);</span>
+</code></pre>
+<p>Decrypts a keystore v3 JSON, and creates the account.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">decrypt</span><span class="p">({</span>
+        <span class="na">version</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="na">id</span><span class="p">:</span> <span class="s1">'04e9bcbb-96fa-497b-94d1-14df4cd20af6'</span><span class="p">,</span>
+        <span class="na">address</span><span class="p">:</span> <span class="s1">'2c7536e3605d9c16a7a3d7b1898e529396a65c23'</span><span class="p">,</span>
+        <span class="na">crypto</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">ciphertext</span><span class="p">:</span> <span class="s1">'a1c25da3ecde4e6a24f3697251dd15d6208520efc84ad97397e906e6df24d251'</span><span class="p">,</span>
+            <span class="na">cipherparams</span><span class="p">:</span> <span class="p">{</span> <span class="na">iv</span><span class="p">:</span> <span class="s1">'2885df2b63f7ef247d753c82fa20038a'</span> <span class="p">},</span>
+            <span class="na">cipher</span><span class="p">:</span> <span class="s1">'aes-128-ctr'</span><span class="p">,</span>
+            <span class="na">kdf</span><span class="p">:</span> <span class="s1">'scrypt'</span><span class="p">,</span>
+            <span class="na">kdfparams</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">dklen</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+                <span class="na">salt</span><span class="p">:</span> <span class="s1">'4531b3c174cc3ff32a6a7a85d6761b410db674807b2d216d022318ceee50be10'</span><span class="p">,</span>
+                <span class="na">n</span><span class="p">:</span> <span class="mi">262144</span><span class="p">,</span>
+                <span class="na">r</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+                <span class="na">p</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="p">},</span>
+            <span class="na">mac</span><span class="p">:</span> <span class="s1">'b8b010fff37f9ae5559a352a185e86f9b9c1d7f7a9f1bd4e82a5dd35468fc7f6'</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="s1">'test!'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="p">{</span>
+        <span class="na">address</span><span class="p">:</span> <span class="s2">"0x2c7536E3605D9C16a7a3D7b1898e529396a65c23"</span><span class="p">,</span>
+        <span class="na">privateKey</span><span class="p">:</span> <span class="s2">"0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318"</span><span class="p">,</span>
+        <span class="na">signTransaction</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">tx</span><span class="p">){...},</span>
+        <span class="na">sign</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){...},</span>
+        <span class="na">encrypt</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">password</span><span class="p">){...}</span>
+    <span class="p">}</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>keystoreJsonV3</code> - <code>String</code>: The encrypted keystore v3 JSON.</li>
+<li><code>password</code> - <code>String</code>: The password used for encryption.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Object</code>: The decrypted account.</p>
+
+<p><a name="eth_accounts_wallet"/></p>
+<h1 id='wallet'>wallet</h1><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">;</span>
+</code></pre>
+<p>Contains an in memory wallet with multiple accounts. These accounts can be used when using :ref:<code>web3.eth.sendTransaction() &lt;eth-sendtransaction&gt;</code>.</p>
+
+<p>Example</p>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">;</span>
+    <span class="o">&gt;</span> <span class="nx">Wallet</span> <span class="p">{</span>
+        <span class="mi">0</span><span class="p">:</span> <span class="p">{...},</span> <span class="c1">// account by index</span>
+        <span class="s2">"0xF0109fC8DF283027b6285cc889F5aA624EaC1F55"</span><span class="p">:</span> <span class="p">{...},</span>  <span class="c1">// same account by address</span>
+        <span class="s2">"0xf0109fc8df283027b6285cc889f5aa624eac1f55"</span><span class="p">:</span> <span class="p">{...},</span>  <span class="c1">// same account by address lowercase</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="p">{...},</span>
+        <span class="s2">"0xD0122fC8DF283027b6285cc889F5aA624EaC1d23"</span><span class="p">:</span> <span class="p">{...},</span>
+        <span class="s2">"0xd0122fc8df283027b6285cc889f5aa624eac1d23"</span><span class="p">:</span> <span class="p">{...},</span>
+
+        <span class="nx">add</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){},</span>
+        <span class="nx">remove</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){},</span>
+        <span class="nx">save</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){},</span>
+        <span class="nx">load</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){},</span>
+        <span class="nx">clear</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){},</span>
+
+        <span class="nx">length</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="p">}</span>
+</code></pre><h2 id='wallet-create'>wallet.create</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">numberOfAccounts</span> <span class="p">[,</span> <span class="nx">entropy</span><span class="p">]);</span>
+</code></pre>
+<p>Generates one or more accounts in the wallet. If wallets already exist they will not be overridden.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'54674321§3456764321§345674321§3453647544±±±§±±±!!!43534534534534'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="nx">Wallet</span> <span class="p">{</span>
+        <span class="mi">0</span><span class="p">:</span> <span class="p">{...},</span>
+        <span class="s2">"0xF0109fC8DF283027b6285cc889F5aA624EaC1F55"</span><span class="p">:</span> <span class="p">{...},</span>
+        <span class="s2">"0xf0109fc8df283027b6285cc889f5aa624eac1f55"</span><span class="p">:</span> <span class="p">{...},</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>numberOfAccounts</code> - <code>Number</code>: Number of accounts to create. Leave empty to create an empty wallet.</li>
+<li><code>entropy</code> - <code>String</code>(optional): A string with random characters as additional entropy when generating accounts. If given it should be at least 32 characters.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Object</code>: The wallet object.</p>
+<h2 id='wallet-add'>wallet.add</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">account</span><span class="p">);</span>
+</code></pre>
+<p>Adds an account using a private key or account object to the wallet.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="p">{</span>
+        <span class="na">index</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="na">address</span><span class="p">:</span> <span class="s1">'0x2c7536E3605D9C16a7a3D7b1898e529396a65c23'</span><span class="p">,</span>
+        <span class="na">privateKey</span><span class="p">:</span> <span class="s1">'0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318'</span><span class="p">,</span>
+        <span class="na">signTransaction</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">tx</span><span class="p">){...},</span>
+        <span class="na">sign</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){...},</span>
+        <span class="na">encrypt</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">password</span><span class="p">){...}</span>
+    <span class="p">}</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>
+        <span class="na">privateKey</span><span class="p">:</span> <span class="s1">'0x348ce564d427a3311b6536bbcff9390d69395b06ed6c486954e971d960fe8709'</span><span class="p">,</span>
+        <span class="na">address</span><span class="p">:</span> <span class="s1">'0xb8CE9ab6943e0eCED004cDe8e3bBed6568B2Fa01'</span>
+    <span class="p">});</span>
+    <span class="o">&gt;</span> <span class="p">{</span>
+        <span class="na">index</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="na">address</span><span class="p">:</span> <span class="s1">'0xb8CE9ab6943e0eCED004cDe8e3bBed6568B2Fa01'</span><span class="p">,</span>
+        <span class="na">privateKey</span><span class="p">:</span> <span class="s1">'0x348ce564d427a3311b6536bbcff9390d69395b06ed6c486954e971d960fe8709'</span><span class="p">,</span>
+        <span class="na">signTransaction</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">tx</span><span class="p">){...},</span>
+        <span class="na">sign</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){...},</span>
+        <span class="na">encrypt</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">password</span><span class="p">){...}</span>
+    <span class="p">}</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>account</code> - <code>String</code> or <code>Object</code>: A private key or account object created with :ref:<code>meterify.eth.accounts.create() &lt;accounts-create&gt;</code>.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Object</code>: The added account.</p>
+<h2 id='wallet-remove'>wallet.remove</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">account</span><span class="p">);</span>
+</code></pre>
+<p>Removes an account from the wallet.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">;</span>
+    <span class="o">&gt;</span> <span class="nx">Wallet</span> <span class="p">{</span>
+        <span class="mi">0</span><span class="p">:</span> <span class="p">{...},</span>
+        <span class="s2">"0xF0109fC8DF283027b6285cc889F5aA624EaC1F55"</span><span class="p">:</span> <span class="p">{...}</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="p">{...},</span>
+        <span class="s2">"0xb8CE9ab6943e0eCED004cDe8e3bBed6568B2Fa01"</span><span class="p">:</span> <span class="p">{...}</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">'0xF0109fC8DF283027b6285cc889F5aA624EaC1F55'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">true</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">false</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>account</code> - <code>String</code> or <code>Number</code>: The account address, or index in the wallet.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Boolean</code>: <code>true</code> if the wallet was removed. <code>false</code> if it couldn&#39;t be found.</p>
+<h2 id='wallet-clear'>wallet.clear</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+</code></pre>
+<p>Securely empties the wallet and removes all its accounts.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+    <span class="o">&gt;</span> <span class="nx">Wallet</span> <span class="p">{</span>
+        <span class="nl">add</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){},</span>
+        <span class="nx">remove</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){},</span>
+        <span class="nx">save</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){},</span>
+        <span class="nx">load</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){},</span>
+        <span class="nx">clear</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){},</span>
+
+        <span class="nx">length</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="p">}</span>
+</code></pre>
+<p>Parameters</p>
+
+<p>none</p>
+
+<p>Returns</p>
+
+<p><code>Object</code>: The wallet object.</p>
+<h2 id='wallet-encrypt'>wallet.encrypt</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="nx">password</span><span class="p">);</span>
+</code></pre>
+<p>Encrypts all wallet accounts to an array of encrypted keystore v3 objects.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="p">[</span> <span class="p">{</span> <span class="na">version</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="na">id</span><span class="p">:</span> <span class="s1">'dcf8ab05-a314-4e37-b972-bf9b86f91372'</span><span class="p">,</span>
+        <span class="na">address</span><span class="p">:</span> <span class="s1">'06f702337909c06c82b09b7a22f0a2f0855d1f68'</span><span class="p">,</span>
+        <span class="na">crypto</span><span class="p">:</span>
+         <span class="p">{</span> <span class="na">ciphertext</span><span class="p">:</span> <span class="s1">'0de804dc63940820f6b3334e5a4bfc8214e27fb30bb7e9b7b74b25cd7eb5c604'</span><span class="p">,</span>
+           <span class="na">cipherparams</span><span class="p">:</span> <span class="p">[</span><span class="nb">Object</span><span class="p">],</span>
+           <span class="na">cipher</span><span class="p">:</span> <span class="s1">'aes-128-ctr'</span><span class="p">,</span>
+           <span class="na">kdf</span><span class="p">:</span> <span class="s1">'scrypt'</span><span class="p">,</span>
+           <span class="na">kdfparams</span><span class="p">:</span> <span class="p">[</span><span class="nb">Object</span><span class="p">],</span>
+           <span class="na">mac</span><span class="p">:</span> <span class="s1">'b2aac1485bd6ee1928665642bf8eae9ddfbc039c3a673658933d320bac6952e3'</span> <span class="p">}</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="na">version</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="na">id</span><span class="p">:</span> <span class="s1">'9e1c7d24-b919-4428-b10e-0f3ef79f7cf0'</span><span class="p">,</span>
+        <span class="na">address</span><span class="p">:</span> <span class="s1">'b5d89661b59a9af0b34f58d19138baa2de48baaf'</span><span class="p">,</span>
+        <span class="na">crypto</span><span class="p">:</span>
+         <span class="p">{</span> <span class="na">ciphertext</span><span class="p">:</span> <span class="s1">'d705ebed2a136d9e4db7e5ae70ed1f69d6a57370d5fbe06281eb07615f404410'</span><span class="p">,</span>
+           <span class="na">cipherparams</span><span class="p">:</span> <span class="p">[</span><span class="nb">Object</span><span class="p">],</span>
+           <span class="na">cipher</span><span class="p">:</span> <span class="s1">'aes-128-ctr'</span><span class="p">,</span>
+           <span class="na">kdf</span><span class="p">:</span> <span class="s1">'scrypt'</span><span class="p">,</span>
+           <span class="na">kdfparams</span><span class="p">:</span> <span class="p">[</span><span class="nb">Object</span><span class="p">],</span>
+           <span class="na">mac</span><span class="p">:</span> <span class="s1">'af9eca5eb01b0f70e909f824f0e7cdb90c350a802f04a9f6afe056602b92272b'</span> <span class="p">}</span> <span class="p">}</span>
+    <span class="p">]</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>password</code> - <code>String</code>: The password which will be used for encryption.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Array</code>: The encrypted keystore v3.</p>
+<h2 id='wallet-decrypt'>wallet.decrypt</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">decrypt</span><span class="p">(</span><span class="nx">keystoreArray</span><span class="p">,</span> <span class="nx">password</span><span class="p">);</span>
+</code></pre>
+<p>Decrypts keystore v3 objects.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">decrypt</span><span class="p">([</span>
+      <span class="p">{</span> <span class="na">version</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="na">id</span><span class="p">:</span> <span class="s1">'83191a81-aaca-451f-b63d-0c5f3b849289'</span><span class="p">,</span>
+      <span class="na">address</span><span class="p">:</span> <span class="s1">'06f702337909c06c82b09b7a22f0a2f0855d1f68'</span><span class="p">,</span>
+      <span class="na">crypto</span><span class="p">:</span>
+       <span class="p">{</span> <span class="na">ciphertext</span><span class="p">:</span> <span class="s1">'7d34deae112841fba86e3e6cf08f5398dda323a8e4d29332621534e2c4069e8d'</span><span class="p">,</span>
+         <span class="na">cipherparams</span><span class="p">:</span> <span class="p">{</span> <span class="na">iv</span><span class="p">:</span> <span class="s1">'497f4d26997a84d570778eae874b2333'</span> <span class="p">},</span>
+         <span class="na">cipher</span><span class="p">:</span> <span class="s1">'aes-128-ctr'</span><span class="p">,</span>
+         <span class="na">kdf</span><span class="p">:</span> <span class="s1">'scrypt'</span><span class="p">,</span>
+         <span class="na">kdfparams</span><span class="p">:</span>
+          <span class="p">{</span> <span class="na">dklen</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+            <span class="na">salt</span><span class="p">:</span> <span class="s1">'208dd732a27aa4803bb760228dff18515d5313fd085bbce60594a3919ae2d88d'</span><span class="p">,</span>
+            <span class="na">n</span><span class="p">:</span> <span class="mi">262144</span><span class="p">,</span>
+            <span class="na">r</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+            <span class="na">p</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span>
+         <span class="na">mac</span><span class="p">:</span> <span class="s1">'0062a853de302513c57bfe3108ab493733034bf3cb313326f42cf26ea2619cf9'</span> <span class="p">}</span> <span class="p">},</span>
+       <span class="p">{</span> <span class="na">version</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="na">id</span><span class="p">:</span> <span class="s1">'7d6b91fa-3611-407b-b16b-396efb28f97e'</span><span class="p">,</span>
+      <span class="na">address</span><span class="p">:</span> <span class="s1">'b5d89661b59a9af0b34f58d19138baa2de48baaf'</span><span class="p">,</span>
+      <span class="na">crypto</span><span class="p">:</span>
+       <span class="p">{</span> <span class="na">ciphertext</span><span class="p">:</span> <span class="s1">'cb9712d1982ff89f571fa5dbef447f14b7e5f142232bd2a913aac833730eeb43'</span><span class="p">,</span>
+         <span class="na">cipherparams</span><span class="p">:</span> <span class="p">{</span> <span class="na">iv</span><span class="p">:</span> <span class="s1">'8cccb91cb84e435437f7282ec2ffd2db'</span> <span class="p">},</span>
+         <span class="na">cipher</span><span class="p">:</span> <span class="s1">'aes-128-ctr'</span><span class="p">,</span>
+         <span class="na">kdf</span><span class="p">:</span> <span class="s1">'scrypt'</span><span class="p">,</span>
+         <span class="na">kdfparams</span><span class="p">:</span>
+          <span class="p">{</span> <span class="na">dklen</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+            <span class="na">salt</span><span class="p">:</span> <span class="s1">'08ba6736363c5586434cd5b895e6fe41ea7db4785bd9b901dedce77a1514e8b8'</span><span class="p">,</span>
+            <span class="na">n</span><span class="p">:</span> <span class="mi">262144</span><span class="p">,</span>
+            <span class="na">r</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+            <span class="na">p</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span>
+         <span class="na">mac</span><span class="p">:</span> <span class="s1">'d2eb068b37e2df55f56fa97a2bf4f55e072bef0dd703bfd917717d9dc54510f0'</span> <span class="p">}</span> <span class="p">}</span>
+    <span class="p">],</span> <span class="s1">'test'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="nx">Wallet</span> <span class="p">{</span>
+        <span class="mi">0</span><span class="p">:</span> <span class="p">{...},</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="p">{...},</span>
+        <span class="s2">"0xF0109fC8DF283027b6285cc889F5aA624EaC1F55"</span><span class="p">:</span> <span class="p">{...},</span>
+        <span class="s2">"0xD0122fC8DF283027b6285cc889F5aA624EaC1d23"</span><span class="p">:</span> <span class="p">{...}</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>keystoreArray</code> - <code>Array</code>: The encrypted keystore v3 objects to decrypt.</li>
+<li><code>password</code> - <code>String</code>: The password which will be used for encryption.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Object</code>: The wallet object.</p>
+<h2 id='wallet-save'>wallet.save</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">password</span> <span class="p">[,</span> <span class="nx">keyName</span><span class="p">]);</span>
+</code></pre>
+<p>Stores the wallet encrypted and as string in local storage.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="s1">'test#!$'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">true</span>
+</code></pre>
+<p>Note:  Browser only.</p>
+
+<p>Parameters</p>
+
+<ol>
+<li><code>password</code> - <code>String</code>: The password to encrypt the wallet.</li>
+<li><code>keyName</code> - <code>String</code>: (optional) The key used for the local storage position, defaults to <code>&quot;web3js_wallet&quot;</code>.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Boolean</code></p>
+<h2 id='wallet-load'>wallet.load</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">password</span> <span class="p">[,</span> <span class="nx">keyName</span><span class="p">]);</span>
+</code></pre>
+<p>Loads a wallet from local storage and decrypts it.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="s1">'test#!$'</span><span class="p">,</span> <span class="s1">'myWalletKey'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="nx">Wallet</span> <span class="p">{</span>
+        <span class="mi">0</span><span class="p">:</span> <span class="p">{...},</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="p">{...},</span>
+        <span class="s2">"0xF0109fC8DF283027b6285cc889F5aA624EaC1F55"</span><span class="p">:</span> <span class="p">{...},</span>
+        <span class="s2">"0xD0122fC8DF283027b6285cc889F5aA624EaC1d23"</span><span class="p">:</span> <span class="p">{...}</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+</code></pre>
+<p>Note:  Browser only.</p>
+
+<p>Parameters</p>
+
+<ol>
+<li><code>password</code> - <code>String</code>: The password to decrypt the wallet.</li>
+<li><code>keyName</code> - <code>String</code>: (optional) The key used for the localstorage position, defaults to <code>&quot;web3js_wallet&quot;</code>.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Object</code>: The wallet object.</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

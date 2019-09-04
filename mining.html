@@ -1,0 +1,427 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Meter Mining Guide</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="mining" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#meter-mining-guide" class="toc-h1 toc-link" data-title="Meter Mining Guide">Meter Mining Guide</a>
+          </li>
+          <li>
+            <a href="#making-the-case-for-mining" class="toc-h1 toc-link" data-title="Making The Case for Mining">Making The Case for Mining</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#how-to-mine" class="toc-h2 toc-link" data-title="How to Mine">How to Mine</a>
+                  </li>
+                  <li>
+                    <a href="#mining-hardware" class="toc-h2 toc-link" data-title="Mining Hardware">Mining Hardware</a>
+                  </li>
+                  <li>
+                    <a href="#the-meter-mining-pool" class="toc-h2 toc-link" data-title="The Meter Mining Pool">The Meter Mining Pool</a>
+                  </li>
+                  <li>
+                    <a href="#running-a-private-mining-pool-on-the-meter-network" class="toc-h2 toc-link" data-title="Running a Private Mining Pool on the Meter Network">Running a Private Mining Pool on the Meter Network</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='./index.html'>Documentation Home</a></li>
+            <li><a href='./meterify.html'>API Documentation</a></li>
+            <li><a href='./meterify.dapps.html'>DApp Tutorial</a></li>
+            <li><a href='./examples/index.html'>Examples</a></li>
+            <li><a href='./mining.html'>Mining Guide</a></li>
+            <li><a href='./contributing/index.html'>Contributing</a></li>
+            <li><hr></li>
+            <li><a href='https://www.meter.io/claim-your-meter/'>Request Test Tokens</a></li>
+            <li><a href='https://www.meter.io'>Meter.io</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='meter-mining-guide'>Meter Mining Guide</h1>
+<p>Mining is how cryptocurrency is created and one way to acquire coins. It is an intensive computing activity, and involves the use of specialized hardware to get rewarded for processing transaction blocks on a blockchain. Meter (MTR) itself is no exception to this.</p>
+
+<p>There are a number of interlinked factors to consider when it comes to mining. Just to name a few:</p>
+
+<ul>
+<li>Whether it is more economical or profitable to mine or buy cryptocurrency.</li>
+<li>What blockchain to focus on, and why.</li>
+<li>How to approach mining. For example, doing it all yourself, cooperating with others, or have somebody else do it for you.</li>
+</ul>
+<h1 id='making-the-case-for-mining'>Making The Case for Mining</h1>
+<p>Every miner will have their own reasons whether or not to choose mining. For example, under some circumstances it may be highly profitable to mine, while in other situations the costs may be too high and the return on investment too low.</p>
+
+<p>When it comes to owning equipment, the main expenses involved will include the cost of the equipment, and the expenses involved in operating and maintaining it. Mining equipment is specialized hardware that is much more expensive than a standard PC computer, and requires a big upfront investment. That equipment also needs to be housed somewhere, under optimal conditions, such as keeping it cool while running. And, the other big operational factor is the price of electricity and dependability of delivery wherever the equipment is being operated.</p>
+
+<p>When these challenges can be met in the right combination, the other side that needs to be looked at is the return. If the expenses are manageable, and the return on each coin is high enough, then that should equate to a good profit margin. However, it may be the case that at the time of mining a coin it is not actively being traded yet, but the anticipated return sometime later is expected to be profitable.</p>
+
+<p>Mining Meter at this time is in the testing phase, and production mining is set to begin soon. This provides a very good incentive for early adopters to more easily and economically acquire MTR through mining, before it becomes more widely available, and as more miners begin to direct their resources towards the Meter Network.     </p>
+<h2 id='how-to-mine'>How to Mine</h2>
+<p>Generally speaking, miners may choose to operate their own equipment, and gain all the rewards for their efforts, or join together with others in a mining pool, and share the rewards (see What is a Mining Pool). In some cases people can subscribe to a pool and gain some of the rewards, but without owning any equipment of their own. This is called cloud mining. Each has its own benefits and drawbacks, and it is up to each person to determine which approach suits them best.</p>
+
+<p>The remainder of this document is in support of those that already operate their own equipment, or wish to, and are interested in mining Meter. Primarily this will include those that will mine directly on their own, mining pools that choose to support Meter, or those that want to setup cloud mining for Meter. However, this information might also be of interest to others, such as those that are already part of a mining pool, and want to request that their pool add support for Meter.  </p>
+<h3 id='what-is-a-mining-pool'>What is a Mining Pool?</h3>
+<p>When miners group together to use their combined processing power this is called a mining pool. The rewards from mining are split proportionally according to the amount of hash power miners contribute to the pool.</p>
+
+<p>Mining pools can be split into both public ones and private ones. Public pools will generally charge a fee</p>
+
+<p>Mining is strictly voluntary, and as such miners can opt to switch their mining capabilities whenever they choose, according to their own objectives or criteria. For example, if a miner that traditionally was in a Bitcoin mining pool decided to divert some or all processing power to mine another blockchain, such as Meter, it is simply a case of making a few minor configuration changes to point the mining equipment to the new pool.</p>
+<h2 id='mining-hardware'>Mining Hardware</h2>
+<p>ASIC miners are specialized hardware machines that are required to efficiently mine Meter.</p>
+
+<p>Since Meter uses SHA256, the same as Bitcoin, miners can use the same hardware for mining both coins, and the mining setup for the two is very similar.</p>
+<h3 id='hardware-setup-guide'>Hardware Setup Guide</h3>
+<p>Meter uses an account based system, rather than the UTXO based method that Bitcoin uses. However, this difference only amounts to a small change that needs to be made in the configuration.</p>
+
+<p>Follow <a href="https://www.bitcoin.com/get-started/how-to-setup-a-bitcoin-asic-miner-and-what-they-are">this guide</a> on installing and configuring your ASICs.</p>
+<h2 id='the-meter-mining-pool'>The Meter Mining Pool</h2>
+<p>Meter is actively working with mining pool providers for future mining support. We have also setup two dedicated Meter mining pools for testing purpose:</p>
+<pre class="highlight plaintext"><code>stratum+tcp://34.222.111.82:3256
+stratum+tcp://54.184.235.97:3256
+</code></pre>
+<p>!&gt; BE AWARE NO REWARD will be distributed from these pools, as the logic has not been implemented yet.</p>
+
+<p>The following are the rough production parameters for different mining hardware on the Meter testnet, tuned to 1 meter = 10 kwh on an Antminer S9:</p>
+
+<table><thead>
+<tr>
+<th></th>
+<th>Power</th>
+<th>Hash</th>
+<th>Efficiency</th>
+<th>Meter/Day</th>
+<th>Margin Index</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AntMiner S9</td>
+<td>1323</td>
+<td>13.5</td>
+<td>98</td>
+<td>31.75</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>WhatsMiner M10</td>
+<td>3500</td>
+<td>55</td>
+<td>63.64</td>
+<td>129.36</td>
+<td>1.54</td>
+</tr>
+<tr>
+<td>Inno Silicon T3+ 52T</td>
+<td>2200</td>
+<td>52</td>
+<td>42.31</td>
+<td>79.42</td>
+<td>2.32</td>
+</tr>
+<tr>
+<td>AntMiner S17Pro</td>
+<td>2094</td>
+<td>53</td>
+<td>39.51</td>
+<td>80.95</td>
+<td>2.48</td>
+</tr>
+</tbody></table>
+
+<p>These adaption speed to hash rate changes are still relatively slow on the test net. However, closer to the mainnet launch, parameters will be tuned to more efficient mining hardware, and faster response speed.</p>
+
+<p>The Meter mining pool status statistics can be viewed at http://54.184.235.97:8088/stats.</p>
+<h3 id='miner-configurations'>Miner Configurations</h3>
+<p>In order to configure a miner to join the mining pool, the following fields in the <code>Miner configuration</code> tab of the ASIC&#39;s web panel need to be set:</p>
+
+<p><img src="images/conf_s9.png" alt="miner_configuration_example" /></p>
+
+<p>Where:</p>
+
+<ul>
+<li><code>URL</code> is the address of the mining pool.</li>
+<li><code>Worker</code> is the Meter wallet address.</li>
+<li><code>Password</code> is the password associated with the wallet.</li>
+</ul>
+<h2 id='running-a-private-mining-pool-on-the-meter-network'>Running a Private Mining Pool on the Meter Network</h2>
+<p>An example implementation of the Meter mining pool is available on <a href="https://github.com/meterio/meter-nomp">GitHub</a>, based on the open source nomp Bitcoin mining pool. This code has been provided to show the changes needed compared to standard bitcoin mining pools, and is not intended to be used in a production environment.</p>
+<h3 id='requirements'>Requirements</h3>
+<p>There are three things required to run Meter nomp: Node.js, a database (Redis or MySQL), and a connection to a coin daemon on the Meter Network, which is a Meter full node that monitors transactions on both the Meter PoW and PoS chains.</p>
+
+<p>On the testnet, coin deamons have already been setup by the Meter team. Normally a pool operator would setup its own coin daemon, and this will be possible in the future.</p>
+
+<p>The following are the minimal version requirements for Node.js and Redis. If older versions than the following are used (e.g. installed by a package manager) then problems will arise:</p>
+
+<ul>
+<li><a href="http://nodejs.org/">Node.js</a> v0.10+ (<a href="https://tecadmin.net/install-nodejs-with-nvm/#">follow these installation instructions</a>)</li>
+<li><a href="http://redis.io/">Redis</a> v2.6+ (<a href="http://redis.io/topics/quickstart">follow these instructions</a>)</li>
+</ul>
+
+<p>In Ubuntu, you could use the following command to install nodejs and Redis:</p>
+<pre class="highlight shell"><code><span class="gp">$ </span>sudo apt install npm
+<span class="gp">$ </span>sudo apt install nodejs
+<span class="gp">$ </span>sudo apt install redis
+</code></pre>
+<p><strong>Important Warning!</strong> It is always a good idea to learn about and understand any software that you are using. An important security measure to implement for nomp is to secure the database so it cannot be accessed externally. An easy way to do this for Redis is to include <code>bind 127.0.0.1</code> in your <code>redis.conf</code> file, and use a firewall with strict rules in place to only allow accessing Redis locally. For more information please read <a href="http://redis.io/topics/security">Security</a>. Another good place to start for additional information about using Redis for nomp is <a href="http://redis.io/topics/persistence">Data Persistence</a>.</p>
+<h3 id='downloading-amp-installing'>Downloading &amp; Installing</h3>
+<p>Clone the repository and run <code>npm update</code> for all the dependencies to be installed:</p>
+<pre class="highlight shell"><code>git clone https://github.com/meterio/meter-nomp.git
+<span class="nb">cd </span>meter-nomp
+npm install
+</code></pre><h3 id='portal-configuration'>Portal Configuration</h3>
+<p>Inside the <code>config_example.json</code> file, ensure the default configuration will work for your environment, then copy the file to <code>config.json</code>.</p>
+<pre class="highlight javascript"><code><span class="s2">"redis"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"host"</span><span class="p">:</span> <span class="s2">"127.0.0.1"</span><span class="p">,</span>
+    <span class="s2">"port"</span><span class="p">:</span> <span class="mi">6379</span>
+<span class="p">}</span>
+</code></pre><h3 id='coin-configuration'>Coin Configuration</h3>
+<p>Inside the <code>coins</code> directory, ensure that a json file exists for Meter coin, and if no create it. Here is an example of what the file should look like:</p>
+<pre class="highlight javascript"><code><span class="p">{</span>
+    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Meter"</span><span class="p">,</span>
+    <span class="s2">"symbol"</span><span class="p">:</span> <span class="s2">"MTR"</span><span class="p">,</span>
+    <span class="s2">"algorithm"</span><span class="p">:</span> <span class="s2">"sha256"</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre>
+<p>For additional documentation on how to configure coins and their different algorithms see <a href="https://github.com/meterio/meter-stratum-pool/blob/master/README.md#module-usage">these instructions</a>.</p>
+<h3 id='pool-configuration'>Pool Configuration</h3>
+<p>There is a json config file <code>meter.json</code> in the <code>pool_configs</code> sub-directory. Make sure to configure the appropriate fields in this file, especially the <code>rewardBeneficiary</code> and the <code>daemon</code>/<code>daemons</code> fields.</p>
+
+<p>In the following example, the pool owner&#39;s Meter address is <code>0a05c2d862ca051010698b69b54278cbaf945ccb</code> (no 0x in the beginning), the <code>rewardBeneficiary</code> should be configured accordingly.  In addition, the mining pool has to connect to a coin daemon (full node) on the Meter network. We will use a full node on the testnet （18.236.153.136）.  The value for Meter in the <code>daemons</code> section should be configured as follows:</p>
+<pre class="highlight javascript"><code><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">"host"</span><span class="p">:</span> <span class="s2">"test.meter.io"</span><span class="p">,</span>
+        <span class="s2">"port"</span><span class="p">:</span> <span class="mi">8332</span><span class="p">,</span>
+        <span class="s2">"user"</span><span class="p">:</span> <span class="s2">"testuser"</span><span class="p">,</span>
+        <span class="s2">"password"</span><span class="p">:</span> <span class="s2">"testpass"</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre>
+<p>There are many other fields in <code>meter.json</code>.  We could ignore them for now as  only limited functions was ported in the current Nomp implementation for Meter.</p>
+
+<p>For more information on these configuration options see the <a href="https://github.com/meterio/meter-stratum-pool/blob/master/README.md#module-usage">pool module documentation</a>.</p>
+<h3 id='start-the-portal'>Start the Portal</h3>
+<p>After all the configuration files have been set up, it is time to start the mining pool.</p>
+
+<p>If everything is installed locally on the host, initiate using the following:</p>
+<pre class="highlight shell"><code><span class="gp">$ </span>node init.js
+</code></pre>
+<p>The pool should now start running and we could see the status of the pool from the log and http://pool_ip:8080/stats</p>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1335 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>meterify.utils</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="meterify" data-languages="[&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#web3-utils" class="toc-h1 toc-link" data-title="web3.utils">web3.utils</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#randomhex" class="toc-h2 toc-link" data-title="randomHex">randomHex</a>
+                  </li>
+                  <li>
+                    <a href="#bn" class="toc-h2 toc-link" data-title="BN">BN</a>
+                  </li>
+                  <li>
+                    <a href="#isbn" class="toc-h2 toc-link" data-title="isBN">isBN</a>
+                  </li>
+                  <li>
+                    <a href="#isbignumber" class="toc-h2 toc-link" data-title="isBigNumber">isBigNumber</a>
+                  </li>
+                  <li>
+                    <a href="#keccak256" class="toc-h2 toc-link" data-title="keccak256">keccak256</a>
+                  </li>
+                  <li>
+                    <a href="#soliditysha3" class="toc-h2 toc-link" data-title="soliditySha3">soliditySha3</a>
+                  </li>
+                  <li>
+                    <a href="#ishex" class="toc-h2 toc-link" data-title="isHex">isHex</a>
+                  </li>
+                  <li>
+                    <a href="#ishexstrict" class="toc-h2 toc-link" data-title="isHexStrict">isHexStrict</a>
+                  </li>
+                  <li>
+                    <a href="#isaddress" class="toc-h2 toc-link" data-title="isAddress">isAddress</a>
+                  </li>
+                  <li>
+                    <a href="#tochecksumaddress" class="toc-h2 toc-link" data-title="toChecksumAddress">toChecksumAddress</a>
+                  </li>
+                  <li>
+                    <a href="#striphexprefix" class="toc-h2 toc-link" data-title="stripHexPrefix">stripHexPrefix</a>
+                  </li>
+                  <li>
+                    <a href="#checkaddresschecksum" class="toc-h2 toc-link" data-title="checkAddressChecksum">checkAddressChecksum</a>
+                  </li>
+                  <li>
+                    <a href="#tohex" class="toc-h2 toc-link" data-title="toHex">toHex</a>
+                  </li>
+                  <li>
+                    <a href="#tobn" class="toc-h2 toc-link" data-title="toBN">toBN</a>
+                  </li>
+                  <li>
+                    <a href="#hextonumberstring" class="toc-h2 toc-link" data-title="hexToNumberString">hexToNumberString</a>
+                  </li>
+                  <li>
+                    <a href="#hextonumber" class="toc-h2 toc-link" data-title="hexToNumber">hexToNumber</a>
+                  </li>
+                  <li>
+                    <a href="#numbertohex" class="toc-h2 toc-link" data-title="numberToHex">numberToHex</a>
+                  </li>
+                  <li>
+                    <a href="#hextoutf8" class="toc-h2 toc-link" data-title="hexToUtf8">hexToUtf8</a>
+                  </li>
+                  <li>
+                    <a href="#hextoascii" class="toc-h2 toc-link" data-title="hexToAscii">hexToAscii</a>
+                  </li>
+                  <li>
+                    <a href="#utf8tohex" class="toc-h2 toc-link" data-title="utf8ToHex">utf8ToHex</a>
+                  </li>
+                  <li>
+                    <a href="#asciitohex" class="toc-h2 toc-link" data-title="asciiToHex">asciiToHex</a>
+                  </li>
+                  <li>
+                    <a href="#hextobytes" class="toc-h2 toc-link" data-title="hexToBytes">hexToBytes</a>
+                  </li>
+                  <li>
+                    <a href="#bytestohex" class="toc-h2 toc-link" data-title="bytesToHex">bytesToHex</a>
+                  </li>
+                  <li>
+                    <a href="#towei" class="toc-h2 toc-link" data-title="toWei">toWei</a>
+                  </li>
+                  <li>
+                    <a href="#fromwei" class="toc-h2 toc-link" data-title="fromWei">fromWei</a>
+                  </li>
+                  <li>
+                    <a href="#unitmap" class="toc-h2 toc-link" data-title="unitMap">unitMap</a>
+                  </li>
+                  <li>
+                    <a href="#padleft" class="toc-h2 toc-link" data-title="padLeft">padLeft</a>
+                  </li>
+                  <li>
+                    <a href="#padright" class="toc-h2 toc-link" data-title="padRight">padRight</a>
+                  </li>
+                  <li>
+                    <a href="#totwoscomplement" class="toc-h2 toc-link" data-title="toTwosComplement">toTwosComplement</a>
+                  </li>
+                  <li>
+                    <a href="#getsignatureparameters" class="toc-h2 toc-link" data-title="getSignatureParameters">getSignatureParameters</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='./index.html'>Documentation Home</a></li>
+            <li><a href='./meterify.dapps.html'>DApp Tutorials</a></li>
+            <li><a href='./examples/index.html'>Examples</a></li>
+            <li><a href='./mining.html'>Mining Guide</a></li>
+            <li><hr></li>
+            <li>API Documentation</li>
+            <li><a href='./meterify.html'>meterify</a></li>
+            <li><a href='./meterify.module.options.html'>meterify.module.options</a></li>
+            <li><a href='./meterify.eth.html'>meterify.eth</a></li>
+            <li><a href='./meterify.eth.Contract.html'>meterify.eth.Contract</a></li>
+            <li><a href='./meterify.eth.accounts.html'>meterify.eth.accounts</a></li>
+            <li><a href='./meterify.utils.html'>meterify.utils</a></li>
+            <li><!--<a href='./meterify.eth.subscribe.html'>meterify.eth.subscribe</a></li>
+            <li><a href='./meterify.eth.Iban.html'>meterify.eth.Iban</a></li>
+            <li><a href='./meterify.eth.personal.html'>meterify.eth.personal</a></li>
+            <li><a href='./meterify.eth.ens.html'>meterify.eth.ens</a></li>
+            <li><a href='./meterify.eth.abi.html'>meterify.eth.abi</a></li>
+            <li><a href='./meterify.eth.net.html'>meterify.eth.net</a></li>
+            <li><a href='./meterify.shh.html'>meterify.shh</a>--></li>
+            <li><hr></li>
+            <li><a href='https://www.meter.io/claim-your-meter/'>Request Test Tokens</a></li>
+            <li><a href='https://www.meter.io'>Meter.io</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='web3-utils'>web3.utils</h1>
+<p>This package provides utility functions for dapps and other packages.</p>
+<h2 id='randomhex'>randomHex</h2><pre class="highlight javascript tab-javascript"><code>    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">randomHex</span><span class="p">(</span><span class="nx">size</span><span class="p">)</span>
+</code></pre>
+<p>The <a href="https://github.com/frozeman/randomHex">randomHex</a> library to generate cryptographically strong pseudo-random HEX strings from a given byte size.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">randomHex</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+    <span class="o">&gt;</span> <span class="s2">"0xa5b9d60f32436310afebcfda832817a68921beb782fabf7915cc0460b443116a"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">randomHex</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="o">&gt;</span> <span class="s2">"0x6892ffc6"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">randomHex</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="o">&gt;</span> <span class="s2">"0x99d6"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">randomHex</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="o">&gt;</span> <span class="s2">"0x9a"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">randomHex</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="o">&gt;</span> <span class="s2">"0x"</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>size</code> - <code>Number</code>: The byte size for the HEX string, e.g. <code>32</code> will result in a 32 bytes HEX string with 64 characters preficed with &quot;0x&quot;.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String</code>: The generated random HEX string.</p>
+
+<p><a name="utils-bn"></p>
+<h2 id='bn'>BN</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">BN</span><span class="p">(</span><span class="nx">mixed</span><span class="p">)</span>
+</code></pre>
+<p>The <a href="https://github.com/indutny/bn.js/">BN.js</a> library for calculating with big numbers in JavaScript. See the <a href="https://github.com/indutny/bn.js/">BN.js documentation</a> for details.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="kr">const</span> <span class="nx">BN</span> <span class="o">=</span> <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">BN</span><span class="p">;</span>
+
+    <span class="k">new</span> <span class="nx">BN</span><span class="p">(</span><span class="mi">1234</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
+    <span class="o">&gt;</span> <span class="s2">"1234"</span>
+
+    <span class="k">new</span> <span class="nx">BN</span><span class="p">(</span><span class="s1">'1234'</span><span class="p">).</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">BN</span><span class="p">(</span><span class="s1">'1'</span><span class="p">)).</span><span class="nx">toString</span><span class="p">();</span>
+    <span class="o">&gt;</span> <span class="s2">"1235"</span>
+
+    <span class="k">new</span> <span class="nx">BN</span><span class="p">(</span><span class="s1">'0xea'</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
+    <span class="o">&gt;</span> <span class="s2">"234"</span>
+</code></pre>
+<p>Note: For safe conversion of many types, incl <a href="http://mikemcl.github.io/bignumber.js/">BigNumber.js</a> use :ref:<code>utils.toBN &lt;utils-tobn&gt;</code></p>
+
+<p>Parameters</p>
+
+<ol>
+<li><code>value</code> - <code>String|Number</code>: A number, number string or HEX string to convert to a BN object.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Object</code>: The <code>BN.js &lt;https://github.com/indutny/bn.js/&gt;</code>_ instance.</p>
+<h2 id='isbn'>isBN</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isBN</span><span class="p">(</span><span class="nx">bn</span><span class="p">)</span>
+</code></pre>
+<p>Checks if a given value is a <code>BN.js &lt;https://github.com/indutny/bn.js/&gt;</code>_ instance.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="kr">const</span> <span class="nx">number</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BN</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isBN</span><span class="p">(</span><span class="nx">number</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">true</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>bn</code> - <code>Object</code>: An <code>BN.js &lt;https://github.com/indutny/bn.js/&gt;</code>_ instance.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Boolean</code></p>
+<h2 id='isbignumber'>isBigNumber</h2><pre class="highlight javascript tab-javascript"><code>    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isBigNumber</span><span class="p">(</span><span class="nx">bignumber</span><span class="p">)</span>
+</code></pre>
+<p>Checks if a given value is a <code>BigNumber.js &lt;http://mikemcl.github.io/bignumber.js/&gt;</code>_ instance.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="kr">const</span> <span class="nx">number</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BigNumber</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isBigNumber</span><span class="p">(</span><span class="nx">number</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">true</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>BigNumber</code> - <code>Object</code>: A <code>BigNumber.js &lt;http://mikemcl.github.io/bignumber.js/&gt;</code>_ instance.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Boolean</code></p>
+<h2 id='keccak256'>keccak256</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">keccak256</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">sha3</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="c1">// ALIAS</span>
+</code></pre>
+<p>Will calculate the keccak256 of the input.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">keccak256</span><span class="p">(</span><span class="s1">'234'</span><span class="p">);</span> <span class="c1">// taken as string</span>
+    <span class="o">&gt;</span> <span class="s2">"0xc1912fee45d61c87cc5ea59dae311904cd86b84fee17cc96966216f811ce6a79"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">keccak256</span><span class="p">(</span><span class="k">new</span> <span class="nx">BN</span><span class="p">(</span><span class="s1">'234'</span><span class="p">));</span>
+    <span class="o">&gt;</span> <span class="s2">"0xbc36789e7a1e281436464229828f817d6612f7b477d66591ff96a9e064bcc98a"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">keccak256</span><span class="p">(</span><span class="mi">234</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">null</span> <span class="c1">// can't calculate the hash of a number</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">keccak256</span><span class="p">(</span><span class="mh">0xea</span><span class="p">);</span> <span class="c1">// same as above, just the HEX representation of the number</span>
+    <span class="o">&gt;</span> <span class="kc">null</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">keccak256</span><span class="p">(</span><span class="s1">'0xea'</span><span class="p">);</span> <span class="c1">// will be converted to a byte array first, and then hashed</span>
+    <span class="o">&gt;</span> <span class="s2">"0x2f20677459120677484f7104c76deb6846a2c071f9b3152c103bb12cd54d1a4a"</span>
+</code></pre>
+<p>Note:  To mimic the keccak256 behaviour of solidity use <a href="#utils-soliditysha3">soliditySha3</a>`</p>
+
+<p>Parameters</p>
+
+<ol>
+<li><code>string</code> - <code>String</code>: A string to hash.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String</code>: the result hash.</p>
+
+<p><a name="utils-soliditysha3"></p>
+<h2 id='soliditysha3'>soliditySha3</h2><pre class="highlight javascript tab-javascript"><code>    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">soliditySha3</span><span class="p">(</span><span class="nx">param1</span> <span class="p">[,</span> <span class="nx">param2</span><span class="p">,</span> <span class="p">...])</span>
+</code></pre>
+<p>Will calculate the sha3 of given input parameters in the same way solidity would.
+This means arguments will be ABI converted and tightly packed before being hashed.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">soliditySha3</span><span class="p">(</span><span class="s1">'234564535'</span><span class="p">,</span> <span class="s1">'0xfff23243'</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">);</span>
+    <span class="c1">// auto detects:        uint256,      bytes,     bool,   int256</span>
+    <span class="o">&gt;</span> <span class="s2">"0x3e27a893dc40ef8a7f0841d96639de2f58a132be5ae466d40087a2cfa83b7179"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">soliditySha3</span><span class="p">(</span><span class="s1">'Hello!%'</span><span class="p">);</span> <span class="c1">// auto detects: string</span>
+    <span class="o">&gt;</span> <span class="s2">"0x661136a4267dba9ccdf6bfddb7c00e714de936674c4bdb065a531cf1cb15c7fc"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">soliditySha3</span><span class="p">(</span><span class="s1">'234'</span><span class="p">);</span> <span class="c1">// auto detects: uint256</span>
+    <span class="o">&gt;</span> <span class="s2">"0x61c831beab28d67d1bb40b5ae1a11e2757fa842f031a2d0bc94a7867bc5d26c2"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">soliditySha3</span><span class="p">(</span><span class="mh">0xea</span><span class="p">);</span> <span class="c1">// same as above</span>
+    <span class="o">&gt;</span> <span class="s2">"0x61c831beab28d67d1bb40b5ae1a11e2757fa842f031a2d0bc94a7867bc5d26c2"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">soliditySha3</span><span class="p">(</span><span class="k">new</span> <span class="nx">BN</span><span class="p">(</span><span class="s1">'234'</span><span class="p">));</span> <span class="c1">// same as above</span>
+    <span class="o">&gt;</span> <span class="s2">"0x61c831beab28d67d1bb40b5ae1a11e2757fa842f031a2d0bc94a7867bc5d26c2"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">soliditySha3</span><span class="p">({</span><span class="na">type</span><span class="p">:</span> <span class="s1">'uint256'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="s1">'234'</span><span class="p">}));</span> <span class="c1">// same as above</span>
+    <span class="o">&gt;</span> <span class="s2">"0x61c831beab28d67d1bb40b5ae1a11e2757fa842f031a2d0bc94a7867bc5d26c2"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">soliditySha3</span><span class="p">({</span><span class="na">t</span><span class="p">:</span> <span class="s1">'uint'</span><span class="p">,</span> <span class="na">v</span><span class="p">:</span> <span class="k">new</span> <span class="nx">BN</span><span class="p">(</span><span class="s1">'234'</span><span class="p">)}));</span> <span class="c1">// same as above</span>
+    <span class="o">&gt;</span> <span class="s2">"0x61c831beab28d67d1bb40b5ae1a11e2757fa842f031a2d0bc94a7867bc5d26c2"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">soliditySha3</span><span class="p">(</span><span class="s1">'0x407D73d8a49eeb85D32Cf465507dd71d507100c1'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0x4e8ebbefa452077428f93c9520d3edd60594ff452a29ac7d2ccc11d47f3ab95b"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">soliditySha3</span><span class="p">({</span><span class="na">t</span><span class="p">:</span> <span class="s1">'bytes'</span><span class="p">,</span> <span class="na">v</span><span class="p">:</span> <span class="s1">'0x407D73d8a49eeb85D32Cf465507dd71d507100c1'</span><span class="p">});</span>
+    <span class="o">&gt;</span> <span class="s2">"0x4e8ebbefa452077428f93c9520d3edd60594ff452a29ac7d2ccc11d47f3ab95b"</span> <span class="c1">// same result as above</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">soliditySha3</span><span class="p">({</span><span class="na">t</span><span class="p">:</span> <span class="s1">'address'</span><span class="p">,</span> <span class="na">v</span><span class="p">:</span> <span class="s1">'0x407D73d8a49eeb85D32Cf465507dd71d507100c1'</span><span class="p">});</span>
+    <span class="o">&gt;</span> <span class="s2">"0x4e8ebbefa452077428f93c9520d3edd60594ff452a29ac7d2ccc11d47f3ab95b"</span> <span class="c1">// same as above, but will do a checksum check, if its multi case</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">soliditySha3</span><span class="p">({</span><span class="na">t</span><span class="p">:</span> <span class="s1">'bytes32'</span><span class="p">,</span> <span class="na">v</span><span class="p">:</span> <span class="s1">'0x407D73d8a49eeb85D32Cf465507dd71d507100c1'</span><span class="p">});</span>
+    <span class="o">&gt;</span> <span class="s2">"0x3c69a194aaf415ba5d6afca734660d0a3d45acdc05d54cd1ca89a8988e7625b4"</span> <span class="c1">// different result as above</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">soliditySha3</span><span class="p">({</span><span class="na">t</span><span class="p">:</span> <span class="s1">'string'</span><span class="p">,</span> <span class="na">v</span><span class="p">:</span> <span class="s1">'Hello!%'</span><span class="p">},</span> <span class="p">{</span><span class="na">t</span><span class="p">:</span> <span class="s1">'int8'</span><span class="p">,</span> <span class="na">v</span><span class="p">:</span><span class="o">-</span><span class="mi">23</span><span class="p">},</span> <span class="p">{</span><span class="na">t</span><span class="p">:</span> <span class="s1">'address'</span><span class="p">,</span> <span class="na">v</span><span class="p">:</span> <span class="s1">'0x85F43D8a49eeB85d32Cf465507DD71d507100C1d'</span><span class="p">});</span>
+    <span class="o">&gt;</span> <span class="s2">"0xa13b31627c1ed7aaded5aecec71baf02fe123797fffd45e662eac8e06fbe4955"</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>paramX</code> - <code>Mixed</code>: Any type, or an object with <code>{type: &#39;uint&#39;, value: &#39;123456&#39;}</code> or <code>{t: &#39;bytes&#39;, v: &#39;0xfff456&#39;}</code>. Basic types are autodetected as follows:</li>
+</ol>
+
+<p>- <code>String</code> non numerical UTF-8 string is interpreted as <code>string</code>.
+    - <code>String|Number|BN|HEX</code> positive number is interpreted as <code>uint256</code>.
+    - <code>String|Number|BN</code> negative number is interpreted as <code>int256</code>.
+    - <code>Boolean</code> as <code>bool</code>.
+    - <code>String</code> HEX string with leading <code>0x</code> is interpreted as <code>bytes</code>.
+    - <code>HEX</code> HEX number representation is interpreted as <code>uint256</code>.</p>
+
+<p>Returns</p>
+
+<p><code>String</code>: the result hash.</p>
+<h2 id='ishex'>isHex</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isHex</span><span class="p">(</span><span class="nx">hex</span><span class="p">)</span>
+</code></pre>
+<p>Checks if a given string is a HEX string.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isHex</span><span class="p">(</span><span class="s1">'0xc1912'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">true</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isHex</span><span class="p">(</span><span class="mh">0xc1912</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">true</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isHex</span><span class="p">(</span><span class="s1">'c1912'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">true</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isHex</span><span class="p">(</span><span class="mi">345</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">true</span> <span class="c1">// this is tricky, as 345 can be a a HEX representation or a number, be careful when not having a 0x in front!</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isHex</span><span class="p">(</span><span class="s1">'0xZ1912'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">false</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isHex</span><span class="p">(</span><span class="s1">'Hello'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">false</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>hex</code> - <code>String|HEX</code>: The given HEX string.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Boolean</code></p>
+<h2 id='ishexstrict'>isHexStrict</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isHexStrict</span><span class="p">(</span><span class="nx">hex</span><span class="p">)</span>
+</code></pre>
+<p>Checks if a given string is a HEX string. Difference to <code>meterify.utils.isHex()</code> is that it expects HEX to be prefixed with <code>0x</code>.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isHexStrict</span><span class="p">(</span><span class="s1">'0xc1912'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">true</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isHexStrict</span><span class="p">(</span><span class="mh">0xc1912</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">false</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isHexStrict</span><span class="p">(</span><span class="s1">'c1912'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">false</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isHexStrict</span><span class="p">(</span><span class="mi">345</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">false</span> <span class="c1">// this is tricky, as 345 can be a a HEX representation or a number, be careful when not having a 0x in front!</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isHexStrict</span><span class="p">(</span><span class="s1">'0xZ1912'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">false</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isHex</span><span class="p">(</span><span class="s1">'Hello'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">false</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>hex</code> - <code>String|HEX</code>: The given HEX string.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Boolean</code></p>
+<h2 id='isaddress'>isAddress</h2><pre class="highlight javascript tab-javascript"><code>    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isAddress</span><span class="p">(</span><span class="nx">address</span><span class="p">,</span>  <span class="p">[,</span> <span class="nx">chainId</span><span class="p">])</span>
+</code></pre>
+<p>Checks if a given string is a valid Meter address.
+It will also check the checksum, if the address has upper and lowercase letters.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isAddress</span><span class="p">(</span><span class="s1">'0xc1912fee45d61c87cc5ea59dae31190fffff232d'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">true</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isAddress</span><span class="p">(</span><span class="s1">'c1912fee45d61c87cc5ea59dae31190fffff232d'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">true</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isAddress</span><span class="p">(</span><span class="s1">'0XC1912FEE45D61C87CC5EA59DAE31190FFFFF232D'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">true</span> <span class="c1">// as all is uppercase, no checksum will be checked</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isAddress</span><span class="p">(</span><span class="s1">'0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">true</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isAddress</span><span class="p">(</span><span class="s1">'0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">false</span> <span class="c1">// wrong checksum</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isAddress</span><span class="p">(</span><span class="s1">'0x5aaEB6053f3e94c9b9a09f33669435E7ef1bEAeD'</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">true</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>address</code> - <code>String</code>: An address string.</li>
+<li><code>chainId</code> - <code>number</code> (optional): Chain id where checksummed address should be valid, defaults to <code>null</code>. <a href="https://github.com/rsksmart/RSKIPs/blob/master/IPs/RSKIP60.md">RSKIP-60</a> for details.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Boolean</code></p>
+<h2 id='tochecksumaddress'>toChecksumAddress</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toChecksumAddress</span><span class="p">(</span><span class="nx">address</span><span class="p">[,</span> <span class="nx">chainId</span><span class="p">])</span>
+</code></pre>
+<p>Will convert an upper or lowercase Meter address to a checksum address.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toChecksumAddress</span><span class="p">(</span><span class="s1">'0xc1912fee45d61c87cc5ea59dae31190fffff232d'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toChecksumAddress</span><span class="p">(</span><span class="s1">'0XC1912FEE45D61C87CC5EA59DAE31190FFFFF232D'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d"</span> <span class="c1">// same as above</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toChecksumAddress</span><span class="p">(</span><span class="s1">'0x5aaeb6053f3e94c9b9a09f33669435e7ef1beaed'</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0x5aaEB6053f3e94c9b9a09f33669435E7ef1bEAeD"</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>address</code> - <code>String</code>: An address string.</li>
+<li><code>chainId</code> - <code>number</code> (optional): Chain id where checksummed address should be valid, defaults to <code>null</code>. <a href="https://github.com/rsksmart/RSKIPs/blob/master/IPs/RSKIP60.md">RSKIP-60</a> for details.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String</code>: The checksum address.</p>
+<h2 id='striphexprefix'>stripHexPrefix</h2><pre class="highlight javascript tab-javascript"><code>     <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">stripHexPrefix</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span>
+</code></pre>
+<p>Removes the prefix <code>0x</code> from a given hex if it exists.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>      <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">stripHexPrefix</span><span class="p">(</span><span class="s1">'0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'</span><span class="p">);</span>
+     <span class="o">&gt;</span> <span class="s2">"c1912fEE45d61C87Cc5EA59DaE31190FFFFf232d"</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>hex</code> - <code>String</code>: Hex</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String</code>: Hex without prefix.</p>
+<h2 id='checkaddresschecksum'>checkAddressChecksum</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">checkAddressChecksum</span><span class="p">(</span><span class="nx">address</span> <span class="p">[,</span> <span class="nx">chainId</span><span class="p">])</span>
+</code></pre>
+<p>Checks the checksum of a given address. Will also return false on non-checksum addresses.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">checkAddressChecksum</span><span class="p">(</span><span class="s1">'0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">true</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">checkAddressChecksum</span><span class="p">(</span><span class="s1">'0x5aAeb6053F3e94c9b9A09F33669435E7EF1BEaEd'</span><span class="p">,</span> <span class="mi">31</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="kc">true</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>address</code> - <code>String</code>: An address string.</li>
+<li><code>chainId</code> - <code>number</code> (optional): Chain id where checksummed address should be valid, defaults to <code>null</code>. <a href="https://github.com/rsksmart/RSKIPs/blob/master/IPs/RSKIP60.md">RSKIP-60</a> for details.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Boolean</code>: <code>true</code> when the checksum of the address is valid, <code>false</code> if its not a checksum address, or the checksum is invalid.</p>
+<h2 id='tohex'>toHex</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toHex</span><span class="p">(</span><span class="nx">mixed</span><span class="p">)</span>
+</code></pre>
+<p>Will auto convert any given value to HEX.
+Number strings will interpreted as numbers.
+Text strings will be interpreted as UTF-8 strings.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toHex</span><span class="p">(</span><span class="s1">'234'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0xea"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toHex</span><span class="p">(</span><span class="mi">234</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0xea"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toHex</span><span class="p">(</span><span class="k">new</span> <span class="nx">BN</span><span class="p">(</span><span class="s1">'234'</span><span class="p">));</span>
+    <span class="o">&gt;</span> <span class="s2">"0xea"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toHex</span><span class="p">(</span><span class="k">new</span> <span class="nx">BigNumber</span><span class="p">(</span><span class="s1">'234'</span><span class="p">));</span>
+    <span class="o">&gt;</span> <span class="s2">"0xea"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toHex</span><span class="p">(</span><span class="s1">'I have 100€'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0x49206861766520313030e282ac"</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>value</code> - <code>String|Number|BN|BigNumber</code>: The input to convert to HEX.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String</code>: The resulting HEX string.</p>
+
+<p><a name="utils-tobn"></p>
+<h2 id='tobn'>toBN</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toBN</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span>
+</code></pre>
+<p>Will safely convert any given value (including <a href="http://mikemcl.github.io/bignumber.js/">BigNumber.js</a> instances) into a <a href="https://github.com/indutny/bn.js/">BN.js</a> instance, for handling big numbers in JavaScript.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toBN</span><span class="p">(</span><span class="mi">1234</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
+    <span class="o">&gt;</span> <span class="s2">"1234"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toBN</span><span class="p">(</span><span class="s1">'1234'</span><span class="p">).</span><span class="nx">add</span><span class="p">(</span><span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toBN</span><span class="p">(</span><span class="s1">'1'</span><span class="p">)).</span><span class="nx">toString</span><span class="p">();</span>
+    <span class="o">&gt;</span> <span class="s2">"1235"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toBN</span><span class="p">(</span><span class="s1">'0xea'</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
+    <span class="o">&gt;</span> <span class="s2">"234"</span>
+</code></pre>
+<p>Note: For just the <a href="https://github.com/indutny/bn.js/">BN.js</a> class use <a href="#utils-bn">utils.BN</a>
+Parameters</p>
+
+<ol>
+<li><code>number</code> - <code>String|Number|HEX</code>: Number to convert to a big number.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Object</code>: The <code>BN.js &lt;https://github.com/indutny/bn.js/&gt;</code>_ instance.</p>
+<h2 id='hextonumberstring'>hexToNumberString</h2><pre class="highlight javascript tab-javascript"><code>    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">hexToNumberString</span><span class="p">(</span><span class="nx">hex</span><span class="p">)</span>
+</code></pre>
+<p>Returns the number representation of a given HEX value as a string.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">hexToNumberString</span><span class="p">(</span><span class="s1">'0xea'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"234"</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>hexString</code> - <code>String|HEX</code>: A string to hash.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String</code>: The number as a string.</p>
+<h2 id='hextonumber'>hexToNumber</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">hexToNumber</span><span class="p">(</span><span class="nx">hex</span><span class="p">)</span>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toDecimal</span><span class="p">(</span><span class="nx">hex</span><span class="p">)</span> <span class="c1">// ALIAS, deprecated</span>
+</code></pre>
+<p>Returns the number representation of a given HEX value.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">hexToNumber</span><span class="p">(</span><span class="s1">'0xea'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="mi">234</span>
+</code></pre>
+<p>Note: This is not useful for big numbers, use <a href="#utils-tobn">utils.toBN</a> instead.</p>
+
+<p>Parameters</p>
+
+<ol>
+<li><code>hexString</code> - <code>String|HEX</code>: A string to hash.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Number</code></p>
+<h2 id='numbertohex'>numberToHex</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">numberToHex</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">fromDecimal</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="c1">// ALIAS, deprecated</span>
+</code></pre>
+<p>Returns the HEX representation of a given number value.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">numberToHex</span><span class="p">(</span><span class="s1">'234'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s1">'0xea'</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>number</code> - <code>String|Number|BN|BigNumber</code>: A number as string or number.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String</code>: The HEX value of the given number.</p>
+<h2 id='hextoutf8'>hexToUtf8</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">hexToUtf8</span><span class="p">(</span><span class="nx">hex</span><span class="p">)</span>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">hexToString</span><span class="p">(</span><span class="nx">hex</span><span class="p">)</span> <span class="c1">// ALIAS</span>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toUtf8</span><span class="p">(</span><span class="nx">hex</span><span class="p">)</span> <span class="c1">// ALIAS, deprecated</span>
+</code></pre>
+<p>Returns the UTF-8 string representation of a given HEX value.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">hexToUtf8</span><span class="p">(</span><span class="s1">'0x49206861766520313030e282ac'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"I have 100€"</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>hex</code> - <code>String</code>: A HEX string to convert to a UTF-8 string.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String</code>: The UTF-8 string.</p>
+<h2 id='hextoascii'>hexToAscii</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">hexToAscii</span><span class="p">(</span><span class="nx">hex</span><span class="p">)</span>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toAscii</span><span class="p">(</span><span class="nx">hex</span><span class="p">)</span> <span class="c1">// ALIAS, deprecated</span>
+</code></pre>
+<p>Returns the ASCII string representation of a given HEX value.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">hexToAscii</span><span class="p">(</span><span class="s1">'0x4920686176652031303021'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"I have 100!"</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>hex</code> - <code>String</code>: A HEX string to convert to a ASCII string.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String</code>: The ASCII string.</p>
+
+<p><a name="utils-utf8tohex"></p>
+<h2 id='utf8tohex'>utf8ToHex</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">utf8ToHex</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">stringToHex</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="c1">// ALIAS</span>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">fromUtf8</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="c1">// ALIAS, deprecated</span>
+</code></pre>
+<p>Returns the HEX representation of a given UTF-8 string.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">utf8ToHex</span><span class="p">(</span><span class="s1">'I have 100€'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0x49206861766520313030e282ac"</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>string</code> - <code>String</code>: A UTF-8 string to convert to a HEX string.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String</code>: The HEX string.</p>
+<h2 id='asciitohex'>asciiToHex</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">asciiToHex</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">fromAscii</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="c1">// ALIAS, deprecated</span>
+</code></pre>
+<p>Returns the HEX representation of a given ASCII string. If you would like to transform an ASCII string into a valid <code>bytes4</code>, <code>bytes8</code> etc. value then please pass the correct length as the second parameter.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">asciiToHex</span><span class="p">(</span><span class="s1">'I have 100!'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0x4920686176652031303021000000000000000000000000000000000000000000"</span>
+
+    <span class="c1">// transforming to a bytes4 value:</span>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">asciiToHex</span><span class="p">(</span><span class="s1">'yes'</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+
+    <span class="c1">// transforming to a bytes8 value:</span>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">asciiToHex</span><span class="p">(</span><span class="s1">'yes'</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
+
+    <span class="c1">//etc.</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>string</code> - <code>String</code>: A ASCII string to convert to a HEX string.</li>
+<li><code>length</code> - <code>Number</code>: The length of the returned hex string. The default size is <code>32</code> e.g.: <code>bytes32</code>.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String</code>: The HEX string.</p>
+<h2 id='hextobytes'>hexToBytes</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">hexToBytes</span><span class="p">(</span><span class="nx">hex</span><span class="p">)</span>
+</code></pre>
+<p>Returns a byte array from the given HEX string.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">hexToBytes</span><span class="p">(</span><span class="s1">'0x000000ea'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">234</span> <span class="p">]</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">hexToBytes</span><span class="p">(</span><span class="mh">0x000000ea</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="p">[</span> <span class="mi">234</span> <span class="p">]</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>hex</code> - <code>String|HEX</code>: A HEX to convert.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Array</code>: The byte array.</p>
+<h2 id='bytestohex'>bytesToHex</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">bytesToHex</span><span class="p">(</span><span class="nx">byteArray</span><span class="p">)</span>
+</code></pre>
+<p>Returns a HEX string from a byte array.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">bytesToHex</span><span class="p">([</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">36</span> <span class="p">]);</span>
+    <span class="o">&gt;</span> <span class="s2">"0x48656c6c6f2125"</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>byteArray</code> - <code>Array</code>: A byte array to convert.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String</code>: The HEX string.</p>
+<h2 id='towei'>toWei</h2><pre class="highlight javascript tab-javascript"><code>    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toWei</span><span class="p">(</span><span class="nx">number</span> <span class="p">[,</span> <span class="nx">unit</span><span class="p">])</span>
+</code></pre>
+<p>Converts a Meter value into <code>wei</code>.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toWei</span><span class="p">(</span><span class="s1">'1'</span><span class="p">,</span> <span class="s1">'ether'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"1000000000000000000"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toWei</span><span class="p">(</span><span class="s1">'1'</span><span class="p">,</span> <span class="s1">'finney'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"1000000000000000"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toWei</span><span class="p">(</span><span class="s1">'1'</span><span class="p">,</span> <span class="s1">'szabo'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"1000000000000"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toWei</span><span class="p">(</span><span class="s1">'1'</span><span class="p">,</span> <span class="s1">'shannon'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"1000000000"</span>
+</code></pre>
+<p>Note: <code>wei</code> are the smallest conversion unit, and you should always make calculations in <code>wei</code> and convert only for display reasons.</p>
+
+<p>Parameters</p>
+
+<ol>
+<li><code>number</code> - <code>String|BN</code>: The value.</li>
+<li><code>unit</code> - <code>String</code> (optional, defaults to <code>&quot;ether&quot;</code>): The ether to convert from. Possible units are:
+
+<ul>
+<li><code>noether</code>: &#39;0&#39;</li>
+<li><code>wei</code>: &#39;1&#39;</li>
+<li><code>kwei</code>: &#39;1000&#39;</li>
+<li><code>Kwei</code>: &#39;1000&#39;</li>
+<li><code>babbage</code>: &#39;1000&#39;</li>
+<li><code>femtoether</code>: &#39;1000&#39;</li>
+<li><code>mwei</code>: &#39;1000000&#39;</li>
+<li><code>Mwei</code>: &#39;1000000&#39;</li>
+<li><code>lovelace</code>: &#39;1000000&#39;</li>
+<li><code>picoether</code>: &#39;1000000&#39;</li>
+<li><code>gwei</code>: &#39;1000000000&#39;</li>
+<li><code>Gwei</code>: &#39;1000000000&#39;</li>
+<li><code>shannon</code>: &#39;1000000000&#39;</li>
+<li><code>nanoether</code>: &#39;1000000000&#39;</li>
+<li><code>nano</code>: &#39;1000000000&#39;</li>
+<li><code>szabo</code>: &#39;1000000000000&#39;</li>
+<li><code>microether</code>: &#39;1000000000000&#39;</li>
+<li><code>micro</code>: &#39;1000000000000&#39;</li>
+<li><code>finney</code>: &#39;1000000000000000&#39;</li>
+<li><code>milliether</code>: &#39;1000000000000000&#39;</li>
+<li><code>milli</code>: &#39;1000000000000000&#39;</li>
+<li><code>ether</code>: &#39;1000000000000000000&#39;</li>
+<li><code>kether</code>: &#39;1000000000000000000000&#39;</li>
+<li><code>grand</code>: &#39;1000000000000000000000&#39;</li>
+<li><code>mether</code>: &#39;1000000000000000000000000&#39;</li>
+<li><code>gether</code>: &#39;1000000000000000000000000000&#39;</li>
+<li><code>tether</code>: &#39;1000000000000000000000000000000&#39;</li>
+</ul></li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String|BN</code>: If a string is given it returns a number string, otherwise a <a href="https://github.com/indutny/bn.js/">BN.js</a> instance.</p>
+<h2 id='fromwei'>fromWei</h2><pre class="highlight javascript tab-javascript"><code>    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">fromWei</span><span class="p">(</span><span class="nx">number</span> <span class="p">[,</span> <span class="nx">unit</span><span class="p">])</span>
+</code></pre>
+<p>Converts any <code>wei</code> value into another value.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">fromWei</span><span class="p">(</span><span class="s1">'1'</span><span class="p">,</span> <span class="s1">'ether'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0.000000000000000001"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">fromWei</span><span class="p">(</span><span class="s1">'1'</span><span class="p">,</span> <span class="s1">'finney'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0.000000000000001"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">fromWei</span><span class="p">(</span><span class="s1">'1'</span><span class="p">,</span> <span class="s1">'szabo'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0.000000000001"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">fromWei</span><span class="p">(</span><span class="s1">'1'</span><span class="p">,</span> <span class="s1">'shannon'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0.000000001"</span>
+</code></pre>
+<p>Note: <code>wei</code> are the smallest conversion unit, and you should always make calculations in wei and convert only for display reasons.</p>
+
+<p>Parameters</p>
+
+<ol>
+<li><code>number</code> - <code>String|BN</code>: The value in wei.</li>
+<li><code>unit</code> - <code>String</code> (optional, defaults to <code>&quot;ether&quot;</code>): The ether to convert to. Possible units are:
+
+<ul>
+<li><code>noether</code>: &#39;0&#39;</li>
+<li><code>wei</code>: &#39;1&#39;</li>
+<li><code>kwei</code>: &#39;1000&#39;</li>
+<li><code>Kwei</code>: &#39;1000&#39;</li>
+<li><code>babbage</code>: &#39;1000&#39;</li>
+<li><code>femtoether</code>: &#39;1000&#39;</li>
+<li><code>mwei</code>: &#39;1000000&#39;</li>
+<li><code>Mwei</code>: &#39;1000000&#39;</li>
+<li><code>lovelace</code>: &#39;1000000&#39;</li>
+<li><code>picoether</code>: &#39;1000000&#39;</li>
+<li><code>gwei</code>: &#39;1000000000&#39;</li>
+<li><code>Gwei</code>: &#39;1000000000&#39;</li>
+<li><code>shannon</code>: &#39;1000000000&#39;</li>
+<li><code>nanoether</code>: &#39;1000000000&#39;</li>
+<li><code>nano</code>: &#39;1000000000&#39;</li>
+<li><code>szabo</code>: &#39;1000000000000&#39;</li>
+<li><code>microether</code>: &#39;1000000000000&#39;</li>
+<li><code>micro</code>: &#39;1000000000000&#39;</li>
+<li><code>finney</code>: &#39;1000000000000000&#39;</li>
+<li><code>milliether</code>: &#39;1000000000000000&#39;</li>
+<li><code>milli</code>: &#39;1000000000000000&#39;</li>
+<li><code>ether</code>: &#39;1000000000000000000&#39;</li>
+<li><code>kether</code>: &#39;1000000000000000000000&#39;</li>
+<li><code>grand</code>: &#39;1000000000000000000000&#39;</li>
+<li><code>mether</code>: &#39;1000000000000000000000000&#39;</li>
+<li><code>gether</code>: &#39;1000000000000000000000000000&#39;</li>
+<li><code>tether</code>: &#39;1000000000000000000000000000000&#39;</li>
+</ul></li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String</code>: It always returns a string number.</p>
+<h2 id='unitmap'>unitMap</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">unitMap</span>
+</code></pre>
+<p>Shows all possible values and their amount in <code>wei</code>.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">unitMap</span>
+    <span class="o">&gt;</span> <span class="p">{</span>
+        <span class="na">noether</span><span class="p">:</span> <span class="s1">'0'</span><span class="p">,</span>
+        <span class="na">wei</span><span class="p">:</span>        <span class="s1">'1'</span><span class="p">,</span>
+        <span class="na">kwei</span><span class="p">:</span>       <span class="s1">'1000'</span><span class="p">,</span>
+        <span class="na">Kwei</span><span class="p">:</span>       <span class="s1">'1000'</span><span class="p">,</span>
+        <span class="na">babbage</span><span class="p">:</span>    <span class="s1">'1000'</span><span class="p">,</span>
+        <span class="na">femtoether</span><span class="p">:</span> <span class="s1">'1000'</span><span class="p">,</span>
+        <span class="na">mwei</span><span class="p">:</span>       <span class="s1">'1000000'</span><span class="p">,</span>
+        <span class="na">Mwei</span><span class="p">:</span>       <span class="s1">'1000000'</span><span class="p">,</span>
+        <span class="na">lovelace</span><span class="p">:</span>   <span class="s1">'1000000'</span><span class="p">,</span>
+        <span class="na">picoether</span><span class="p">:</span>  <span class="s1">'1000000'</span><span class="p">,</span>
+        <span class="na">gwei</span><span class="p">:</span>       <span class="s1">'1000000000'</span><span class="p">,</span>
+        <span class="na">Gwei</span><span class="p">:</span>       <span class="s1">'1000000000'</span><span class="p">,</span>
+        <span class="na">shannon</span><span class="p">:</span>    <span class="s1">'1000000000'</span><span class="p">,</span>
+        <span class="na">nanoether</span><span class="p">:</span>  <span class="s1">'1000000000'</span><span class="p">,</span>
+        <span class="na">nano</span><span class="p">:</span>       <span class="s1">'1000000000'</span><span class="p">,</span>
+        <span class="na">szabo</span><span class="p">:</span>      <span class="s1">'1000000000000'</span><span class="p">,</span>
+        <span class="na">microether</span><span class="p">:</span> <span class="s1">'1000000000000'</span><span class="p">,</span>
+        <span class="na">micro</span><span class="p">:</span>      <span class="s1">'1000000000000'</span><span class="p">,</span>
+        <span class="na">finney</span><span class="p">:</span>     <span class="s1">'1000000000000000'</span><span class="p">,</span>
+        <span class="na">milliether</span><span class="p">:</span> <span class="s1">'1000000000000000'</span><span class="p">,</span>
+        <span class="na">milli</span><span class="p">:</span>      <span class="s1">'1000000000000000'</span><span class="p">,</span>
+        <span class="na">ether</span><span class="p">:</span>      <span class="s1">'1000000000000000000'</span><span class="p">,</span>
+        <span class="na">kether</span><span class="p">:</span>     <span class="s1">'1000000000000000000000'</span><span class="p">,</span>
+        <span class="na">grand</span><span class="p">:</span>      <span class="s1">'1000000000000000000000'</span><span class="p">,</span>
+        <span class="na">mether</span><span class="p">:</span>     <span class="s1">'1000000000000000000000000'</span><span class="p">,</span>
+        <span class="na">gether</span><span class="p">:</span>     <span class="s1">'1000000000000000000000000000'</span><span class="p">,</span>
+        <span class="na">tether</span><span class="p">:</span>     <span class="s1">'1000000000000000000000000000000'</span>
+    <span class="p">}</span>
+</code></pre>
+<p>Return value</p>
+
+<ul>
+<li><code>Object</code> with the following properties:
+
+<ul>
+<li><code>noether</code>: &#39;0&#39;</li>
+<li><code>wei</code>: &#39;1&#39;</li>
+<li><code>kwei</code>: &#39;1000&#39;</li>
+<li><code>Kwei</code>: &#39;1000&#39;</li>
+<li><code>babbage</code>: &#39;1000&#39;</li>
+<li><code>femtoether</code>: &#39;1000&#39;</li>
+<li><code>mwei</code>: &#39;1000000&#39;</li>
+<li><code>Mwei</code>: &#39;1000000&#39;</li>
+<li><code>lovelace</code>: &#39;1000000&#39;</li>
+<li><code>picoether</code>: &#39;1000000&#39;</li>
+<li><code>gwei</code>: &#39;1000000000&#39;</li>
+<li><code>Gwei</code>: &#39;1000000000&#39;</li>
+<li><code>shannon</code>: &#39;1000000000&#39;</li>
+<li><code>nanoether</code>: &#39;1000000000&#39;</li>
+<li><code>nano</code>: &#39;1000000000&#39;</li>
+<li><code>szabo</code>: &#39;1000000000000&#39;</li>
+<li><code>microether</code>: &#39;1000000000000&#39;</li>
+<li><code>micro</code>: &#39;1000000000000&#39;</li>
+<li><code>finney</code>: &#39;1000000000000000&#39;</li>
+<li><code>milliether</code>: &#39;1000000000000000&#39;</li>
+<li><code>milli</code>: &#39;1000000000000000&#39;</li>
+<li><code>ether</code>: &#39;1000000000000000000&#39;</li>
+<li><code>kether</code>: &#39;1000000000000000000000&#39;</li>
+<li><code>grand</code>: &#39;1000000000000000000000&#39;</li>
+<li><code>mether</code>: &#39;1000000000000000000000000&#39;</li>
+<li><code>gether</code>: &#39;1000000000000000000000000000&#39;</li>
+<li><code>tether</code>: &#39;1000000000000000000000000000000&#39;</li>
+</ul></li>
+</ul>
+<h2 id='padleft'>padLeft</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">padLeft</span><span class="p">(</span><span class="nx">string</span><span class="p">,</span> <span class="nx">characterAmount</span> <span class="p">[,</span> <span class="nx">sign</span><span class="p">])</span>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">leftPad</span><span class="p">(</span><span class="nx">string</span><span class="p">,</span> <span class="nx">characterAmount</span> <span class="p">[,</span> <span class="nx">sign</span><span class="p">])</span> <span class="c1">// ALIAS</span>
+</code></pre>
+<p>Adds a padding on the left of a string, Useful for adding paddings to HEX strings.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">padLeft</span><span class="p">(</span><span class="s1">'0x3456ff'</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0x000000000000003456ff"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">padLeft</span><span class="p">(</span><span class="mh">0x3456ff</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0x000000000000003456ff"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">padLeft</span><span class="p">(</span><span class="s1">'Hello'</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">'x'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"xxxxxxxxxxxxxxxHello"</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>string</code> - <code>String</code>: The string to add padding on the left.</li>
+<li><code>characterAmount</code> - <code>Number</code>: The number of characters the total string should have.</li>
+<li><code>sign</code> - <code>String</code> (optional): The character sign to use, defaults to <code>&quot;0&quot;</code>.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String</code>: The padded string.</p>
+<h2 id='padright'>padRight</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">padRight</span><span class="p">(</span><span class="nx">string</span><span class="p">,</span> <span class="nx">characterAmount</span> <span class="p">[,</span> <span class="nx">sign</span><span class="p">])</span>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">rightPad</span><span class="p">(</span><span class="nx">string</span><span class="p">,</span> <span class="nx">characterAmount</span> <span class="p">[,</span> <span class="nx">sign</span><span class="p">])</span> <span class="c1">// ALIAS</span>
+</code></pre>
+<p>Adds a padding on the right of a string, Useful for adding paddings to HEX strings.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">padRight</span><span class="p">(</span><span class="s1">'0x3456ff'</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0x3456ff00000000000000"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">padRight</span><span class="p">(</span><span class="mh">0x3456ff</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0x3456ff00000000000000"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">padRight</span><span class="p">(</span><span class="s1">'Hello'</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">'x'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"Helloxxxxxxxxxxxxxxx"</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>string</code> - <code>String</code>: The string to add padding on the right.</li>
+<li><code>characterAmount</code> - <code>Number</code>: The number of characters the total string should have.</li>
+<li><code>sign</code> - <code>String</code> (optional): The character sign to use, defaults to <code>&quot;0&quot;</code>.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String</code>: The padded string.</p>
+<h2 id='totwoscomplement'>toTwosComplement</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toTwosComplement</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span>
+</code></pre>
+<p>Converts a negative number into a two&#39;s complement.</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toTwosComplement</span><span class="p">(</span><span class="s1">'-1'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toTwosComplement</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toTwosComplement</span><span class="p">(</span><span class="s1">'0x1'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0x0000000000000000000000000000000000000000000000000000000000000001"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toTwosComplement</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1"</span>
+
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toTwosComplement</span><span class="p">(</span><span class="s1">'-0x1'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>number</code> - <code>Number|String|BigNumber</code>: The number to convert.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>String</code>: The converted hex string.</p>
+<h2 id='getsignatureparameters'>getSignatureParameters</h2><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">getSignatureParameters</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span>
+</code></pre>
+<p>Gets the r, s and v values of an ECDSA signature</p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">getSignatureParameters</span><span class="p">(</span><span class="s1">'0x5763ab346198e3e6cc4d53996ccdeca0c941cb6cb70d671d97711c421d3bf7922c77ef244ad40e5262d1721bf9638fb06bab8ed3c43bfaa80d6da0be9bbd33dc1b'</span><span class="p">);</span>
+    <span class="o">&gt;</span> <span class="s2">"{ r: '0x5763ab346198e3e6cc4d53996ccdeca0c941cb6cb70d671d97711c421d3bf792', s: '0x2c77ef244ad40e5262d1721bf9638fb06bab8ed3c43bfaa80d6da0be9bbd33dc', v: 27 }"</span>
+</code></pre>
+<p>Parameters</p>
+
+<ol>
+<li><code>string</code> - <code>String</code>: An ECDSA signature.</li>
+</ol>
+
+<p>Returns</p>
+
+<p><code>Object</code>: Object containing r,s,v values.</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

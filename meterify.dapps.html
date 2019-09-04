@@ -1,0 +1,614 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>DApps Using Meter</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="meterify" data-languages="[&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#dapps-using-meter" class="toc-h1 toc-link" data-title="DApps Using Meter">DApps Using Meter</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#developing-an-example-dapp" class="toc-h2 toc-link" data-title="Developing an Example DApp">Developing an Example DApp</a>
+                  </li>
+                  <li>
+                    <a href="#building-the-example-on-linux-using-docker" class="toc-h2 toc-link" data-title="Building the Example on Linux Using Docker">Building the Example on Linux Using Docker</a>
+                  </li>
+                  <li>
+                    <a href="#building-the-example-on-linux-without-docker" class="toc-h2 toc-link" data-title="Building the Example on Linux Without Docker">Building the Example on Linux Without Docker</a>
+                  </li>
+                  <li>
+                    <a href="#create-the-application-functions" class="toc-h2 toc-link" data-title="Create the Application Functions">Create the Application Functions</a>
+                  </li>
+                  <li>
+                    <a href="#load-deploy-and-test-a-smart-contract" class="toc-h2 toc-link" data-title="Load, Deploy, and Test a Smart Contract">Load, Deploy, and Test a Smart Contract</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='./index.html'>Documentation Home</a></li>
+            <li><a href='./meterify.dapps.html'>DApp Tutorials</a></li>
+            <li><a href='./examples/index.html'>Examples</a></li>
+            <li><a href='./mining.html'>Mining Guide</a></li>
+            <li><hr></li>
+            <li>API Documentation</li>
+            <li><a href='./meterify.html'>meterify</a></li>
+            <li><a href='./meterify.module.options.html'>meterify.module.options</a></li>
+            <li><a href='./meterify.eth.html'>meterify.eth</a></li>
+            <li><a href='./meterify.eth.Contract.html'>meterify.eth.Contract</a></li>
+            <li><a href='./meterify.eth.accounts.html'>meterify.eth.accounts</a></li>
+            <li><a href='./meterify.utils.html'>meterify.utils</a></li>
+            <li><!--<a href='./meterify.eth.subscribe.html'>meterify.eth.subscribe</a></li>
+            <li><a href='./meterify.eth.Iban.html'>meterify.eth.Iban</a></li>
+            <li><a href='./meterify.eth.personal.html'>meterify.eth.personal</a></li>
+            <li><a href='./meterify.eth.ens.html'>meterify.eth.ens</a></li>
+            <li><a href='./meterify.eth.abi.html'>meterify.eth.abi</a></li>
+            <li><a href='./meterify.eth.net.html'>meterify.eth.net</a></li>
+            <li><a href='./meterify.shh.html'>meterify.shh</a>--></li>
+            <li><hr></li>
+            <li><a href='https://www.meter.io/claim-your-meter/'>Request Test Tokens</a></li>
+            <li><a href='https://www.meter.io'>Meter.io</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='dapps-using-meter'>DApps Using Meter</h1>
+<p>DApps are decentralized applications that utilize blockchains to store their history of operation (e.g. transactions). They can also consist of functional code, called smart contracts, that is published to the blockchain. The same as any kind of application, a DApp will have some kind of an interface, which might be a graphical client, a command line client or an API.</p>
+
+<p>At this time, DApps are generally related to categories such as finance, exchanges, and gambling, but social applications and games also exist. At the same time, there are numerous untapped opportunities to develop DApps for other categories that don&#39;t yet exist, or for which there are few DApps for at this time.</p>
+
+<p><a name="example-dapp"/></p>
+<h2 id='developing-an-example-dapp'>Developing an Example DApp</h2>
+<p>The Meter blockchain provides a great foundation for creating DApps, using common development tools that are also used for other blockchains. One prime example is that it is possible to utilize <code>Web3</code> with Meter using the <code>Meterify</code> library.</p>
+
+<p>As with any app, a DApp needs an identified use case. In the blockchain world the most common use case is a transaction, where cryptocurrency is sent between two accounts. It is very easy to create an example of this kind of transaction using Web3 and the Meter blockchain, where Alice wishes to send some MTR and MTRG to Bob&#39;s account.  </p>
+
+<p>There are two approaches below for building the example app on Linux, one with Docker and one without.</p>
+
+<p><a name="example-with-docker"/></p>
+<h2 id='building-the-example-on-linux-using-docker'>Building the Example on Linux Using Docker</h2><h3 id='step-1-ensure-the-latest-version-of-docker-compose-is-installed'>Step 1: Ensure the latest version of <code>docker-compose</code> is installed.</h3><pre class="highlight shell"><code><span class="gp">$ </span>sudo curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-compose-<span class="sb">`</span>uname -s<span class="sb">`</span>-<span class="sb">`</span>uname -m<span class="sb">`</span> -o /usr/local/bin/docker-compose
+<span class="gp">$ </span>sudo chmod +x /usr/local/bin/docker-compose
+</code></pre><h3 id='step-2-check-that-docker-compose-was-installed-correctly'>Step 2: Check that docker-compose was installed correctly.</h3><pre class="highlight shell"><code><span class="gp">$ </span>docker-compose --version
+docker-compose version 1.24.1, build 4667896b
+</code></pre><h3 id='step-3-create-a-project-directory-e-g-meter-dapp'>Step 3: Create a project directory (e.g. <code>meter-dapp</code>).</h3><pre class="highlight shell"><code><span class="gp">$ </span>mkdir meter-dapp
+<span class="gp">$ </span><span class="nb">cd </span>meter-dapp
+</code></pre><h3 id='step-4-initialize-the-app-directory'>Step 4: Initialize the app directory.</h3><pre class="highlight shell"><code><span class="gp">$ </span>npm init
+</code></pre><h3 id='step-5-create-a-docker-compose-yml-file'>Step 5: Create a <code>docker-compose.yml</code> file.</h3>
+<p>A copy of this file can be found here: <a href="https://github.com/meter-io-docs/meter-io-docs.github.io/blob/master/examples/includes/meter-dapp/docker-compose.yml">docker-compose.yml</a></p>
+<pre class="highlight plaintext"><code>version: '3.5'
+services:
+  node:
+    image: "node:10"
+    user: "node"
+    working_dir: /home/node/meter-daap
+    volumes:
+      - ./:/home/node/meter-daap
+    command: &gt;
+      sh -c "rm -rf node_modules
+            npm init -y &amp;&amp;
+            npm install meterify --save &amp;&amp;
+            rm -rf node_modules/*/.git/
+            npm install web3@1.0.0-beta.37 --save &amp;&amp;
+            npm install solc@0.4.24 --save &amp;&amp;
+            node index.js"
+</code></pre><h3 id='step-6-create-a-file-called-index-js'>Step 6: Create a file called <code>index.js</code>.</h3>
+<p>This will initially test the connection to the testnet.</p>
+<pre class="highlight javascript"><code><span class="kr">const</span> <span class="nx">meterify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"meterify"</span><span class="p">).</span><span class="nx">meterify</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">Web3</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"web3"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">web3</span> <span class="o">=</span> <span class="nx">meterify</span><span class="p">(</span><span class="k">new</span> <span class="nx">Web3</span><span class="p">(),</span> <span class="s2">"http://test.meter.io:8669"</span><span class="p">);</span>
+</code></pre><h3 id='step-7-run-docker-compose-to-use-the-test-application'>Step 7: Run <code>docker-compose</code> to use the test application.</h3><pre class="highlight shell"><code><span class="gp">$ </span>docker-compose up
+</code></pre>
+<p>If there are no errors the connection was successful.</p>
+<h3 id='step-8-stop-docker-using-ctrl-c'>Step 8: Stop Docker using <code>Ctrl+C</code>.</h3><pre class="highlight shell"><code>Ctrl+C
+</code></pre>
+<p>Continue to <em>Building the Main App</em> below the next section.</p>
+
+<p><a name="example-no-docker"/></p>
+<h2 id='building-the-example-on-linux-without-docker'>Building the Example on Linux Without Docker</h2><h3 id='step-1-ensure-node-js-version-10-15-1-or-above-is-installed'>Step 1: Ensure Node.js version 10.15.1 or above is installed.</h3>
+<p><a href="https://tecadmin.net/install-nodejs-with-nvm/#">Here is a guide</a> on how to install Node.js and manage different versions.</p>
+<h3 id='step-2-create-a-project-directory-e-g-meter-dapp'>Step 2: Create a project directory (e.g. <code>meter-dapp</code>).</h3><pre class="highlight shell"><code><span class="gp">$ </span>mkdir meter-dapp
+<span class="gp">$ </span><span class="nb">cd </span>meter-dapp
+</code></pre><h3 id='step-3-initialize-the-app-directory'>Step 3: Initialize the app directory.</h3><pre class="highlight shell"><code><span class="gp">$ </span>npm init
+</code></pre><h3 id='step-4-install-the-app-prerequisites'>Step 4: Install the app prerequisites.</h3>
+<ul>
+<li><a href="https://www.npmjs.com/package/meterify">meterify</a></li>
+<li><a href="https://www.npmjs.com/package/web3/v/1.0.0-beta.37">web3</a> version 1.0.0-beta.37</li>
+<li><a href="https://www.npmjs.com/package/solc/v/0.4.24">solc</a> version 0.4.24</li>
+</ul>
+<pre class="highlight shell"><code>npm install meterify --save
+npm install web3@1.0.0-beta.37 --save
+npm install solc@0.4.24 --save
+</code></pre><h3 id='step-5-create-a-file-called-index-js'>Step 5: Create a file called <code>index.js</code>.</h3>
+<p>This will initially test the connection to the testnet.</p>
+<pre class="highlight javascript"><code><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">meterify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"meterify"</span><span class="p">).</span><span class="nx">meterify</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">Web3</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"web3"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">web3</span> <span class="o">=</span> <span class="nx">meterify</span><span class="p">(</span><span class="k">new</span> <span class="nx">Web3</span><span class="p">(),</span> <span class="s2">"http://test.meter.io:8669"</span><span class="p">);</span>
+</code></pre><h3 id='step-6-run-the-test-connection-app'>Step 6: Run the test connection app.</h3><pre class="highlight shell"><code><span class="gp">$ </span>node index.js
+</code></pre>
+<p>If the code above runs without any errors the connection was successful.</p>
+
+<p><a name="create-application-functions"/></p>
+<h2 id='create-the-application-functions'>Create the Application Functions</h2>
+<p>Next, follow each step to add function and other code snippets <code>index.js</code>. The full file project files can also be found here:</p>
+
+<ul>
+<li><a href="https://github.com/meter-io-docs/meter-io-docs.github.io/blob/master/examples/includes/meter-dapp/index.js">index.js</a></li>
+<li><a href="https://github.com/meter-io-docs/meter-io-docs.github.io/blob/master/examples/includes/meter-dapp/sample_token.sol">sample_token.sol</a></li>
+<li><a href="https://github.com/meter-io-docs/meter-io-docs.github.io/blob/master/examples/includes/meter-dapp/docker-compose.yml">docker-compose.yml</a></li>
+</ul>
+<h3 id='step-1-quot-create-two-accounts-one-for-alice-and-one-for-bob'>Step 1:&quot; Create two accounts, one for Alice and one for Bob.</h3><pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">createAccounts</span><span class="p">(</span><span class="nx">accounts</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Creating Accounts"</span><span class="p">);</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="nx">key</span> <span class="k">in</span> <span class="nx">accounts</span><span class="p">){</span>
+    <span class="nx">accounts</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Account "</span><span class="o">+</span><span class="nx">accounts</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">address</span><span class="o">+</span><span class="s2">" Created."</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"All Accounts Created"</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">accounts</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><h3 id='step-2-add-the-account-private-keys-for-each-account-to-the-wallet'>Step 2: Add the account private keys for each account to the wallet.</h3><pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">addAccountsToWallet</span><span class="p">(</span><span class="nx">accounts</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Adding Accounts to Wallet"</span><span class="p">);</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">accounts</span><span class="p">){</span>
+    <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">accounts</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">privateKey</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Added Private Key "</span><span class="o">+</span><span class="nx">accounts</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">privateKey</span><span class="o">+</span><span class="s2">" to Wallet"</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Added All Accounts to Wallet"</span><span class="p">);</span>
+  <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><h3 id='step-3-send-mtr-from-one-account-to-another'>Step 3: Send MTR from one account to another.</h3>
+<p><em>Note:</em> The unit in <code>meterify</code> is Wei, where 1 MTR = 10e18 Wei.</p>
+<pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">send_MTR</span><span class="p">(</span><span class="nx">fromAddress</span><span class="p">,</span><span class="nx">toAddress</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Sending MTR"</span><span class="p">);</span>
+
+  <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">sendTransaction</span><span class="p">(</span>
+    <span class="p">{</span>
+      <span class="na">from</span><span class="p">:</span> <span class="nx">fromAddress</span><span class="p">,</span>
+      <span class="na">to</span><span class="p">:</span> <span class="nx">toAddress</span><span class="p">,</span>
+      <span class="na">value</span><span class="p">:</span> <span class="s1">'1000000000000000000'</span><span class="p">,</span>
+      <span class="na">data</span><span class="p">:</span> <span class="s1">'00'</span>
+    <span class="p">}</span>
+  <span class="p">).</span><span class="nx">then</span><span class="p">(</span>
+    <span class="nx">receipt</span> <span class="o">=&gt;</span> <span class="p">{}</span>
+  <span class="p">).</span><span class="nx">then</span><span class="p">(</span>
+    <span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"MTR sent: "</span><span class="o">+</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+      <span class="nx">next</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">).</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Error: "</span><span class="o">+</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre><h3 id='step-4-send-mtrg-from-one-account-to-another'>Step 4: Send MTRG from one account to another.</h3>
+<p><em>Note:</em> The unit in meterify is Wei, where 1 MTRG = 10e18 WeiG.</p>
+<pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">send_MTRG</span><span class="p">(</span><span class="nx">fromAddress</span><span class="p">,</span><span class="nx">toAddress</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Sending MTRG"</span><span class="p">);</span>
+
+  <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">sendTransaction</span><span class="p">(</span>
+    <span class="p">{</span>
+      <span class="na">from</span><span class="p">:</span> <span class="nx">fromAddress</span><span class="p">,</span>
+      <span class="na">to</span><span class="p">:</span> <span class="nx">toAddress</span><span class="p">,</span>
+      <span class="na">value</span><span class="p">:</span> <span class="s1">'1000000000000000000'</span><span class="p">,</span>
+      <span class="na">data</span><span class="p">:</span> <span class="s1">'01'</span>
+    <span class="p">}</span>
+  <span class="p">).</span><span class="nx">then</span><span class="p">(</span>
+    <span class="nx">receipt</span> <span class="o">=&gt;</span> <span class="p">{}</span>
+  <span class="p">).</span><span class="nx">then</span><span class="p">(</span>
+    <span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"MTRG sent: "</span><span class="o">+</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+      <span class="nx">next</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">).</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Error: "</span><span class="o">+</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre><h3 id='step-10-begin-the-function-calling-sequence'>Step 10: Begin the function calling sequence.</h3>
+<p>This code can go either before or after the functions.</p>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">accounts</span> <span class="o">=</span> <span class="nx">createAccounts</span><span class="p">({</span><span class="s2">"bob"</span><span class="p">:{}});</span>
+
+<span class="cm">/* Alice should be a pre-existing account that already contains some MTR.
+ * Add Alice's public and private keys to the following object.
+ */</span>
+<span class="nx">accounts</span><span class="p">.</span><span class="nx">alice</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"0x..."</span><span class="p">,</span><span class="s2">"privateKey"</span><span class="p">:</span><span class="s2">"0x..."</span><span class="p">};</span>
+<span class="nx">addAccountsToWallet</span><span class="p">(</span><span class="nx">accounts</span><span class="p">);</span>
+
+<span class="nx">send_MTR</span><span class="p">(</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">alice</span><span class="p">.</span><span class="nx">address</span><span class="p">,</span> <span class="nx">accounts</span><span class="p">.</span><span class="nx">bob</span><span class="p">.</span><span class="nx">address</span><span class="p">);</span>
+<span class="nx">send_MTRG</span><span class="p">(</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">alice</span><span class="p">.</span><span class="nx">address</span><span class="p">,</span> <span class="nx">accounts</span><span class="p">.</span><span class="nx">bob</span><span class="p">.</span><span class="nx">address</span><span class="p">);</span>
+
+</code></pre><h3 id='step-11-run-the-application'>Step 11: Run the application.</h3>
+<p><em>Using Docker:</em></p>
+<pre class="highlight shell"><code><span class="gp">$ </span>docker-compose up
+</code></pre>
+<p><em>Without Docker:</em></p>
+<pre class="highlight shell"><code><span class="gp">$ </span>node index.js
+</code></pre><h3 id='step-12-docker-only-comment-out-dependency-installation'>Step 12 (Docker Only): Comment out dependency installation.</h3>
+<p>Do this after the first run in <code>docker-compose.yml</code> to stop repeated initialization and dependency installation on each Docker run.</p>
+<pre class="highlight plaintext"><code>version: '3.5'
+services:
+  node:
+    image: "node:10"
+    user: "node"
+    working_dir: /home/node/meter-daap
+    volumes:
+      - ./:/home/node/meter-daap
+    command: node index.js
+#    command: &gt;
+#      sh -c "rm -rf node_modules
+#            npm init -y &amp;&amp;
+#            npm install meterify --save &amp;&amp;
+#            rm -rf node_modules/*/.git/
+#            npm install web3@1.0.0-beta.37 --save &amp;&amp;
+#            npm install solc@0.4.24 --save &amp;&amp;
+#            node index.js"
+</code></pre>
+<p><a name="example-smart-contract"/></p>
+<h2 id='load-deploy-and-test-a-smart-contract'>Load, Deploy, and Test a Smart Contract</h2>
+<p>The following modifications to the example demonstrate the use of a sample smart contract on the Meter blockchain. Again, follow the steps to add code snippets to the existing <code>index.js</code> file.</p>
+<h3 id='step-1-load-the-sample-smart-contract'>Step 1: Load the sample smart contract.</h3>
+<p>The file can be found here: <a href="https://github.com/meter-io-docs/meter-io-docs.github.io/blob/master/examples/includes/meter-dapp/sample_token.sol">sample_token.sol</a></p>
+<pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">loadContract</span><span class="p">(</span><span class="nx">file</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Loading contract: "</span><span class="o">+</span><span class="nx">file</span><span class="p">);</span>
+  <span class="kr">const</span> <span class="nx">contractFile</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">file</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
+  <span class="kr">const</span> <span class="nx">solc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'solc'</span><span class="p">);</span>
+  <span class="kr">const</span> <span class="nx">compiledCode</span> <span class="o">=</span> <span class="nx">solc</span><span class="p">.</span><span class="nx">compile</span><span class="p">(</span><span class="nx">contractFile</span><span class="p">);</span>
+
+  <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{};</span>
+
+  <span class="nx">data</span><span class="p">.</span><span class="nx">token_abiDefinition</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">compiledCode</span><span class="p">.</span><span class="nx">contracts</span><span class="p">[</span><span class="s1">':SAMPLEToken'</span><span class="p">].</span><span class="kr">interface</span><span class="p">)</span>
+  <span class="kd">let</span> <span class="nx">token_byteCode</span> <span class="o">=</span> <span class="nx">compiledCode</span><span class="p">.</span><span class="nx">contracts</span><span class="p">[</span><span class="s1">':SAMPLEToken'</span><span class="p">].</span><span class="nx">bytecode</span>
+  <span class="nx">data</span><span class="p">.</span><span class="nx">token_byteCode</span> <span class="o">=</span> <span class="s2">"0x"</span> <span class="o">+</span> <span class="nx">token_byteCode</span><span class="p">;</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Contract Loaded."</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre><h3 id='step-2-deploy-the-contract-byte-code-to-blockchain'>Step 2: Deploy the contract byte code to blockchain.</h3><pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">deployContract</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="nx">address</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Deploying contract."</span><span class="p">);</span>
+
+  <span class="nx">contractInstance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">Contract</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">token_abiDefinition</span><span class="p">)</span>
+  <span class="nx">contractInstance</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">token_byteCode</span>
+  <span class="nx">contractInstance</span><span class="p">.</span><span class="nx">deploy</span><span class="p">(</span>
+    <span class="p">{</span>
+      <span class="na">arguments</span><span class="p">:</span> <span class="p">[</span>
+        <span class="nx">address</span><span class="p">,</span>
+        <span class="s1">'1000000000'</span><span class="p">,</span>
+        <span class="s1">'Sample Token'</span><span class="p">,</span>
+        <span class="s1">'3'</span><span class="p">,</span>
+        <span class="s1">'STOKEN'</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">).</span><span class="nx">send</span><span class="p">(</span>
+    <span class="p">{</span>
+      <span class="na">from</span><span class="p">:</span> <span class="nx">address</span><span class="p">,</span>
+      <span class="na">gas</span><span class="p">:</span> <span class="mi">4700000</span>
+    <span class="p">}</span>
+  <span class="p">).</span><span class="nx">then</span><span class="p">(</span>
+    <span class="p">(</span>
+      <span class="nx">newContractInstance</span>
+    <span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Contract deployed."</span><span class="p">);</span>
+      <span class="nx">contractInstance</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">address</span> <span class="o">=</span> <span class="nx">newContractInstance</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">address</span><span class="p">;</span>
+      <span class="nx">registerEvents</span><span class="p">(</span><span class="nx">contractInstance</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre><h3 id='step-3-register-contract-events'>Step 3: Register contract events.</h3>
+<p>Additionally, call some example functions within <code>contractReady</code> when the contract is ready.</p>
+<pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">registerEvents</span><span class="p">(</span><span class="nx">contractInstance</span><span class="p">){</span>
+  <span class="nx">contractInstance</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">allEvents</span><span class="p">(</span>
+    <span class="p">{},</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Contract Ready."</span><span class="p">);</span>
+          <span class="nx">contractReady</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span><span class="nx">contractInstance</span><span class="p">);</span>
+      <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">contractReady</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span><span class="nx">contractInstance</span><span class="p">){</span>
+  <span class="nx">transferFrom</span><span class="p">(</span><span class="nx">contractInstance</span><span class="p">,</span> <span class="nx">accounts</span><span class="p">.</span><span class="nx">alice</span><span class="p">.</span><span class="nx">address</span><span class="p">,</span> <span class="nx">accounts</span><span class="p">.</span><span class="nx">bob</span><span class="p">.</span><span class="nx">address</span><span class="p">);</span>
+<span class="p">}</span>
+
+</code></pre><h3 id='step-4-transfer-cryptocurrency-between-two-accounts'>Step 4: Transfer cryptocurrency between two accounts.</h3><pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">transferFrom</span><span class="p">(</span><span class="nx">contractInstance</span><span class="p">,</span> <span class="nx">fromAddress</span><span class="p">,</span> <span class="nx">toAddress</span><span class="p">){</span>
+  <span class="nx">contractInstance</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">_transferFrom</span><span class="p">(</span>
+    <span class="nx">fromAddress</span><span class="p">,</span>
+    <span class="nx">toAddress</span><span class="p">,</span>
+    <span class="s1">'9999'</span>
+  <span class="p">).</span><span class="nx">send</span><span class="p">(</span>
+    <span class="p">{</span>
+      <span class="na">from</span><span class="p">:</span><span class="nx">fromAddress</span><span class="p">,</span>
+      <span class="na">gas</span><span class="p">:</span> <span class="mi">4700000</span>
+    <span class="p">}</span>
+  <span class="p">).</span><span class="nx">then</span><span class="p">(</span>
+    <span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)}</span>
+    <span class="p">).</span><span class="k">catch</span><span class="p">(</span>
+      <span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)}</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre><h3 id='step-4-get-an-account-balance'>Step 4: Get an account balance.</h3><pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">getAccountBalanceOf</span><span class="p">(</span><span class="nx">contractInstance</span><span class="p">,</span><span class="nx">address</span><span class="p">){</span>
+  <span class="nx">contractInstance</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">getAccountBalanceOf</span><span class="p">(</span>
+    <span class="nx">address</span>
+  <span class="p">).</span><span class="nx">send</span><span class="p">(</span>
+    <span class="p">{</span>
+      <span class="na">from</span><span class="p">:</span> <span class="nx">address</span><span class="p">,</span>
+      <span class="na">gas</span><span class="p">:</span> <span class="mi">4700000</span>
+    <span class="p">}).</span><span class="nx">then</span><span class="p">(</span>
+      <span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre><h3 id='step-5-minting-some-coins'>Step 5: Minting some coins.</h3><pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">mintToken</span><span class="p">(</span><span class="nx">contractInstance</span><span class="p">,</span><span class="nx">address</span><span class="p">){</span>
+  <span class="nx">contractInstance</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">mintToken</span><span class="p">(</span>
+    <span class="nx">address</span><span class="p">,</span>
+    <span class="s1">'99999999999999999999999'</span>
+  <span class="p">).</span><span class="nx">send</span><span class="p">(</span>
+    <span class="p">{</span>
+      <span class="na">from</span><span class="p">:</span> <span class="nx">address</span><span class="p">,</span>
+      <span class="na">gas</span><span class="p">:</span> <span class="mi">4700000</span>
+    <span class="p">}</span>
+  <span class="p">).</span><span class="nx">then</span><span class="p">(</span>
+    <span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">).</span><span class="k">catch</span><span class="p">(</span>
+    <span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+</code></pre><h3 id='step-6-add-the-loadcontract-and-deploycontract-function-calls'>Step 6: Add the <code>loadContract</code> and <code>deployContract</code> function calls.</h3><pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">accounts</span> <span class="o">=</span> <span class="nx">createAccounts</span><span class="p">({</span><span class="s2">"bob"</span><span class="p">:{}});</span>
+
+<span class="cm">/* Alice should be a pre-existing account that already contains some MTR.
+ * Add Alice's public and private keys to the following object.
+ */</span>
+<span class="nx">accounts</span><span class="p">.</span><span class="nx">alice</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"address"</span><span class="p">:</span><span class="s2">"0x..."</span><span class="p">,</span><span class="s2">"privateKey"</span><span class="p">:</span><span class="s2">"0x..."</span><span class="p">};</span>
+<span class="nx">addAccountsToWallet</span><span class="p">(</span><span class="nx">accounts</span><span class="p">);</span>
+
+<span class="nx">send_MTR</span><span class="p">(</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">alice</span><span class="p">.</span><span class="nx">address</span><span class="p">,</span> <span class="nx">accounts</span><span class="p">.</span><span class="nx">bob</span><span class="p">.</span><span class="nx">address</span><span class="p">);</span>
+<span class="nx">send_MTRG</span><span class="p">(</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">alice</span><span class="p">.</span><span class="nx">address</span><span class="p">,</span> <span class="nx">accounts</span><span class="p">.</span><span class="nx">bob</span><span class="p">.</span><span class="nx">address</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">loadContract</span><span class="p">(</span><span class="s1">'sample_token.sol'</span><span class="p">);</span>
+
+<span class="cm">/* The following function requires some energy first. Uncomment when the Alice account has some.*/</span>
+
+<span class="nx">deployContract</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">accounts</span><span class="p">.</span><span class="nx">alice</span><span class="p">.</span><span class="nx">address</span><span class="p">);</span>
+</code></pre><h3 id='step-7-run-the-application'>Step 7: Run the application.</h3>
+<p><em>Using Docker:</em></p>
+<pre class="highlight shell"><code><span class="gp">$ </span>docker-compose up
+</code></pre>
+<p><em>Without Docker:</em></p>
+<pre class="highlight shell"><code><span class="gp">$ </span>node index.js
+</code></pre>
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

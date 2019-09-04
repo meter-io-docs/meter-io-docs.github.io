@@ -1,0 +1,16 @@
+<h1 id='deploy-a-contract-example'>Deploy a Contract Example</h1><h2 id='source-files-includes-create-account'>Source Files](includes/create-account)</h2>
+<p><a href="includes/create-account/createAccount.js">createAccount.js</a>
+<a href="includes/create-account/sendTransaction.js">sendTransaction.js</a>
+<a href="includes/create-account/deployContract.js">deployContract.js</a>
+<a href="includes/create-account/sample-token.sol">sample-token.sol</a>
+<a href="includes/create-account/meterifiedWeb3.js">meterifiedWeb3.js</a>
+<a href="includes/create-account/utils.js">utils.js</a>
+<a href="includes/create-account/package.json">package.json</a></p>
+<h2 id='install'>Install</h2><pre class="highlight shell"><code>npm install
+</code></pre><h2 id='run'>Run</h2><pre class="highlight shell"><code>
+<span class="gp">$ </span>node createAccount.js
+
+<span class="gp">$ </span>node sendTransaction.js
+
+<span class="gp">$ </span>node deployContract.js
+</code></pre>

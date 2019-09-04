@@ -1,0 +1,284 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Contributing Guide</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="../stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all.js"></script>
+  </head>
+
+  <body class="contributing contributing_index" data-languages="[&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="../images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#contributing-to-meter-and-meter-documentation" class="toc-h1 toc-link" data-title="Contributing to Meter and Meter Documentation">Contributing to Meter and Meter Documentation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#meter-project-contributions" class="toc-h2 toc-link" data-title="Meter Project Contributions">Meter Project Contributions</a>
+                  </li>
+                  <li>
+                    <a href="#documentation-contributions" class="toc-h2 toc-link" data-title="Documentation Contributions">Documentation Contributions</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='./index.html'>Meter Documentation</a></li>
+            <li><hr></li>
+            <li>Contributing</li>
+            <li><a href='./index.html'>Contributing Home</a></li>
+            <li><a href='./documentation-guidelines.html'>Documentation Guidelines</a></li>
+            <li><a href='./api-doc-guidelines.html'>Writing API Docs</a></li>
+            <li><a href='./tutorials-guidelines.html'>How to Create Tutorials</a></li>
+            <li><a href='./article-guidelines.html'>What is an Article</a></li>
+            <li><a href='./code-example-guidelines.html'>Instructions for Examples</a></li>
+            <li><hr></li>
+            <li><a href='../meterify.html'>API Documentation</a></li>
+            <li><a href='../meterify.dapps.html'>DApp Tutorial</a></li>
+            <li><a href='../examples/index.html'>Examples</a></li>
+            <li><a href='../mining.html'>Mining Guide</a></li>
+            <li><hr></li>
+            <li><a href='https://www.meter.io/claim-your-meter/'>Request Test Tokens</a></li>
+            <li><a href='https://www.meter.io'>Meter.io</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='contributing-to-meter-and-meter-documentation'>Contributing to Meter and Meter Documentation</h1>
+<p>Meter welcomes contributions from the community. If you wish to contribute to any of our projects, including the documentation, feel free to clone the relevant repositories listed below.</p>
+
+<p>Please create a unique branch in your local copy. When you have made your modifications, are finished your contribution, submit a merge request and one of the Meter term will review and provide any feedback.</p>
+
+<p>You may also reach out to our team at any time if you have questions, or wish to get advance feedback on work in progress.</p>
+<h2 id='meter-project-contributions'>Meter Project Contributions</h2>
+<p>Meter has a number of projects you can contribute to, available at <a href="https://github.com/meterio">https://github.com/meterio</a>.</p>
+
+<p>Some notable projects include:</p>
+
+<ul>
+<li><a href="https://github.com/meterio/meterify">meterify</a>: An extended version of <code>web3</code> to interact with Meter&#39;s RESTful API.</li>
+<li><a href="https://github.com/meterio/meter-nomp">Meter NOMP</a>: A cryptocurrency mining pool for Meter, written entirely in Node.js.<br></li>
+</ul>
+<h2 id='documentation-contributions'>Documentation Contributions</h2>
+<p>The documentation for Meter uses a static content generator called <a href="https://github.com/lord/slate">Slate</a>. Slate is primarily for API documentation, but the Meter docs also make use of it for all technical content.</p>
+
+<p>Slate uses Markdown, which makes it intuitive for many people to be able to contribute. The <a href="documentation-guidelines.html">Documentation Guidelines</a> discusses how to format Markdown documents for Slate according to the Meter standard, and approaches to writing for the Meter documentation.</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
