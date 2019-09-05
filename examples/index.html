@@ -220,35 +220,18 @@
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#create-account-example" class="toc-h1 toc-link" data-title="Create Account Example">Create Account Example</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#source-files" class="toc-h2 toc-link" data-title="Source Files">Source Files</a>
-                  </li>
-              </ul>
           </li>
           <li>
             <a href="#send-transaction-cli-example" class="toc-h1 toc-link" data-title="Send Transaction CLI Example">Send Transaction CLI Example</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#source-files" class="toc-h2 toc-link" data-title="Source Files">Source Files</a>
-                  </li>
-              </ul>
           </li>
           <li>
             <a href="#deploy-a-contract-example" class="toc-h1 toc-link" data-title="Deploy a Contract Example">Deploy a Contract Example</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#source-files" class="toc-h2 toc-link" data-title="Source Files">Source Files</a>
-                  </li>
-              </ul>
           </li>
           <li>
             <a href="#call-a-contract-cli-example" class="toc-h1 toc-link" data-title="Call a Contract CLI Example">Call a Contract CLI Example</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#source-files" class="toc-h2 toc-link" data-title="Source Files">Source Files</a>
-                  </li>
-              </ul>
+          </li>
+          <li>
+            <a href="#meterify-react" class="toc-h1 toc-link" data-title="Meterify + React">Meterify + React</a>
           </li>
       </ul>
         <ul class="toc-footer">
@@ -268,14 +251,7 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='create-account-example'>Create Account Example</h1><h2 id='source-files'>Source Files</h2>
-<ul>
-<li><a href="includes/create-account/createAccount.js">createAccount.js</a></li>
-<li><a href="includes/create-account/meterifiedWeb3.js">meterifiedWeb3.js</a></li>
-<li><a href="includes/create-account/utils.js">utils.js</a></li>
-<li><a href="includes/create-account/package.json">package.json</a></li>
-</ul>
-
+        <h1 id='create-account-example'>Create Account Example</h1>
 <blockquote>
 <p>Install</p>
 </blockquote>
@@ -285,15 +261,16 @@
 <p>Run</p>
 </blockquote>
 <pre class="highlight shell"><code><span class="gp">$ </span>node createAccount.js
-</code></pre><h1 id='send-transaction-cli-example'>Send Transaction CLI Example</h1><h2 id='source-files'>Source Files</h2>
-<ul>
-<li><a href="includes/send-transaction/createAccount.js">createAccount.js</a></li>
-<li><a href="includes/send-transaction/sendTransaction.js">sendTransaction.js</a></li>
-<li><a href="includes/send-transaction/meterifiedWeb3.js">meterifiedWeb3.js</a></li>
-<li><a href="includes/send-transaction/utils.js">utils.js</a></li>
-<li><a href="includes/send-transaction/package.json">package.json</a></li>
-</ul>
+</code></pre>
+<p><strong>Source Files</strong></p>
 
+<ul>
+<li><a href="includes/create-account/createAccount.js">createAccount.js</a></li>
+<li><a href="includes/create-account/meterifiedWeb3.js">meterifiedWeb3.js</a></li>
+<li><a href="includes/create-account/utils.js">utils.js</a></li>
+<li><a href="includes/create-account/package.json">package.json</a></li>
+</ul>
+<h1 id='send-transaction-cli-example'>Send Transaction CLI Example</h1>
 <blockquote>
 <p>Install</p>
 </blockquote>
@@ -307,17 +284,17 @@
 
 <span class="gp">$ </span>node sendTransaction.js
 
-</code></pre><h1 id='deploy-a-contract-example'>Deploy a Contract Example</h1><h2 id='source-files'>Source Files</h2>
-<ul>
-<li><a href="includes/deploy-contract/createAccount.js">createAccount.js</a></li>
-<li><a href="includes/deploy-contract/sendTransaction.js">sendTransaction.js</a></li>
-<li><a href="includes/deploy-contract/deployContract.js">deployContract.js</a></li>
-<li><a href="includes/deploy-contract/sample_token.sol">sample_token.sol</a></li>
-<li><a href="includes/deploy-contract/meterifiedWeb3.js">meterifiedWeb3.js</a></li>
-<li><a href="includes/deploy-contract/utils.js">utils.js</a></li>
-<li><a href="includes/deploy-contract/package.json">package.json</a></li>
-</ul>
+</code></pre>
+<p><strong>Source Files</strong></p>
 
+<ul>
+<li><a href="includes/send-transaction/createAccount.js">createAccount.js</a></li>
+<li><a href="includes/send-transaction/sendTransaction.js">sendTransaction.js</a></li>
+<li><a href="includes/send-transaction/meterifiedWeb3.js">meterifiedWeb3.js</a></li>
+<li><a href="includes/send-transaction/utils.js">utils.js</a></li>
+<li><a href="includes/send-transaction/package.json">package.json</a></li>
+</ul>
+<h1 id='deploy-a-contract-example'>Deploy a Contract Example</h1>
 <blockquote>
 <p>Install</p>
 </blockquote>
@@ -332,18 +309,19 @@
 <span class="gp">$ </span>node sendTransaction.js
 
 <span class="gp">$ </span>node deployContract.js
-</code></pre><h1 id='call-a-contract-cli-example'>Call a Contract CLI Example</h1><h2 id='source-files'>Source Files</h2>
-<ul>
-<li><a href="includes/call-contract/createAccount.js">createAccount.js</a></li>
-<li><a href="includes/call-contract/sendTransaction.js">sendTransaction.js</a></li>
-<li><a href="includes/call-contract/deployContract.js">deployContract.js</a></li>
-<li><a href="includes/call-contract/callContract.js">callContract.js</a></li>
-<li><a href="includes/call-contract/sample_token.sol">sample_token.sol</a></li>
-<li><a href="includes/call-contract/meterifiedWeb3.js">meterifiedWeb3.js</a></li>
-<li><a href="includes/call-contract/utils.js">utils.js</a></li>
-<li><a href="includes/call-contract/package.json">package.json</a></li>
-</ul>
+</code></pre>
+<p><strong>Source Files</strong></p>
 
+<ul>
+<li><a href="includes/deploy-contract/createAccount.js">createAccount.js</a></li>
+<li><a href="includes/deploy-contract/sendTransaction.js">sendTransaction.js</a></li>
+<li><a href="includes/deploy-contract/deployContract.js">deployContract.js</a></li>
+<li><a href="includes/deploy-contract/sample_token.sol">sample_token.sol</a></li>
+<li><a href="includes/deploy-contract/meterifiedWeb3.js">meterifiedWeb3.js</a></li>
+<li><a href="includes/deploy-contract/utils.js">utils.js</a></li>
+<li><a href="includes/deploy-contract/package.json">package.json</a></li>
+</ul>
+<h1 id='call-a-contract-cli-example'>Call a Contract CLI Example</h1>
 <blockquote>
 <p>Install</p>
 </blockquote>
@@ -360,6 +338,45 @@
 
 <span class="gp">$ </span>node callContract.js
 </code></pre>
+<p><strong>Source Files</strong></p>
+
+<ul>
+<li><a href="includes/call-contract/createAccount.js">createAccount.js</a></li>
+<li><a href="includes/call-contract/sendTransaction.js">sendTransaction.js</a></li>
+<li><a href="includes/call-contract/deployContract.js">deployContract.js</a></li>
+<li><a href="includes/call-contract/callContract.js">callContract.js</a></li>
+<li><a href="includes/call-contract/sample_token.sol">sample_token.sol</a></li>
+<li><a href="includes/call-contract/meterifiedWeb3.js">meterifiedWeb3.js</a></li>
+<li><a href="includes/call-contract/utils.js">utils.js</a></li>
+<li><a href="includes/call-contract/package.json">package.json</a></li>
+</ul>
+<h1 id='meterify-react'>Meterify + React</h1>
+<blockquote>
+<p>Install</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="gp">$ </span>git clone https://github.com/meterio/hackathon-demo-react.git
+
+<span class="gp">$ </span><span class="nb">cd </span>hackathon-demo-react.git
+
+<span class="gp">$ </span>npm install
+</code></pre>
+<blockquote>
+<p>Run</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="gp">$ </span>npm start
+</code></pre>
+<p><strong>Web UI</strong></p>
+
+<p>After starting the application, open <a href="http://localhost:3000">http://localhost:3000</a> in a web browser.</p>
+
+<p><strong>Tips</strong></p>
+
+<ol>
+<li>Private key and public address are stored at the browser. Type <code>localStorage.getItem(&#39;private.key&#39;)</code> and <code>localStorage.getItem(&#39;public.address&#39;)</code> in the console to retrieve them.</li>
+<li>ABI definition is pre-built. There is no solidity compilation included in this demo. (the <code>solc</code> library occupies too much memory and it causes failure)</li>
+<li><code>this.setState</code> is not available in every <code>then</code> function provided by web3.</li>
+</ol>
+
       </div>
       <div class="dark-box">
           <div class="lang-selector">
