@@ -316,9 +316,9 @@ v10.16.3
 <blockquote>
 <p>index.js</p>
 </blockquote>
-<pre class="highlight javascript"><code><span class="kr">const</span> <span class="nx">meterify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"meterify"</span><span class="p">).</span><span class="nx">meterify</span><span class="p">;</span>
+<pre class="highlight javascript"><code><span class="kr">const</span> <span class="nx">mtr</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"meterify"</span><span class="p">).</span><span class="nx">meterify</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">Web3</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"web3"</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">web3</span> <span class="o">=</span> <span class="nx">meterify</span><span class="p">(</span><span class="k">new</span> <span class="nx">Web3</span><span class="p">(),</span> <span class="s2">"http://test.meter.io:8669"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">meterify</span> <span class="o">=</span> <span class="nx">mtr</span><span class="p">(</span><span class="k">new</span> <span class="nx">Web3</span><span class="p">(),</span> <span class="s2">"http://test.meter.io:8669"</span><span class="p">);</span>
 </code></pre><pre class="highlight shell"><code><span class="gp">$ </span>node index.js
 </code></pre>
 <p>If the code runs without any errors the connection was successful.</p>
@@ -326,15 +326,15 @@ v10.16.3
 <p><a name="create-application-functions"/></p>
 <h2 id='create-the-application-functions'>Create the Application Functions</h2>
 <p>Next, follow each step to add function and other code snippets <code>index.js</code>.</p>
-<h2 id='step-3-creating-an-account-generating-function'>Step 3 - Creating an Account Generating Function</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">create</span><span class="p">()</span>
+<h2 id='step-3-creating-an-account-generating-function'>Step 3 - Creating an Account Generating Function</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">create</span><span class="p">()</span>
 </code></pre>
-<p>The <code>web3.eth.accounts</code> package contains functions for generating accounts and signing transactions and data. Create an object, using Alice&#39;s and Bob&#39;s names as keys. Perform a loop on the object, calling the <code>create</code> function. This will generate new local accounts that contain both a private key and a public key. Add each account to the object as is created.</p>
+<p>The <code>meterify.eth.accounts</code> package contains functions for generating accounts and signing transactions and data. Create an object, using Alice&#39;s and Bob&#39;s names as keys. Perform a loop on the object, calling the <code>create</code> function. This will generate new local accounts that contain both a private key and a public key. Add each account to the object as is created.</p>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">accounts</span> <span class="o">=</span> <span class="nx">createAccounts</span><span class="p">({</span><span class="s2">"alice"</span><span class="p">:{},</span><span class="s2">"bob"</span><span class="p">:{}});</span>
 
 <span class="kd">function</span> <span class="nx">createAccounts</span><span class="p">(</span><span class="nx">accounts</span><span class="p">){</span>
 
   <span class="k">for</span><span class="p">(</span><span class="nx">key</span> <span class="k">in</span> <span class="nx">accounts</span><span class="p">){</span>
-    <span class="nx">accounts</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+    <span class="nx">accounts</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
   <span class="p">}</span>
 
   <span class="k">return</span> <span class="nx">accounts</span><span class="p">;</span>
@@ -342,11 +342,11 @@ v10.16.3
 
 </code></pre><h3 id='step-4-add-accounts-to-a-wallet'>Step 4 - Add Accounts to a Wallet.</h3><pre class="highlight javascript"><code><span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">;</span>
 </code></pre>
-<p><code>web3.eth.accounts</code> also contains an in memory wallet to store multiple accounts. Loop through the object returned by the <code>createAccounts</code> function, and add Alice&#39;s and Bob&#39;s accounts to the wallet, using each account&#39;s private key.</p>
+<p><code>meterify.eth.accounts</code> also contains an in memory wallet to store multiple accounts. Loop through the object returned by the <code>createAccounts</code> function, and add Alice&#39;s and Bob&#39;s accounts to the wallet, using each account&#39;s private key.</p>
 <pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">addAccountsToWallet</span><span class="p">(</span><span class="nx">accounts</span><span class="p">){</span>
 
   <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">accounts</span><span class="p">){</span>
-    <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">accounts</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">privateKey</span><span class="p">);</span>
+    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">accounts</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">privateKey</span><span class="p">);</span>
   <span class="p">}</span>
 
 <span class="p">}</span>
@@ -365,7 +365,7 @@ v10.16.3
 
 <span class="kd">function</span> <span class="nx">sendCrypto</span><span class="p">(</span><span class="nx">fromAddress</span><span class="p">,</span> <span class="nx">toAddress</span><span class="p">,</span> <span class="nx">code</span><span class="p">,</span> <span class="nx">amount</span><span class="p">){</span>
 
-  <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">sendTransaction</span><span class="p">(</span>
+  <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">sendTransaction</span><span class="p">(</span>
     <span class="p">{</span>
       <span class="na">from</span><span class="p">:</span> <span class="nx">fromAddress</span><span class="p">,</span>
       <span class="na">to</span><span class="p">:</span> <span class="nx">toAddress</span><span class="p">,</span>
@@ -408,7 +408,7 @@ v10.16.3
 </code></pre><h3 id='step-2-deploy-a-smart-contract'>Step 2 - Deploy a Smart Contract</h3><pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">deployContract</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="nx">address</span><span class="p">){</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Deploying contract."</span><span class="p">);</span>
 
-  <span class="nx">contractInstance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">Contract</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">token_abiDefinition</span><span class="p">)</span>
+  <span class="nx">contractInstance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">Contract</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">token_abiDefinition</span><span class="p">)</span>
   <span class="nx">contractInstance</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">token_byteCode</span>
   <span class="nx">contractInstance</span><span class="p">.</span><span class="nx">deploy</span><span class="p">(</span>
     <span class="p">{</span>
