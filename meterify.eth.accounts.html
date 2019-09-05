@@ -325,6 +325,7 @@
 <h1 id='create'>create</h1><pre class="highlight javascript tab-javascript"><code>
     <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">create</span><span class="p">([</span><span class="nx">entropy</span><span class="p">]);</span>
 </code></pre>
+
 <p>Generates an account object with private key and public key. </p>
 
 <blockquote>
@@ -361,6 +362,7 @@
 <p>Parameters</p>
 
 <ol>
+
 <li><code>entropy</code> - <code>String</code>(optional): A random string to increase entropy. If given it should be at least 32 characters. If none is given a random string will be generated using <a href="#randomhex"><code>randomhex</code></a>.</li>
 </ol>
 
@@ -374,6 +376,7 @@
     - <code>privateKey</code> - <code>String</code>: The accounts private key. This should never be shared or stored unencrypted in localstorage! Also make sure to <code>null</code> the memory after usage.
     - <code>signTransaction(tx [, callback])</code> - <code>Function</code>: The function to sign transactions. See <a href="meterify.eth.accounts.html#eth-accounts-signtransaction"><code>meterify.eth.accounts.signTransaction()</code></a> for more.
     - <code>sign(data)</code> - <code>Function</code>: The function to sign transactions. See <a href="meterify.eth.accounts.html#eth-accounts-sign"><code>meterify.eth.accounts.sign()</code></a>` for more.</p>
+
 <h1 id='privatekeytoaccount'>privateKeyToAccount</h1><pre class="highlight javascript tab-javascript"><code>
     <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">privateKeyToAccount</span><span class="p">(</span><span class="nx">privateKey</span><span class="p">);</span>
 </code></pre>
@@ -401,6 +404,7 @@
 <p>Returns</p>
 
 <p><code>Object</code> - The account object with the <a href="#eth-accounts-create-return"><code>structure seen here</code></a>.</p>
+
 
 <p><a name="eth-accounts-signtransaction"/></p>
 <h1 id='signtransaction'>signTransaction</h1>
@@ -466,12 +470,14 @@
 <li><code>tx</code> - <code>Object</code>: The transaction&#39;s properties object as follows:
 
 <ul>
+
 <li><code>nonce</code> - <code>String</code>: (optional) The nonce to use when signing this transaction. Default will use <a href="meterify.eth.html#eth-gettransactioncount"><code>meterify.eth.getTransactionCount()</code></a>.</li>
 <li><code>chainId</code> - <code>String</code>: (optional) The chain id to use when signing this transaction. Default will use <a href="meterify.eth.html#net-getid"><code>meterify.eth.net.getId()</code></a>.</li>
 <li><code>to</code> - <code>String</code>: (optional) The receiver of the transaction, can be empty when deploying a contract.</li>
 <li><code>data</code> - <code>String</code>: (optional) The call data of the transaction, can be empty for simple value transfers.</li>
 <li><code>value</code> - <code>String</code>: (optional) The value of the transaction in wei.</li>
 <li><code>gasPrice</code> - <code>String</code>: (optional) The gas price set by this transaction, if empty, it will use <a href="meterify.eth.html#eth-gasprice"><code>meterify.eth.gasPrice()</code></a></li>
+
 <li><code>gas</code> - <code>String</code>: The gas provided by the transaction.</li>
 </ul></li>
 <li><code>privateKey</code> - <code>String</code>: The private key to sign with.</li>
@@ -485,7 +491,9 @@
     - <code>r</code> - <code>String</code>: First 32 bytes of the signature
     - <code>s</code> - <code>String</code>: Next 32 bytes of the signature
     - <code>v</code> - <code>String</code>: Recovery value + 27
+
     - <code>rawTransaction</code> - <code>String</code>: The RLP encoded transaction, ready to be send using <a href="meterify.eth.html#eth-sendsignedtransaction"><code>meterify.eth.sendSignedTransaction</code></a>.
+
     - <code>transactionHash</code> - <code>String</code>: The transaction hash for the RLP encoded transaction.</p>
 <h1 id='recovertransaction'>recoverTransaction</h1><pre class="highlight javascript tab-javascript"><code>    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">recoverTransaction</span><span class="p">(</span><span class="nx">rawTransaction</span><span class="p">);</span>
 </code></pre>
@@ -509,7 +517,9 @@
 <h1 id='hashmessage'>hashMessage</h1><pre class="highlight javascript tab-javascript"><code>
     <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">hashMessage</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
 </code></pre>
+
 <p>Hashes the given message to be passed <a href="meterify.eth.html#accounts-recover"><code>meterify.eth.accounts.recover()</code></a> function. The data  will be UTF-8 HEX decoded and enveloped as follows: <code>&quot;\x19Ethereum Signed Message:\n&quot; + message.length + message</code> and hashed using keccak256.</p>
+
 
 <blockquote>
 <p>Example</p>
@@ -705,7 +715,9 @@
 <h1 id='wallet'>wallet</h1><pre class="highlight javascript tab-javascript"><code>
     <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">wallet</span><span class="p">;</span>
 </code></pre>
+
 <p>Contains an in memory wallet with multiple accounts. These accounts can be used when using <a href="meterify.eth.html#eth-sendtransaction"><code>meterify.eth.sendTransaction()</code></a>.</p>
+
 
 <p>Example</p>
 <pre class="highlight javascript tab-javascript"><code>
@@ -788,7 +800,9 @@
 <p>Parameters</p>
 
 <ol>
+
 <li><code>account</code> - <code>String</code> or <code>Object</code>: A private key or account object created with <a href="meterify.eth.html#accounts-create"><code>meterify.eth.accounts.create()</code></a>.</li>
+
 </ol>
 
 <p>Returns</p>
