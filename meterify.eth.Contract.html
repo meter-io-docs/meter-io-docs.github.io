@@ -292,9 +292,10 @@
             <li><a href='./meterify.eth.Contract.html'>meterify.eth.Contract</a></li>
             <li><a href='./meterify.eth.accounts.html'>meterify.eth.accounts</a></li>
             <li><a href='./meterify.utils.html'>meterify.utils</a></li>
+
+            <li><a href='./callbacks-promises-events.html'>Callbacks Promises Events</a></li>
             <li><!--<a href='./meterify.eth.subscribe.html'>meterify.eth.subscribe</a></li>
             <li><a href='./meterify.eth.Iban.html'>meterify.eth.Iban</a></li>
-            <li><a href='./meterify.eth.personal.html'>meterify.eth.personal</a></li>
             <li><a href='./meterify.eth.ens.html'>meterify.eth.ens</a></li>
             <li><a href='./meterify.eth.abi.html'>meterify.eth.abi</a></li>
             <li><a href='./meterify.eth.net.html'>meterify.eth.net</a></li>
@@ -339,7 +340,9 @@ and web3 will auto convert all calls into low level ABI calls over RPC for you.<
 <h1 id='meterify-eth-contract-2'>meterify.eth.Contract</h1><pre class="highlight javascript tab-javascript"><code>
     <span class="k">new</span> <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">Contract</span><span class="p">(</span><span class="nx">jsonInterface</span><span class="p">,</span> <span class="nx">address</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
 </code></pre>
-<p>Creates a new contract instance with all its methods and events defined in its :ref:<code>json interface &lt;glossary-json-interface&gt;</code> object.</p>
+
+<p>Creates a new contract instance with all its methods and events defined in its <a href="glossary.html#json-interface"><code>json interface</code></a> object.</p>
+
 
 <blockquote>
 <p>Example</p>
@@ -358,16 +361,18 @@ and web3 will auto convert all calls into low level ABI calls over RPC for you.<
 <li><code>options</code> - <code>Object</code> (optional): The options of the contract. Some are used as fallbacks for calls and transactions:
 
 <ul>
-<li><code>data</code> - <code>String</code>: The byte code of the contract. Used when the contract gets :ref:<code>deployed &lt;contract-deploy&gt;</code>.</li>
-<li><code>address</code> - <code>String</code>: The address where the contract is deployed. See :ref:<code>address &lt;contract-address&gt;</code>.</li>
-<li>:ref:<code>defaultAccount &lt;web3-module-defaultaccount&gt;</code></li>
-<li>:ref:<code>defaultBlock &lt;web3-module-defaultblock&gt;</code></li>
-<li>:ref:<code>defaultGas &lt;web3-module-defaultgas&gt;</code></li>
-<li>:ref:<code>defaultGasPrice &lt;web3-module-defaultaccount&gt;</code></li>
-<li>:ref:<code>transactionBlockTimeout &lt;web3-module-transactionblocktimeout&gt;</code></li>
-<li>:ref:<code>transactionConfirmationBlocks &lt;web3-module-transactionconfirmationblocks&gt;</code></li>
-<li>:ref:<code>transactionPollingTimeout &lt;web3-module-transactionpollingtimeout&gt;</code></li>
-<li>:ref:<code>transactionSigner &lt;web3-module-transactionSigner&gt;</code></li>
+
+<li><code>data</code> - <code>String</code>: The byte code of the contract. Used when the contract gets <a href="#contract-deploy"><code>deployed</code></a>.</li>
+<li><code>address</code> - <code>String</code>: The address where the contract is deployed. See <a href="#contract-address"><code>address</code></a>.</li>
+<li><a href="meterify.module.options.html#defaultaccount"><code>defaultAccount</code></a></li>
+<li><a href="meterify.module.options.html#defaultblock"><code>defaultBlock</code></a></li>
+<li><a href="meterify.module.options.html#defaultgas"><code>defaultGas</code></a></li>
+<li><a href="meterify.module.options.html#defaultaccount"><code>defaultGasPrice</code></a></li>
+<li><a href="meterify.module.options.html#transactionblocktimeout"><code>transactionBlockTimeout</code></a></li>
+<li><a href="meterify.module.options.html#transactionconfirmationblocks"><code>transactionConfirmationBlocks</code></a></li>
+<li><a href="meterify.module.options.html#transactionpollingtimeout"><code>transactionPollingTimeout</code></a></li>
+<li><a href="meterify.module.options.html#transactionSigner"><code>transactionSigner</code></a></li>
+
 </ul></li>
 </ol>
 
@@ -412,11 +417,13 @@ and web3 will auto convert all calls into low level ABI calls over RPC for you.<
 <h1 id='jsoninterface'>jsonInterface</h1><pre class="highlight javascript tab-javascript"><code>
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">jsonInterface</span>
 </code></pre>
-<p>The :ref:<code>json interface &lt;glossary-json-interface&gt;</code> object derived from the <a href="https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI">ABI</a> of this contract.</p>
+
+<p>The <a href="glossary.html#json-interface"><code>json interface</code></a> object derived from the <a href="https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI">ABI</a> of this contract.</p>
 
 <p>Property</p>
 
-<p><code>jsonInterface</code> - <code>AbiModel</code>: The :ref:<code>json interface &lt;glossary-json-interface&gt;</code> for this contract. Re-setting this will regenerate the methods and events of the contract instance.</p>
+<p><code>jsonInterface</code> - <code>AbiModel</code>: The <a href="glossary.html#json-interface"><code>json interface</code></a> for this contract. Re-setting this will regenerate the methods and events of the contract instance.</p>
+
 <h1 id='abimodel'>AbiModel</h1><pre class="highlight javascript tab-javascript"><code>
     <span class="kr">interface</span> <span class="nx">AbiModel</span> <span class="p">{</span>
         <span class="nx">getMethod</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="nx">AbiItemModel</span> <span class="o">|</span> <span class="kc">false</span><span class="p">;</span>
@@ -556,16 +563,20 @@ and web3 will auto convert all calls into low level ABI calls over RPC for you.<
 
 <ul>
 <li><code>Array</code> - arguments: The arguments passed to the method before. They can be changed.</li>
-<li><code>Function</code> - :ref:<code>send &lt;contract-send&gt;</code>: Will deploy the contract. The promise will resolve with the new contract instance, instead of the receipt!</li>
-<li><code>Function</code> - :ref:<code>estimateGas &lt;contract-estimateGas&gt;</code>: Will estimate the gas used for deploying.</li>
-<li><code>Function</code> - :ref:<code>encodeABI &lt;contract-encodeABI&gt;</code>: Encodes the ABI of the deployment, which is contract data + constructor parameters</li>
+
+<li><code>Function</code> - <code>send</code>(#contract-send): Will deploy the contract. The promise will resolve with the new contract instance, instead of the receipt!</li>
+<li><code>Function</code> - <a href="#contract-estimateGas"><code>estimateGas</code></a>: Will estimate the gas used for deploying.</li>
+<li><code>Function</code> - <a href="#contract-encodeABI"><code>encodeABI</code></a>: Encodes the ABI of the deployment, which is contract data + constructor parameters</li>
+
 </ul>
 
 <p>For details to the methods see the documentation below.</p>
 <h2 id='methods-2'>methods</h2><pre class="highlight javascript tab-javascript"><code>
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">myMethod</span><span class="p">([</span><span class="nx">param1</span><span class="p">[,</span> <span class="nx">param2</span><span class="p">[,</span> <span class="p">...]]])</span>
 </code></pre>
-<p>Creates a transaction object for that method, which then can be :ref:<code>called &lt;contract-call&gt;</code>, :ref:<code>send &lt;contract-send&gt;</code>, :ref:<code>estimated  &lt;contract-estimateGas&gt;</code>or :ref:<code>ABI encoded &lt;contract-encodeABI&gt;</code>.</p>
+
+<p>Creates a transaction object for that method, which then can be <a href="#contract-call"><code>called</code></a>, <code>send</code>(#contract-send), <a href="#contract-estimateGas"><code>estimated</code></a> or <a href="#contract-encodeABI">ABI encoded</a>.</p>
+
 
 <p>The methods of this smart contract are available through:</p>
 
@@ -607,7 +618,8 @@ and web3 will auto convert all calls into low level ABI calls over RPC for you.<
     <span class="p">})</span>
     <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
 </code></pre>
-<p>Parameters of any method depend on the smart contracts methods, defined in the :ref:<code>JSON interface &lt;glossary-json-interface&gt;</code>.</p>
+
+<p>Parameters of any method depend on the smart contracts methods, defined in the <a href="glossary.html#json-interface"><code>json interface</code></a>.</p>
 
 <p>Returns</p>
 
@@ -615,10 +627,12 @@ and web3 will auto convert all calls into low level ABI calls over RPC for you.<
 
 <ul>
 <li><code>Array</code> - arguments: The arguments passed to the method before. They can be changed.</li>
-<li><code>Function</code> - :ref:<code>call &lt;contract-call&gt;</code>: Will call the &quot;constant&quot; method and execute its smart contract method in the EVM without sending a transaction (Can&#39;t alter the smart contract state).</li>
-<li><code>Function</code> - :ref:<code>send &lt;contract-send&gt;</code>: Will send a transaction to the smart contract and execute its method (Can alter the smart contract state).</li>
-<li><code>Function</code> - :ref:<code>estimateGas &lt;contract-estimateGas&gt;</code>: Will estimate the gas used when the method would be executed on chain.</li>
-<li><code>Function</code> - :ref:<code>encodeABI &lt;contract-encodeABI&gt;</code>: Encodes the ABI for this method. This can be send using a transaction, call the method or passing into another smart contracts method as argument.</li>
+
+<li><code>Function</code> - <a href="#contract-call"><code>call</code></a>: Will call the &quot;constant&quot; method and execute its smart contract method in the EVM without sending a transaction (Can&#39;t alter the smart contract state).</li>
+<li><code>Function</code> - <code>send</code>(#contract-send): Will send a transaction to the smart contract and execute its method (Can alter the smart contract state).</li>
+<li><code>Function</code> - <a href="#contract-estimateGas"><code>estimateGas</code></a>: Will estimate the gas used when the method would be executed on chain.</li>
+<li><code>Function</code> - <a href="#contract-encodeABI"><code>encodeABI</code></a>: Encodes the ABI for this method. This can be send using a transaction, call the method or passing into another smart contracts method as argument.</li>
+
 </ul>
 
 <p>For details to the methods see the documentation below.</p>
@@ -691,7 +705,8 @@ and web3 will auto convert all calls into low level ABI calls over RPC for you.<
 
 <p>Returns</p>
 
-<p><code>Promise&lt;any&gt;</code> - The return value(s) of the smart contract method.
+<p>`Promise&lt;any) - The return value(s) of the smart contract method.
+
 If it returns a single value, it&#39;s returned as is. If it has multiple return values they are returned as an object with properties and indices.</p>
 
 <p><a name="contract-send"/></p>
@@ -780,11 +795,13 @@ If it returns a single value, it&#39;s returned as is. If it has multiple return
 
 <p>The <strong>callback</strong> will return the 32 bytes transaction hash.</p>
 
-<p><code>PromiEvent</code>: A :ref:<code>promise combined event emitter &lt;promiEvent&gt;</code>. Will be resolved when the transaction <em>receipt</em> is available, OR if this <code>send()</code> is called from a <code>someContract.deploy()</code>, then the promise will resolve with the <em>new contract instance</em>. Additionally the following events are available:</p>
+
+<p><code>PromiEvent</code>: A <a href="callbacks-promises-events.html#PromiEvent"><code>promise combined event emitter</code></a>. Will be resolved when the transaction <em>receipt</em> is available, OR if this <code>send()</code> is called from a <code>someContract.deploy()</code>, then the promise will resolve with the <em>new contract instance</em>. Additionally the following events are available:</p>
 
 <ul>
 <li><code>&quot;transactionHash&quot;</code> returns <code>String</code>: is fired right after the transaction is sent and a transaction hash is available.</li>
-<li><code>&quot;receipt&quot;</code> returns <code>Object</code>: is fired when the transaction <em>receipt</em> is available. Receipts from contracts will have no <code>logs</code> property, but instead an <code>events</code> property with event names as keys and events as properties. See :ref:<code>getPastEvents return values &lt;contract-events-return&gt;</code> for details about the returned event object.</li>
+<li><code>&quot;receipt&quot;</code> returns <code>Object</code>: is fired when the transaction <em>receipt</em> is available. Receipts from contracts will have no <code>logs</code> property, but instead an <code>events</code> property with event names as keys and events as properties. See <a href="#contract-events-return"><code>getPastEvents return values</code></a> for details about the returned event object.</li>
+
 <li><code>&quot;confirmation&quot;</code> returns <code>Number</code>, <code>Object</code>: is fired for every confirmation up to the 24th confirmation. Receives the confirmation number as the first and the receipt as the second argument. Fired from confirmation 1 on, which is the block where it&#39;s mined.</li>
 <li><code>&quot;error&quot;</code> returns <code>Error</code>: is fired if an error occurs during sending. If an out of gas error, the second parameter is the receipt.</li>
 </ul>
@@ -830,7 +847,8 @@ If it returns a single value, it&#39;s returned as is. If it has multiple return
 
 <p>Returns</p>
 
-<p><code>Promise&lt;number&gt;</code> - The gas amount estimated.</p>
+<p>`Promise&lt;number) - The gas amount estimated.</p>
+
 
 <p><a name="contract-encodeABI"/></p>
 <h3 id='methods-mymethod-encodeabi'>methods.myMethod.encodeABI</h3><pre class="highlight javascript tab-javascript"><code>
@@ -897,7 +915,9 @@ If it returns a single value, it&#39;s returned as is. If it has multiple return
 <li><code>filter</code> - <code>Object</code> (optional): Lets you filter events by indexed parameters, e.g. <code>{filter: {myNumber: [12,13]}}</code> means all events where &quot;myNumber&quot; is 12 or 13.</li>
 <li><code>topics</code> - <code>Array</code> (optional): This allows you to manually set the topics for the event filter. If given the filter property and event signature, (topic[0]) will not be set automatically.</li>
 </ul></li>
-<li><code>callback</code> - <code>Function</code>: This callback will be fired for the first <em>event</em> as the second argument, or an error as the first argument. See :ref:<code>getPastEvents return values &lt;contract-events-return&gt;</code> for details about the event structure.</li>
+
+<li><code>callback</code> - <code>Function</code>: This callback will be fired for the first <em>event</em> as the second argument, or an error as the first argument. See <a href="#%20contract-events-return"><code>getPastEvents return values</code></a> for details about the event structure.</li>
+
 </ol>
 
 <p>Returns</p>
@@ -990,7 +1010,9 @@ If it returns a single value, it&#39;s returned as is. If it has multiple return
 <h2 id='events-allevents'>events.allEvents</h2><pre class="highlight javascript tab-javascript"><code>
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">allEvents</span><span class="p">([</span><span class="nx">options</span><span class="p">][,</span> <span class="nx">callback</span><span class="p">])</span>
 </code></pre>
-<p>Same as :ref:<code>events &lt;contract-events&gt;</code> but receives all events from this smart contract.
+
+<p>Same as <a href="#contract-events">`events&#39;</a> but receives all events from this smart contract.
+
 Optionally the filter property can filter those events.</p>
 <h2 id='getpastevents'>getPastEvents</h2><pre class="highlight javascript tab-javascript"><code>
     <span class="nx">myContract</span><span class="p">.</span><span class="nx">getPastEvents</span><span class="p">(</span><span class="nx">event</span><span class="p">[,</span> <span class="nx">options</span><span class="p">][,</span> <span class="nx">callback</span><span class="p">])</span>
@@ -1051,7 +1073,9 @@ Optionally the filter property can filter those events.</p>
 
 <p><code>Promise</code> returns <code>Array</code>: An array with the past event <code>Objects</code>, matching the given event name and filter.</p>
 
-<p>For the structure of a returned event <code>Object</code> see :ref:<code>getPastEvents return values &lt;contract-events-return&gt;</code>.</p>
+
+<p>For the structure of a returned event <code>Object</code> see <a href="#contract-events-return"><code>getPastEvents return values</code></a>.</p>
+
 
       </div>
       <div class="dark-box">
