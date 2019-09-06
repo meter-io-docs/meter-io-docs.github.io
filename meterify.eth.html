@@ -353,7 +353,7 @@
             <li><a href='./meterify.eth.html'>meterify.eth</a></li>
             <li><a href='./meterify.eth.Contract.html'>meterify.eth.Contract</a></li>
             <li><a href='./meterify.eth.accounts.html'>meterify.eth.accounts</a></li>
-            <li><a href='./meterify.utils.html'>meterify.utils</a>
+            <li><a href='./meterify.utils.html'>meterify.utils</a></li>
             <li><a href='./callbacks-promises-events.html'>Callbacks Promises Events</a></li>
             <li><!--<a href='./meterify.eth.subscribe.html'>meterify.eth.subscribe</a></li>
             <li><a href='./meterify.eth.Iban.html'>meterify.eth.Iban</a></li>
@@ -595,13 +595,11 @@ GasPrice is the wei per unit of gas,.</p>
 </thead><tbody>
 <tr>
 <td><code>Promise&lt;string&gt;</code></td>
-
 <td>Number string of the current gas price in <code>wei</code>.</td>
 </tr>
 </tbody></table>
 
 <p>See the <a href="meterify.utils.html#utils-bn">A note on dealing with big numbers in JavaScript</a>.</p>
-
 
 <p>Example</p>
 <pre class="highlight javascript tab-javascript"><code>    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">getGasPrice</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">);</span>
@@ -611,7 +609,6 @@ GasPrice is the wei per unit of gas,.</p>
 <p>Will return a list of the unlocked accounts in the Web3 wallet or it will return the accounts from the currently connected node.</p>
 
 <p>This means you can add accounts with <a href="meterify.eth.accounts.html#accounts-create"><code>meterify.eth.accounts.create()</code></a> and you will get them returned here.</p>
-
 
 <p>Returns</p>
 
@@ -670,7 +667,6 @@ GasPrice is the wei per unit of gas,.</p>
 <tr>
 <td>defaultBlock</td>
 <td><code>Number</code> or <code>String</code></td>
-
 <td>(optional) If you pass this parameter it will not use the default block set with <a href="#eth-defaultblock"><code>meterify.eth.defaultBlock</code></a>.</td>
 </tr>
 <tr>
@@ -690,13 +686,11 @@ GasPrice is the wei per unit of gas,.</p>
 </thead><tbody>
 <tr>
 <td><code>Promise&lt;string&gt;</code></td>
-
 <td>The current Meter balance for the given address in <code>wei</code>.</td>
 </tr>
 </tbody></table>
 
 <p>See the <a href="meterify.utils.html#utils-bn">`A note on dealing with big numbers in JavaScript&#39;</a>.</p>
-
 
 <p>Example</p>
 <pre class="highlight javascript tab-javascript"><code>    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">getBalance</span><span class="p">(</span><span class="s2">"0x407d73d8a49eeb85d32cf465507dd71d507100c1"</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">);</span>
@@ -720,9 +714,7 @@ GasPrice is the wei per unit of gas,.</p>
 <tr>
 <td>defaultBlock</td>
 <td><code>Number</code> or <code>String</code></td>
-
 <td>(optional) If you pass this parameter it will not use the default block set with <a href="#eth-defaultblock"><code>meterify.eth.defaultBlock</code></a>.</td>
-
 </tr>
 <tr>
 <td>callback</td>
@@ -744,7 +736,6 @@ GasPrice is the wei per unit of gas,.</p>
 <td>The current Meter MTR balance for the given address in <code>wei &lt;what-is-wei&gt;</code>.</td>
 </tr>
 </tbody></table>
-
 
 <p>See the <a href="meterify.utils.html#utils-bn">A note on dealing with big numbers in JavaScript</a>.</p>
 
@@ -777,7 +768,6 @@ GasPrice is the wei per unit of gas,.</p>
 <tr>
 <td>defaultBlock</td>
 <td><code>Number</code> or <code>String</code></td>
-
 <td>(optional) If you pass this parameter it will not use the default block set with <a href="#eth-defaultblock"><code>meterify.eth.defaultBlock</code></a>.</td>
 </tr>
 <tr>
@@ -825,7 +815,6 @@ GasPrice is the wei per unit of gas,.</p>
 <tr>
 <td>defaultBlock</td>
 <td><code>Number</code> or <code>String</code></td>
-
 <td>(optional) If you pass this parameter it will not use the default block set with <a href="#eth-defaultblock"><code>meterify.eth.defaultBlock</code></a>.</td>
 </tr>
 <tr>
@@ -868,7 +857,6 @@ GasPrice is the wei per unit of gas,.</p>
 <tr>
 <td>blockHashOrBlockNumber</td>
 <td><code>String</code> or <code>Number</code></td>
-
 <td>The block number or block hash. Or the string <code>&quot;genesis&quot;</code>, <code>&quot;latest&quot;</code> or <code>&quot;pending&quot;</code> as in the <a href="#eth-defaultblock"><code>default block parameter</code></a>.</td>
 </tr>
 <tr>
@@ -1044,7 +1032,6 @@ GasPrice is the wei per unit of gas,.</p>
 <tr>
 <td>blockHashOrBlockNumber</td>
 <td><code>String</code> or <code>Number</code></td>
-
 <td>The block number or hash. Or the string <code>&quot;genesis&quot;</code>, <code>&quot;latest&quot;</code> or <code>&quot;pending&quot;</code> as in the <a href="#eth-defaultblock"><code>default block parameter</code></a>.</td>
 </tr>
 <tr>
@@ -1087,7 +1074,6 @@ GasPrice is the wei per unit of gas,.</p>
 <tr>
 <td>blockHashOrBlockNumber</td>
 <td><code>String</code> or <code>Number</code></td>
-
 <td>The block number or hash. Or the string <code>&quot;genesis&quot;</code>, <code>&quot;latest&quot;</code> or <code>&quot;pending&quot;</code> as in the <a href="#eth-defaultblock"><code>default block parameter</code></a>.</td>
 </tr>
 <tr>
@@ -1327,7 +1313,6 @@ GasPrice is the wei per unit of gas,.</p>
 <tr>
 <td><code>gasPrice</code></td>
 <td><code>String</code></td>
-
 <td>The wei per unit of gas provided by the sender in <code>wei</code>.</td>
 </tr>
 <tr>
@@ -1393,7 +1378,6 @@ GasPrice is the wei per unit of gas,.</p>
 <tr>
 <td>hashStringOrNumber</td>
 <td><code>String</code></td>
-
 <td>A block number or hash. Or the string <code>&quot;genesis&quot;</code>, <code>&quot;latest&quot;</code> or <code>&quot;pending&quot;</code> as in the <a href="#eth-defaultblock"><code>default block parameter</code></a>.</td>
 </tr>
 <tr>
@@ -1569,7 +1553,6 @@ GasPrice is the wei per unit of gas,.</p>
 <tr>
 <td>defaultBlock</td>
 <td><code>Number</code> or <code>String</code></td>
-
 <td>(optional) If you pass this parameter it will not use the default block set with <a href="#eth-defaultblock"><code>meterify.eth.defaultBlock</code></a>.</td>
 </tr>
 <tr>
@@ -1596,7 +1579,6 @@ GasPrice is the wei per unit of gas,.</p>
 <p>Example</p>
 <pre class="highlight javascript tab-javascript"><code>    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">getTransactionCount</span><span class="p">(</span><span class="s2">"0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe"</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">);</span>
     <span class="o">&gt;</span> <span class="mi">1</span>
-
 </code></pre>
 <p><a name="eth-sendtransaction"></p>
 <h2 id='sendtransaction'>sendTransaction</h2><pre class="highlight javascript tab-javascript"><code>    <span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">sendTransaction</span><span class="p">(</span><span class="nx">transactionObject</span> <span class="p">[,</span> <span class="nx">callback</span><span class="p">])</span>
@@ -1636,7 +1618,6 @@ GasPrice is the wei per unit of gas,.</p>
 <tr>
 <td><code>from</code></td>
 <td><code>String</code> or <code>Number</code></td>
-
 <td>The address for the sending account. Uses the <a href="#eth-defaultaccount"><code>meterify.eth.defaultAccount</code></a> property, if not specified. Or an address or index of a local wallet in <a href="meterify.eth.accounts.html#eth_accounts_wallet"><code>meterify.eth.accounts.wallet</code></a>.</td>
 </tr>
 <tr>
@@ -1647,7 +1628,6 @@ GasPrice is the wei per unit of gas,.</p>
 <tr>
 <td><code>value</code></td>
 <td><code>Number</code>, <code>String</code>, <code>BN</code>, or <code>BigNumber</code></td>
-
 <td>(optional) The value transferred for the transaction in <code>wei</code>, also the endowment if it&#39;s a contract-creation transaction.</td>
 </tr>
 <tr>
@@ -1658,7 +1638,6 @@ GasPrice is the wei per unit of gas,.</p>
 <tr>
 <td><code>gasPrice</code></td>
 <td><code>Number</code>, <code>String</code>, <code>BN</code>, or <code>BigNumber</code></td>
-
 <td>(optional) The price of gas for this transaction in <code>wei</code>, defaults to <a href="#eth-gasprice"><code>meterify.eth.gasPrice</code></a>.</td>
 </tr>
 <tr>
@@ -1689,7 +1668,6 @@ GasPrice is the wei per unit of gas,.</p>
 </thead><tbody>
 <tr>
 <td><code>PromiEvent</code></td>
-
 <td>A <a href="#callbacks-promises-events.html#PromiEvent">promise combined event emitter</a>. Will be resolved when the transaction <a href="#eth-gettransactionreceipt-return"><code>receipt</code></a> is available. Additionally the following events are available:</td>
 </tr>
 </tbody></table>
@@ -1714,7 +1692,6 @@ GasPrice is the wei per unit of gas,.</p>
 <tr>
 <td><code>&quot;confirmation&quot;</code></td>
 <td><code>Number</code>, <code>Object</code></td>
-
 <td>Is fired for every confirmation up to the 12th confirmation. Receives the confirmation number as the first and the <a href="#eth-gettransactionreceipt-return"><code>receipt</code></a> as the second argument. Fired from confirmation 0 on, which is the block where its minded.</td>
 </tr>
 <tr>
@@ -1796,7 +1773,6 @@ GasPrice is the wei per unit of gas,.</p>
 </thead><tbody>
 <tr>
 <td><code>PromiEvent</code></td>
-
 <td>A <a href="#callbacks-promises-events.html#PromiEvent">promise combined event emitter</a></td>
 <td>Will be resolved when the transaction <a href="#eth-gettransactionreceipt-return"><code>receipt</code></a> is available.</td>
 </tr>
@@ -1845,13 +1821,11 @@ GasPrice is the wei per unit of gas,.</p>
 <tr>
 <td>dataToSign</td>
 <td><code>String</code></td>
-
 <td>Data to sign. If String it will be converted using <a href="meterify.utils.html#utils-utf8tohex"><code>meterify.utilsutf8ToHex</code></a>.</td>
 </tr>
 <tr>
 <td>address</td>
 <td><code>String</code> or <code>Number</code></td>
-
 <td>Address to sign data with. Or an address or index of a local wallet in <a href="meterify.eth.accounts.html#eth_accounts_wallet"><code>meterify.eth.accounts.wallet</code></a>.</td>
 </tr>
 <tr>
@@ -1903,7 +1877,6 @@ If the given address is a local unlocked account, the transaction will be signed
 <tr>
 <td>transactionObject</td>
 <td><code>Object</code></td>
-
 <td>The transaction data to sign <a href="#eth-sendtransaction"><code>meterify.eth.sendTransaction()</code></a> for more.</td>
 </tr>
 <tr>
@@ -1928,7 +1901,6 @@ If the given address is a local unlocked account, the transaction will be signed
 </thead><tbody>
 <tr>
 <td><code>Promise&lt;object&gt;</code></td>
-
 <td>The RLP encoded transaction. The <code>raw</code> property can be used to send the transaction using <a href="#eth-sendsignedtransaction"><code>meterify.eth.sendSignedTransaction</code></a>.</td>
 </tr>
 </tbody></table>
@@ -1973,13 +1945,11 @@ If the given address is a local unlocked account, the transaction will be signed
 <tr>
 <td>callObject</td>
 <td><code>Object</code></td>
-
 <td>A transaction object see <a href="#eth-sendtransaction-return"><code>meterify.eth.sendTransaction</code></a>, with the difference that for calls the <code>from</code> property is optional as well.</td>
 </tr>
 <tr>
 <td>defaultBlock</td>
 <td><code>Number</code> or <code>String</code></td>
-
 <td>(optional) If you pass this parameter it will not use the default block set with <a href="#eth-defaultblock"><code>meterify.eth.defaultBlock</code></a>.</td>
 </tr>
 <tr>
@@ -2024,7 +1994,6 @@ If the given address is a local unlocked account, the transaction will be signed
 </thead><tbody>
 <tr>
 <td>callObject  <code>Object</code></td>
-
 <td>A transaction object see <a href="#eth-sendtransaction-return"><code>meterify.eth.sendTransaction</code></a>, with the difference that for calls the <code>from</code> property is optional as well.</td>
 <td></td>
 </tr>
@@ -2411,7 +2380,6 @@ This method will only work if you&#39;re using the injected provider from a appl
 <tr>
 <td>storageKey</td>
 <td><code>Array</code> 32 Bytes</td>
-
 <td>Array of storage-keys which should be proofed and included. See <a href="#eth-getStorageAt"><code>meterify.eth.getStorageAt</code></a>.</td>
 </tr>
 <tr>

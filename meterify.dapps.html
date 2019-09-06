@@ -222,30 +222,26 @@
             <a href="#dapps-using-meter" class="toc-h1 toc-link" data-title="DApps Using Meter">DApps Using Meter</a>
               <ul class="toc-list-h2">
                   <li>
-
                     <a href="#prerequisites" class="toc-h2 toc-link" data-title="Prerequisites">Prerequisites</a>
                   </li>
                   <li>
                     <a href="#step-1-project-setup" class="toc-h2 toc-link" data-title="Step 1 - Project Setup">Step 1 - Project Setup</a>
                   </li>
                   <li>
-                    <a href="#create-the-application-functions" class="toc-h2 toc-link" data-title="Create the Application Functions">Create the Application Functions</a>
+                    <a href="#step-2-test-the-connection" class="toc-h2 toc-link" data-title="Step 2 - Test the Connection">Step 2 - Test the Connection</a>
                   </li>
                   <li>
                     <a href="#step-3-creating-an-account-generating-function" class="toc-h2 toc-link" data-title="Step 3 - Creating an Account Generating Function">Step 3 - Creating an Account Generating Function</a>
                   </li>
                   <li>
                     <a href="#step-5-send-mtr-to-an-account" class="toc-h2 toc-link" data-title="Step 5 - Send MTR to an Account">Step 5 - Send MTR to an Account</a>
-
                   </li>
                   <li>
                     <a href="#load-deploy-and-test-a-smart-contract" class="toc-h2 toc-link" data-title="Load, Deploy, and Test a Smart Contract">Load, Deploy, and Test a Smart Contract</a>
                   </li>
-
                   <li>
                     <a href="#using-docker" class="toc-h2 toc-link" data-title="Using Docker">Using Docker</a>
                   </li>
-
               </ul>
           </li>
       </ul>
@@ -262,9 +258,7 @@
             <li><a href='./meterify.eth.Contract.html'>meterify.eth.Contract</a></li>
             <li><a href='./meterify.eth.accounts.html'>meterify.eth.accounts</a></li>
             <li><a href='./meterify.utils.html'>meterify.utils</a></li>
-
             <li><a href='./callbacks-promises-events.html'>Callbacks Promises Events</a></li>
-
             <li><!--<a href='./meterify.eth.subscribe.html'>meterify.eth.subscribe</a></li>
             <li><a href='./meterify.eth.Iban.html'>meterify.eth.Iban</a></li>
             <li><a href='./meterify.eth.personal.html'>meterify.eth.personal</a></li>
@@ -316,7 +310,7 @@ v10.16.3
 <span class="gp">$ </span>npm install web3@1.0.0-beta.37 --save
 
 <span class="gp">$ </span>npm install solc@0.4.24 --save
-</code></pre><h3 id='step-2-test-the-connection'>Step 2 - Test the Connection</h3>
+</code></pre><h2 id='step-2-test-the-connection'>Step 2 - Test the Connection</h2>
 <p>Create a file called <code>index.js</code>, and include the <code>meterify</code> and <code>web3</code> requirements, then call the file with <code>node</code> to test the connection to the testnet.</p>
 
 <blockquote>
@@ -330,8 +324,6 @@ v10.16.3
 <p>If the code runs without any errors the connection was successful.</p>
 
 <p><a name="create-application-functions"/></p>
-<h2 id='create-the-application-functions'>Create the Application Functions</h2>
-<p>Next, follow each step to add function and other code snippets <code>index.js</code>.</p>
 <h2 id='step-3-creating-an-account-generating-function'>Step 3 - Creating an Account Generating Function</h2><pre class="highlight javascript tab-javascript"><code><span class="nx">meterify</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">create</span><span class="p">()</span>
 </code></pre>
 <p>The <code>meterify.eth.accounts</code> package contains functions for generating accounts and signing transactions and data. Create an object, using Alice&#39;s and Bob&#39;s names as keys. Perform a loop on the object, calling the <code>create</code> function. This will generate new local accounts that contain both a private key and a public key. Add each account to the object as is created.</p>
@@ -394,9 +386,7 @@ v10.16.3
 <p><a name="example-smart-contract"/></p>
 <h2 id='load-deploy-and-test-a-smart-contract'>Load, Deploy, and Test a Smart Contract</h2>
 <p>The following modifications to the example demonstrate the use of a sample smart contract on the Meter blockchain. Again, follow the steps to add code snippets to the existing <code>index.js</code> file.</p>
-
 <h3 id='step-1-load-a-smart-contract'>Step 1 - Load a Smart Contract.</h3>
-
 <p>The file can be found here: <a href="https://github.com/meter-io-docs/meter-io-docs.github.io/blob/master/examples/includes/meter-dapp/sample_token.sol">sample_token.sol</a></p>
 <pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">loadContract</span><span class="p">(</span><span class="nx">file</span><span class="p">){</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Loading contract: "</span><span class="o">+</span><span class="nx">file</span><span class="p">);</span>
@@ -413,7 +403,6 @@ v10.16.3
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Contract Loaded."</span><span class="p">);</span>
   <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
 <span class="p">}</span>
-
 </code></pre><h3 id='step-2-deploy-a-smart-contract'>Step 2 - Deploy a Smart Contract</h3><pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">deployContract</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="nx">address</span><span class="p">){</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Deploying contract."</span><span class="p">);</span>
 
@@ -444,7 +433,6 @@ v10.16.3
     <span class="p">}</span>
   <span class="p">);</span>
 <span class="p">}</span>
-
 </code></pre><h3 id='step-3-register-contract-events'>Step 3 - Register Contract Events</h3>
 <p>Additionally, call some example functions within <code>contractReady</code> when the contract is ready.</p>
 <pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">registerEvents</span><span class="p">(</span><span class="nx">contractInstance</span><span class="p">){</span>
@@ -480,7 +468,6 @@ v10.16.3
       <span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)}</span>
   <span class="p">)</span>
 <span class="p">}</span>
-
 </code></pre><h3 id='step-4-get-a-balance'>Step 4 - Get a Balance.</h3><pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">getAccountBalanceOf</span><span class="p">(</span><span class="nx">contractInstance</span><span class="p">,</span><span class="nx">address</span><span class="p">){</span>
   <span class="nx">contractInstance</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">getAccountBalanceOf</span><span class="p">(</span>
     <span class="nx">address</span>
@@ -497,7 +484,6 @@ v10.16.3
     <span class="p">}</span>
   <span class="p">)</span>
 <span class="p">}</span>
-
 </code></pre><h3 id='step-5-mint-some-coins'>Step 5 - Mint Some Coins.</h3><pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">mintToken</span><span class="p">(</span><span class="nx">contractInstance</span><span class="p">,</span><span class="nx">address</span><span class="p">){</span>
   <span class="nx">contractInstance</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">mintToken</span><span class="p">(</span>
     <span class="nx">address</span><span class="p">,</span>
