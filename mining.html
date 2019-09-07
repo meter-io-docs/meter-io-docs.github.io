@@ -290,8 +290,10 @@
 <h2 id='the-meter-mining-pool'>The Meter Mining Pool</h2>
 <p>Meter is actively working with mining pool providers for future mining support. We have also setup two dedicated Meter mining pools for testing purpose:</p>
 
-<p>stratum+tcp://34.222.111.82:3256
-stratum+tcp://54.184.235.97:3256</p>
+<ul>
+<li>stratum+tcp://34.222.111.82:3256</li>
+<li>stratum+tcp://54.184.235.97:3256</li>
+</ul>
 
 <p><strong>BE AWARE</strong> NO REWARD will be distributed from these pools, as the logic has not been implemented yet. For real mining please setup private mining pools.</p>
 
@@ -371,17 +373,43 @@ stratum+tcp://54.184.235.97:3256</p>
 </ul>
 
 <p>In Ubuntu, you could use the following command to install nodejs and Redis:</p>
-<pre class="highlight shell"><code><span class="gp">$ </span>sudo apt install npm
-<span class="gp">$ </span>sudo apt install nodejs
-<span class="gp">$ </span>sudo apt install redis
-</code></pre>
+
+<table><thead>
+<tr>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>$ sudo apt install npm</td>
+</tr>
+<tr>
+<td>$ sudo apt install nodejs</td>
+</tr>
+<tr>
+<td>$ sudo apt install redis</td>
+</tr>
+</tbody></table>
+
 <p><strong>Important Warning!</strong> It is always a good idea to learn about and understand any software that you are using. An important security measure to implement for nomp is to secure the database so it cannot be accessed externally. An easy way to do this for Redis is to include <code>bind 127.0.0.1</code> in your <code>redis.conf</code> file, and use a firewall with strict rules in place to only allow accessing Redis locally. For more information please read <a href="http://redis.io/topics/security">Security</a>. Another good place to start for additional information about using Redis for nomp is <a href="http://redis.io/topics/persistence">Data Persistence</a>.</p>
 <h3 id='downloading-amp-installing'>Downloading &amp; Installing</h3>
 <p>Clone the repository and run <code>npm update</code> for all the dependencies to be installed:</p>
-<pre class="highlight shell"><code>git clone https://github.com/meterio/meter-nomp.git
-<span class="nb">cd </span>meter-nomp
-npm install
-</code></pre><h3 id='portal-configuration'>Portal Configuration</h3>
+
+<table><thead>
+<tr>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>$ git clone https://github.com/meterio/meter-nomp.git</td>
+</tr>
+<tr>
+<td>$ cd meter-nomp</td>
+</tr>
+<tr>
+<td>$ npm install</td>
+</tr>
+</tbody></table>
+<h3 id='portal-configuration'>Portal Configuration</h3>
 <p>Inside the <code>config_example.json</code> file, ensure the default configuration will work for your environment, then copy the file to <code>config.json</code>.</p>
 <pre class="highlight javascript"><code><span class="s2">"redis"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"host"</span><span class="p">:</span> <span class="s2">"127.0.0.1"</span><span class="p">,</span>
@@ -416,8 +444,17 @@ npm install
 <p>After all the configuration files have been set up, it is time to start the mining pool.</p>
 
 <p>If everything is installed locally on the host, initiate using the following:</p>
-<pre class="highlight shell"><code><span class="gp">$ </span>node init.js
-</code></pre>
+
+<table><thead>
+<tr>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>$ node init.js</td>
+</tr>
+</tbody></table>
+
 <p>The pool should now start running and we could see the status of the pool from the log and http://pool_ip:8080/stats</p>
 
       </div>
